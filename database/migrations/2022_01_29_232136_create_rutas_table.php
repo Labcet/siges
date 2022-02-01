@@ -14,16 +14,16 @@ class CreateRutasTable extends Migration
     public function up()
     {
         Schema::create('rutas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('documento_id')->references('id') ->on('documentos');
-            $table->foreignId('oficina_id')->references('id') ->on('oficinas');
-            $table->foreignId('coordinadores_id')->references('id') ->on('cooridnadores');
+            $table->id();
+            $table->unsignedBigInteger('documento_id');
+            $table->foreign('documento_id')->references('id')->on('documentos');
+            $table->unsignedBigInteger('oficina_id');
+            $table->foreign('oficina_id')->references('id')->on('oficinas');
             $table->text('descripción');
-            $table->date('created_at');
-            $table->time('sunrise', $precision = 0);
-            $table->id_oficina_origen();
-            $table->id_oficina_destino();
-            $table->timestamps();
+            $table->date('fecha_ingreso');
+            $table->time('hora_ingreso');
+            $table->date('fecha_salida');
+            $table->time('hora_salida');
         });
     }
 

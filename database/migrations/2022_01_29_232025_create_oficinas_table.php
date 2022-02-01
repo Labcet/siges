@@ -17,8 +17,8 @@ class CreateOficinasTable extends Migration
             $table->id();
             $table->string('nombre_oficina');
             $table->string('nombre_jefe');
-            $table->string('descripción');
-            $table->string('estado');
+            $table->string('descripcion');
+            $table->char('estado', 1);
             $table->timestamps();
         });
     }

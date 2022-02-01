@@ -15,15 +15,18 @@ class CreateCoordinadoresTable extends Migration
     {
         Schema::create('coordinadores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('oficina_id')->references('id') ->on('oficinas');
             $table->string('nombre');
-            $table->string('apellidos');
+            $table->string('paterno');
+            $table->string('materno');
             $table->string('direccion');
-            $table->double('DNI', 8, 2);
-            $table->double('telefono', 9,2);
+            $table->char('dni', 8);
+            $table->char('telefono', 9);
             $table->string('email')->unique();
-            $table->timestamp('email_verified_ad')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->char('estado', 1);
+            $table->unsignedBigInteger('oficina_id');
+            $table->foreign('oficina_id')->references('id') ->on('oficinas');
             $table->timestamps();
         });
     }

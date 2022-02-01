@@ -14,17 +14,21 @@ class CreateDocumentosTable extends Migration
     public function up()
     {
         Schema::create('documentos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('coordinadores_id')->references('id') ->on('coordinadores');
-            $table->string('prioridad');
-            $table->string('estado');
-            $table->date('created_at');
-            $table->time('sunrise', $precision = 0);
+            $table->id();
+            $table->char('codigo', 8);
+            $table->char('prioridad', 1);
+            $table->char('estado', 1);
+            $table->date('fecha_ingreso');
+            $table->time('hora_ingreso');
+            $table->date('fecha_salida');
+            $table->time('hora_salida');
             $table->double('num_folios');
-            $table->strig('nombre_solicitante');
+            $table->char('dni_solicitante', 8);
+            $table->char('ruc_solicitante', 11)->nullable();
             $table->text('observacion');
             $table->string('doc_adjunto');
-            $table->timestamps();
+            $table->unsignedBigInteger('coordinador_id');
+            $table->foreign('coordinador_id')->references('id') ->on('coordinadores');
         });
     }
 
