@@ -14,7 +14,16 @@ class CreateDocumentosTable extends Migration
     public function up()
     {
         Schema::create('documentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->foreignId('coordinadores_id')->references('id') ->on('coordinadores');
+            $table->string('prioridad');
+            $table->string('estado');
+            $table->date('created_at');
+            $table->time('sunrise', $precision = 0);
+            $table->double('num_folios');
+            $table->strig('nombre_solicitante');
+            $table->text('observacion');
+            $table->string('doc_adjunto');
             $table->timestamps();
         });
     }
