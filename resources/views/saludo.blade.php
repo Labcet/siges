@@ -18,8 +18,7 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        <h1>Saludo!</h1>
+    <body>
         <div id="app">
             <example-component/>
         </div>
