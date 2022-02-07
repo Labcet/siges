@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//  return view('welcome');
+//});
 
-Route::get('/intro', function () {
-    return view('saludo');
+//Route::get('/intro', function () {
+  //  return view('saludo');
+//});
+Route::get('/', function(){
+   return view('app');
+
 });
