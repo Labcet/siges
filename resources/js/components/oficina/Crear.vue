@@ -16,19 +16,19 @@
 									</div>
 								</div>
 
-								<div class=col-12 mb-2">
+								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre Jefe </label>
 										<input type="text" class="form-control" v-model="office.nombre_jefe">
 									</div>
 								</div>
-								<div class=col-12 mb-2">
+								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Descripción </label>
 										<input type="text" class="form-control" v-model="office.descripcion">
 									</div>
 								</div>
-								<div class=col-12 mb-2">
+								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
 										<input type="text" class="form-control" v-model="office.estado">
