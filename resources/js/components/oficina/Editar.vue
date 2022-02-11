@@ -65,7 +65,7 @@ export default {
 	},
 	methods:{
 		async mostrarOficinas(){
-			this.axios.get('/api/office/${this.$route.params.ed}')
+			await this.axios.get('/api/office/${this.$route.params.id}')
 				.then(response=>{
 					const{nombre_oficina, nombre_jefe, descripcion, estado} = response.data
 					this.office.nombre_oficina = nombre_oficina,
@@ -73,12 +73,12 @@ export default {
 					this.office.descripcion = descripcion,
 					this.office.estado = estado
 				})
-				. catch(error=>{
+				.catch(error=>{
 					console.log(error)
 				})
 		},
 		async actualizar(){
-			this.axios.put('/api/office/${this.$route.params.id}', this.office)
+			await this.axios.put('/api/office/${this.$route.params.id}', this.office)
 			.then(response=>{
 				this.$router.push({
 					name:"mostrarOficinas"

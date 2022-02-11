@@ -13,8 +13,17 @@
         <li class="nav-item">
           <router-link exact-active-class="active" to="/"class="nav-link active" aria-current="page">Inicio </router-link>
         </li>
+
         <li class="nav-item">
           <router-link exact-active-class="active" to="/oficinas" class="nav-link">Oficinas </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/coordinadores" class="nav-link">Coordinadores </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/documentos" class="nav-link">Documentos </router-link>
         </li>
 
           </ul>

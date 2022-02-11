@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\oficina;
+use App\Models\coordinador;
 use Illuminate\Http\Request;
 
-class oficinaController extends Controller
+class coordinadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class oficinaController extends Controller
      */
     public function index()
     {
-       $oficinas = oficina::all();
-       return response()->json($oficinas); 
+       $coordinadores = coordinador::all();
+       return response()->json($coordinadores); 
     }
 
     /**
@@ -36,8 +36,8 @@ class oficinaController extends Controller
      */
     public function store(Request $request)
     {
-        $office=oficina::create($request->post());
-        return response()->json(['office'=>$office]);
+        $Coordinador=coordinador::create($request->post());
+        return response()->json(['Coordinador'=>$Coordinador]);
     }
 
     /**
@@ -46,9 +46,9 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(oficina $office)
+    public function show(coordinador $Coordinador)
     {
-        return response()->json($office);
+             return response()->json($Coordinador);
     }
 
     /**
@@ -69,11 +69,11 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, oficina $office)
+    public function update(Request $request, coordinador $Coordinador)
     {
-        $office->fill($request->post())->save();
+        $Coordinador->fill($request->post())->save();
         return response()->json([
-        'office'=>$office
+        'Coordinador'=>$Coordinador
         ]);
     }
 
@@ -83,9 +83,9 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $office)
+    public function destroy(coordinador $Coordinador)
     {
-       $office->delete();
+       $Coordinador->delete();
        return response()->json([
             'mensaje'=>'eliminado'
        ]);

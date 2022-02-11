@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\oficina;
+use App\Models\documents;
 use Illuminate\Http\Request;
 
-class oficinaController extends Controller
+class documentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class oficinaController extends Controller
      */
     public function index()
     {
-       $oficinas = oficina::all();
-       return response()->json($oficinas); 
+       $documentos = documents::all();
+       return response()->json($documentos); 
     }
 
     /**
@@ -36,8 +36,8 @@ class oficinaController extends Controller
      */
     public function store(Request $request)
     {
-        $office=oficina::create($request->post());
-        return response()->json(['office'=>$office]);
+        $Documentos=documents::create($request->post());
+        return response()->json(['Documentos'=>$Documentos]);
     }
 
     /**
@@ -46,9 +46,9 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(oficina $office)
+    public function show(documents $Documentos)
     {
-        return response()->json($office);
+             return response()->json($Documentos);
     }
 
     /**
@@ -69,11 +69,11 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, oficina $office)
+    public function update(Request $request, documents $Documentos)
     {
-        $office->fill($request->post())->save();
+        $Documentos->fill($request->post())->save();
         return response()->json([
-        'office'=>$office
+        'Documentos'=>$Documentos
         ]);
     }
 
@@ -83,9 +83,9 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $office)
+    public function destroy(documents $Documentos)
     {
-       $office->delete();
+       $Documentos->delete();
        return response()->json([
             'mensaje'=>'eliminado'
        ]);
