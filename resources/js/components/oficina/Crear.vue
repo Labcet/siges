@@ -12,26 +12,26 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre Oficina </label>
-										<input type="text" class="form-control" v-model="office.nombre_oficina">
+										<input type="text" class="form-control" v-model="oficina.nombre_oficina">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre Jefe </label>
-										<input type="text" class="form-control" v-model="office.nombre_jefe">
+										<input type="text" class="form-control" v-model="oficina.nombre_jefe">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Descripción </label>
-										<input type="text" class="form-control" v-model="office.descripcion">
+										<input type="text" class="form-control" v-model="oficina.descripcion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="office.estado">
+										<input type="text" class="form-control" v-model="oficina.estado">
 									</div>
 								</div>
 
@@ -51,20 +51,19 @@
 export default{
 	name:"crear-office",
 	data(){
-	return{
-		office:{
-			nombre_oficina:"",
-			nombre_jefe:"",
-			descripcion:"",
-			estado:"",
-		}
-
+		return{
+			oficina:{
+				nombre_oficina:"",
+				nombre_jefe:"",
+				descripcion:"",
+				estado:"",
 			}
+		}
 	},
 
 	methods:{
 		async crear(){
-			await this.axios.post('/api/office', this.office)
+			await this.axios.post('/api/oficinas', this.oficina)
 			.then(response=>{
 				this.$router.push({name:"mostrarOficinas"})
 			})

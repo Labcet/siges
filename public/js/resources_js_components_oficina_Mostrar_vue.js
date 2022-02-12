@@ -74,11 +74,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "oficinas",
   data: function data() {
@@ -99,10 +94,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/office').then(function (response) {
+                return _this.axios.get('/api/oficinas').then(function (response) {
                   _this.oficinas = response.data;
                 })["catch"](function (error) {
-                  _this.office = [];
+                  console.log(error);
                 });
 
               case 2:
@@ -117,10 +112,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (confirm("¿confirma eliminar el registro")) {
-        this.axios["delete"]('/api/office/${id}').then(function (response) {
+        this.axios["delete"]('/api/oficinas/' + id).then(function (response) {
           _this2.mostrarOficinas();
         })["catch"](function (error) {
-          console;
+          console.log(error);
         });
       }
     }
@@ -993,7 +988,7 @@ var render = function () {
               staticClass: "btn btn-success",
               attrs: { to: { name: "crearOficinas" } },
             },
-            [_c("i", { staticClass: "fa-solid fa-circle-plus" })]
+            [_vm._v("Crear")]
           ),
         ],
         1
@@ -1006,17 +1001,17 @@ var render = function () {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.oficinas, function (office) {
-                return _c("tr", { key: office.id }, [
-                  _c("td", [_vm._v(_vm._s(office.id))]),
+              _vm._l(_vm.oficinas, function (oficina) {
+                return _c("tr", { key: oficina.id }, [
+                  _c("td", [_vm._v(_vm._s(oficina.id))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(office.nombre_oficina))]),
+                  _c("td", [_vm._v(_vm._s(oficina.nombre_oficina))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(office.nombre_jefe))]),
+                  _c("td", [_vm._v(_vm._s(oficina.nombre_jefe))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(office.descripcion))]),
+                  _c("td", [_vm._v(_vm._s(oficina.descripcion))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(office.estado))]),
+                  _c("td", [_vm._v(_vm._s(oficina.estado))]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -1028,7 +1023,7 @@ var render = function () {
                           attrs: {
                             to: {
                               name: "editarOficinas",
-                              params: { id: office.id },
+                              params: { id: oficina.id },
                             },
                           },
                         },
@@ -1042,7 +1037,7 @@ var render = function () {
                           attrs: { type: "button" },
                           on: {
                             click: function ($event) {
-                              return _vm.borrarOficina(office.id)
+                              return _vm.borrarOficina(oficina.id)
                             },
                           },
                         },

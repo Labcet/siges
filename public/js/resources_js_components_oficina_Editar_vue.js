@@ -83,7 +83,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   name: "editar-office",
   data: function data() {
     return {
-      office: {
+      oficina: {
         nombre_oficina: "",
         nombre_jefe: "",
         descripcion: "",
@@ -92,10 +92,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   mounted: function mounted() {
-    this.mostrarOficinas();
+    this.buscarOficina();
   },
   methods: {
-    mostrarOficinas: function mostrarOficinas() {
+    buscarOficina: function buscarOficina() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -104,13 +104,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/office/${this.$route.params.id}').then(function (response) {
+                return _this.axios.get('/api/oficinas/' + _this.$route.params.id).then(function (response) {
                   var _response$data = response.data,
                       nombre_oficina = _response$data.nombre_oficina,
                       nombre_jefe = _response$data.nombre_jefe,
                       descripcion = _response$data.descripcion,
                       estado = _response$data.estado;
-                  _this.office.nombre_oficina = nombre_oficina, _this.office.nombre_jefe = nombre_jefe, _this.office.descripcion = descripcion, _this.office.estado = estado;
+                  _this.oficina.nombre_oficina = nombre_oficina, _this.oficina.nombre_jefe = nombre_jefe, _this.oficina.descripcion = descripcion, _this.oficina.estado = estado;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -123,16 +123,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    actualizar: function actualizar() {
+    actualizarOficina: function actualizarOficina() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
-                return _this2.axios.put('/api/office/${this.$route.params.id}', _this2.office).then(function (response) {
+                data = {
+                  id: _this2.$route.params.id,
+                  oficina: _this2.oficina
+                };
+                _context2.next = 3;
+                return _this2.axios.put('/api/oficinas/' + _this2.$route.params.id, _this2.oficina).then(function (response) {
                   _this2.$router.push({
                     name: "mostrarOficinas"
                   });
@@ -140,7 +145,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -1018,7 +1023,7 @@ var render = function () {
                 on: {
                   submit: function ($event) {
                     $event.preventDefault()
-                    return _vm.actualizar.apply(null, arguments)
+                    return _vm.actualizarOficina.apply(null, arguments)
                   },
                 },
               },
@@ -1033,20 +1038,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.office.nombre_oficina,
-                            expression: "office.nombre_oficina",
+                            value: _vm.oficina.nombre_oficina,
+                            expression: "oficina.nombre_oficina",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.office.nombre_oficina },
+                        domProps: { value: _vm.oficina.nombre_oficina },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.office,
+                              _vm.oficina,
                               "nombre_oficina",
                               $event.target.value
                             )
@@ -1065,20 +1070,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.office.nombre_jefe,
-                            expression: "office.nombre_jefe",
+                            value: _vm.oficina.nombre_jefe,
+                            expression: "oficina.nombre_jefe",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.office.nombre_jefe },
+                        domProps: { value: _vm.oficina.nombre_jefe },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.office,
+                              _vm.oficina,
                               "nombre_jefe",
                               $event.target.value
                             )
@@ -1097,20 +1102,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.office.descripcion,
-                            expression: "office.descripcion",
+                            value: _vm.oficina.descripcion,
+                            expression: "oficina.descripcion",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.office.descripcion },
+                        domProps: { value: _vm.oficina.descripcion },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.office,
+                              _vm.oficina,
                               "descripcion",
                               $event.target.value
                             )
@@ -1129,19 +1134,19 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.office.estado,
-                            expression: "office.estado",
+                            value: _vm.oficina.estado,
+                            expression: "oficina.estado",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.office.estado },
+                        domProps: { value: _vm.oficina.estado },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.office, "estado", $event.target.value)
+                            _vm.$set(_vm.oficina, "estado", $event.target.value)
                           },
                         },
                       }),

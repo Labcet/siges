@@ -46,9 +46,13 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(oficina $office)
+    public function show($id)
     {
-        return response()->json($office);
+        $oficina = oficina::find($id);
+        return response()->json($oficina);
+        //return response()->json($office);
+        //$office = oficina::find($oficina);
+        //return response()->json($request);
     }
 
     /**
@@ -69,11 +73,22 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, oficina $office)
+    public function update(Request $request, $id)
     {
-        $office->fill($request->post())->save();
+        /*$office->fill($request->post())->save();
         return response()->json([
-        'office'=>$office
+            'office'=>$office
+        ]);*/
+        oficina::where('Id',$id)
+            ->update([
+                'nombre_oficina' => $request->nombre_oficina,
+                'nombre_jefe' => $request->nombre_jefe,
+                'descripcion' => $request->descripcion,
+                'estado' => $request->estado
+            ]);
+        //return $request->nombre_oficina;
+        return response()->json([
+            'mensaje' => 'actualizado'
         ]);
     }
 
@@ -83,11 +98,12 @@ class oficinaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $office)
+    public function destroy($id)
     {
-       $office->delete();
-       return response()->json([
-            'mensaje'=>'eliminado'
-       ]);
+        $oficina = oficina::find($id);
+        $oficina->delete();
+        return response()->json([
+            'mensaje' => 'eliminado'
+        ]);
     }
 }

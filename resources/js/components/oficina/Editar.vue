@@ -7,31 +7,31 @@
 						<h4>Editar Oficinas</h4>
 					</div>
 					<div class="card-body">
-						<form @submit.prevent="actualizar">
+						<form @submit.prevent="actualizarOficina">
 							<div class="row">
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre Oficina </label>
-											<input type="text" class="form-control" v-model="office.nombre_oficina">
+											<input type="text" class="form-control" v-model="oficina.nombre_oficina">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre Jefe </label>
-											<input type="text" class="form-control" v-model="office.nombre_jefe">
+											<input type="text" class="form-control" v-model="oficina.nombre_jefe">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Descripción </label>
-											<input type="text" class="form-control" v-model="office.descripcion">
+											<input type="text" class="form-control" v-model="oficina.descripcion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-											<input type="text" class="form-control" v-model="office.estado">
+											<input type="text" class="form-control" v-model="oficina.estado">
 									</div>
 								</div>
 
@@ -52,7 +52,7 @@ export default {
 	name:"editar-office",
 	data(){
 		return{
-			office:{
+			oficina:{
 				nombre_oficina:"",
 				nombre_jefe:"",
 				descripcion:"",
@@ -61,24 +61,32 @@ export default {
 		}
 	},
 	mounted(){
-		this.mostrarOficinas()
+		this.buscarOficina()
 	},
 	methods:{
-		async mostrarOficinas(){
-			await this.axios.get('/api/office/${this.$route.params.id}')
-				.then(response=>{
-					const{nombre_oficina, nombre_jefe, descripcion, estado} = response.data
-					this.office.nombre_oficina = nombre_oficina,
-					this.office.nombre_jefe = nombre_jefe,
-					this.office.descripcion = descripcion,
-					this.office.estado = estado
-				})
-				.catch(error=>{
-					console.log(error)
-				})
+
+		async buscarOficina(){
+			await this.axios.get('/api/oficinas/' + this.$route.params.id)
+			.then(response=>{
+				const{nombre_oficina, nombre_jefe, descripcion, estado} = response.data
+				this.oficina.nombre_oficina = nombre_oficina,
+				this.oficina.nombre_jefe = nombre_jefe,
+				this.oficina.descripcion = descripcion,
+				this.oficina.estado = estado
+			})
+			.catch(error=>{
+				console.log(error)
+			})
 		},
-		async actualizar(){
-			await this.axios.put('/api/office/${this.$route.params.id}', this.office)
+
+		async actualizarOficina(){
+
+			const data = {
+				id: this.$route.params.id,
+				oficina: this.oficina 
+			};
+
+			await this.axios.put('/api/oficinas/' + this.$route.params.id, this.oficina)
 			.then(response=>{
 				this.$router.push({
 					name:"mostrarOficinas"
