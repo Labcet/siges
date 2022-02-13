@@ -28,8 +28,8 @@
 			      <td>{{oficina.descripcion}}</td>
 			      <td>{{oficina.estado}}</td>
 			      <td> 
-			      	<router-link :to='{name:"editarOficinas", params:{id:oficina.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
-			      	<a type="button" @click="borrarOficina(oficina.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
+			      	<router-link :to='{name:"editarOficinas", params:{id:oficina.id}}' class="btn btn-info"><i class="bi bi-pencil-square"></i></router-link>
+			      	<a type="button" @click="borrarOficina(oficina.id)" class="btn btn-danger "><i class="bi bi-trash"></i></a>
 			      </td>
 			   </tr>
 			</tbody>

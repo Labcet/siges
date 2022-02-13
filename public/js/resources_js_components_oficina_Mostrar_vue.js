@@ -1027,7 +1027,7 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("i", { staticClass: "far fa-edit" })]
+                        [_c("i", { staticClass: "bi bi-pencil-square" })]
                       ),
                       _vm._v(" "),
                       _c(
@@ -1041,7 +1041,7 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("i", { staticClass: "far fa-trash-alt" })]
+                        [_c("i", { staticClass: "bi bi-trash" })]
                       ),
                     ],
                     1
