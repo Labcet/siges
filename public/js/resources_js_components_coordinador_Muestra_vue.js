@@ -89,6 +89,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -1038,6 +1039,8 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.estado))]),
                   _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(coordinador.oficina_id))]),
+                  _vm._v(" "),
                   _c(
                     "td",
                     [
@@ -1107,6 +1110,8 @@ var staticRenderFns = [
         _c("th", [_vm._v(" password ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" estado ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" oficina ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" acciones ")]),
       ]),

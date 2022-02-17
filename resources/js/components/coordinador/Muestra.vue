@@ -22,6 +22,7 @@
 			 	<th> email </th>
 			 	<th> password </th>
 			 	<th> estado </th>
+			 	<th> oficina </th>
 			 	<th> acciones </th>
 			 </tr>
 			  </thead>
@@ -37,7 +38,7 @@
 			      <td>{{coordinador.email}}</td>
 			      <td>{{coordinador.password}}</td>
 			      <td>{{coordinador.estado}}</td>
-
+			      <td>{{coordinador.oficina_id}}</td>
 			      <td> 
 			      	<router-link :to='{name:"editaCoordinador", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
 			      	<a type="button" @click="borrarCoordinador(coordinador.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>

@@ -110,6 +110,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "crea-Coordinador",
   data: function data() {
@@ -123,7 +128,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         telefono: "",
         email: "",
         password: "",
-        estado: ""
+        estado: "",
+        oficina_id: 1
       }
     };
   },
@@ -1309,6 +1315,38 @@ var render = function () {
                             _vm.$set(
                               _vm.coordinador,
                               "estado",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Oficina")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.coordinador.oficina_id,
+                            expression: "coordinador.oficina_id",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.coordinador.oficina_id },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.coordinador,
+                              "oficina_id",
                               $event.target.value
                             )
                           },

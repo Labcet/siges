@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class coordinador extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre','parteno', 'materno', 'direccion', 'dni', 'telefono','email','password','estado'];
+    protected $fillable = ['nombre','paterno', 'materno', 'direccion', 'dni', 'telefono','email','password','estado','oficina_id'];
+    public $table = "coordinadores";
 }

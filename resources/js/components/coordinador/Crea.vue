@@ -64,7 +64,12 @@
 										<input type="text" class="form-control" v-model="coordinador.estado">
 									</div>
 								</div>
-
+								<div class="col-12 mb-2">
+									<div class="form-group">
+										<label>Oficina</label>
+										<input type="text" class="form-control" v-model="coordinador.oficina_id">
+									</div>
+								</div>
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
 								</div>
@@ -93,6 +98,7 @@ export default{
 			email:"",
 			password:"",
 			estado:"",
+			oficina_id: 1,
 		}
 
 	 }
