@@ -12,26 +12,26 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre </label>
-										<input type="text" class="form-control" v-model="Coordinador.nombre">
+										<input type="text" class="form-control" v-model="coordinador.nombre">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Apellido Paterno </label>
-										<input type="text" class="form-control" v-model="Coordinador.paterno">
+										<input type="text" class="form-control" v-model="coordinador.paterno">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Apellido Materno</label>
-										<input type="text" class="form-control" v-model="Coordinador.materno">
+										<input type="text" class="form-control" v-model="coordinador.materno">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Direccion </label>
-										<input type="text" class="form-control" v-model="Coordinador.direccion">
+										<input type="text" class="form-control" v-model="coordinador.direccion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -61,7 +61,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="Coordinador.estado">
+										<input type="text" class="form-control" v-model="coordinador.estado">
 									</div>
 								</div>
 
@@ -82,7 +82,7 @@ export default{
 	name:"Edita-Coordinador",
 	data(){
 	return{
-		Coordinador:{
+		coordinador:{
 			nombre:"",
 			paterno:"",
 			materno:"",
@@ -91,35 +91,39 @@ export default{
 			telefono:"",
 			email:"",
 			password:"",
-			estado:"",
+			estado:""
 		}
 
 	 }
 	},
 		mounted(){
-		this.muestraCoordinador()
+		this.buscarCoordinador()
 	},
 	methods:{
-		async mostrarOficinas(){
-			await this.axios.get('/api/Coordinador/${this.$route.params.id}')
+		async buscarCoordinador(){
+			await this.axios.get('/api/coordinadores/' + this.$route.params.id)
 				.then(response=>{
 					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado} = response.data
-					this.Coordinador.nombre = nombre,
-					this.Coordinador.paterno = paterno,
-					this.Coordinador.materno = materno,
-					this.Coordinador.direccion = direccion,
-					this.Coordinador.dni = dni,
-					this.Coordinador.telefono = telefono,
-					this.Coordinador.email = email,
-					this.Coordinador.password = password,
-					this.Coordinador.estado = estado
+					this.coordinador.nombre = nombre,
+					this.coordinador.paterno = paterno,
+					this.coordinador.materno = materno,
+					this.coordinador.direccion = direccion,
+					this.coordinador.dni = dni,
+					this.coordinador.telefono = telefono,
+					this.coordinador.email = email,
+					this.coordinador.password = password,
+					this.coordinador.estado = estado
 				})
 				.catch(error=>{
 					console.log(error)
 				})
 		},
 		async update(){
-			await this.axios.put('/api/Coordinador/${this.$route.params.id}', this.Coordinador)
+			const data = {
+				id: this.$route.params.id,
+				oficina: this.coordinador 
+			};
+			await this.axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador)
 			.then(response=>{
 				this.$router.push({
 					name:"muestraCoordinador"

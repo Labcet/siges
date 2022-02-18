@@ -12,80 +12,81 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Codigo</label>
-										<input type="text" class="form-control" v-model="Documentos.codigo">
+										<input type="text" class="form-control" v-model="documents.codigo">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Prioridad </label>
-										<input type="text" class="form-control" v-model="Documentos.prioridad">
+										<input type="text" class="form-control" v-model="documents.prioridad">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="Documentos.estado">
+										<input type="text" class="form-control" v-model="documents.estado">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Fecha Ingreso </label>
-										<input type="date" class="form-control" v-model="Documentos.fecha_ingreso">
+										<input type="date" class="form-control" v-model="documents.fecha_ingreso">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Hora Ingreso </label>
-										<input type="time" class="form-control" v-model="Documentos.hora_ingreso">
+										<input type="time" class="form-control" v-model="documents.hora_ingreso">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Fecha Salida </label>
-										<input type="date" class="form-control" v-model="Documentos.fecha_salida">
+										<input type="date" class="form-control" v-model="documents.fecha_salida">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Hora Salida </label>
-										<input type="time" class="form-control" v-model="Documentos.hora_salida">
+										<input type="time" class="form-control" v-model="documents.hora_salida">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>N° de folios </label>
-										<input type="text" class="form-control" v-model="Documentos.num_folios">
+										<input type="text" class="form-control" v-model="documents.num_folios">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>DNI solicitante </label>
-										<input type="text" class="form-control" v-model="Documentos.dni_solicitante">
+										<input type="text" class="form-control" v-model="documents.dni_solicitante">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>RUC solicitante </label>
-										<input type="text" class="form-control" v-model="Documentos.ruc_solicitante">
+										<input type="text" class="form-control" v-model="documents.ruc_solicitante">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Observacion </label>
-										<input type="text" class="form-control" v-model="Documentos.observacion">
+										<input type="text" class="form-control" v-model="documents.observacion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
-										<input type="text" class="form-control" v-model="Documentos.doc_adjunto">
+										<input type="text" class="form-control" v-model="documents.doc_adjunto">
 									</div>
 								</div>
 
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
 								</div>
+								
 							</div>
 						</form>
 					</div>
@@ -100,7 +101,7 @@ export default{
 	name:"create-Documentos",
 	data(){
 	return{
-		Documentos:{
+		documents:{
 			codigo:"",
 			prioridad:"",
 			estado:"",
@@ -115,12 +116,12 @@ export default{
 			doc_adjunto:"",
 		}
 
-			}
-	},
+	}
+},
 
 	methods:{
 		async create(){
-			await this.axios.post('/api/Documentos', this.Documentos)
+			await this.axios.post('/api/documentos', this.documents)
 			.then(response=>{
 				this.$router.push({name:"showDocuments"})
 			})

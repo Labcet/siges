@@ -4,7 +4,7 @@
 
 <div class="row">
    <div class="col-lg-12 mb-4">
-       <router-link :to='{name:"createDocuments"}'class="btn btn-success"><i class="fa-solid fa-circle-plus"></i></router-link>
+       <router-link :to='{name:"createDocuments"}'class="btn btn-success">Crear</router-link>
     </div>
 <div class="col-12">
 	<div class ="table-responsive">
@@ -29,24 +29,24 @@
 			 </tr>
 			  </thead>
 			<tbody>
-			      <tr v-for="Documentos in documentos" :key="Documentos.id">
-			      <td>{{Documentos.id}}</td>
-			      <td>{{Documentos.codigo}}</td>
-			      <td>{{Documentos.prioridad}}</td>
-			      <td>{{Documentos.estado}}</td>
-			      <td>{{Documentos.fecha_ingreso}}</td>
-			      <td>{{Documentos.hora_ingreso}}</td>
-			      <td>{{Documentos.fecha_salida}}</td>
-			      <td>{{Documentos.hora_ingreso}}</td>
-			      <td>{{Documentos.num_folios}}</td>
-			      <td>{{Documentos.dni_solicitante}}</td>
-			      <td>{{Documentos.ruc_solicitante}}</td>
-			      <td>{{Documentos.observacion}}</td>
-			      <td>{{Documentos.doc_adjunto}}</td>
+			      <tr v-for="documents in documentos" :key="documents.id">
+			      <td>{{documents.id}}</td>
+			      <td>{{documents.codigo}}</td>
+			      <td>{{documents.prioridad}}</td>
+			      <td>{{documents.estado}}</td>
+			      <td>{{documents.fecha_ingreso}}</td>
+			      <td>{{documents.hora_ingreso}}</td>
+			      <td>{{documents.fecha_salida}}</td>
+			      <td>{{documents.hora_ingreso}}</td>
+			      <td>{{documents.num_folios}}</td>
+			      <td>{{documents.dni_solicitante}}</td>
+			      <td>{{documents.ruc_solicitante}}</td>
+			      <td>{{documents.observacion}}</td>
+			      <td>{{documents.doc_adjunto}}</td>
 
 			      <td> 
-			      	<router-link :to='{name:"editDocuments", params:{id:Documentos.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
-			      	<a type="button" @click="borrarDocumento(Documentos.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
+			      	<router-link :to='{name:"editDocuments", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
+			      	<a type="button" @click="borrarDocumento(documents.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
 
 
 			       </td>
@@ -76,22 +76,22 @@ mounted(){
 },
 methods:{
 	async showDocuments(){
-		await this.axios.get('/api/Documentos')
+		await this.axios.get('/api/documentos')
 		.then(response=>{
 			this.documentos=response.data
 		})
 		.catch(error=>{
-			this.Documentos = []
+			console.log(error)
 		})
 	},
 	borrarDocumento(id){
 		if(confirm("¿confirma eliminar el registro")){
-			this.axios.delete('/api/Documentos/${id}')
+			this.axios.delete('/api/documentos/' + id)
 			.then(response=>{
 			this.showDocuments()
 			})
 			.catch(error=>{
-			console
+			console.log(error)
 			})			
 		}
 	}

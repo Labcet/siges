@@ -115,10 +115,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/Documentos').then(function (response) {
+                return _this.axios.get('/api/documentos').then(function (response) {
                   _this.documentos = response.data;
                 })["catch"](function (error) {
-                  _this.Documentos = [];
+                  console.log(error);
                 });
 
               case 2:
@@ -133,10 +133,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (confirm("¿confirma eliminar el registro")) {
-        this.axios["delete"]('/api/Documentos/${id}').then(function (response) {
+        this.axios["delete"]('/api/documentos/' + id).then(function (response) {
           _this2.showDocuments();
         })["catch"](function (error) {
-          console;
+          console.log(error);
         });
       }
     }
@@ -1009,7 +1009,7 @@ var render = function () {
               staticClass: "btn btn-success",
               attrs: { to: { name: "createDocuments" } },
             },
-            [_c("i", { staticClass: "fa-solid fa-circle-plus" })]
+            [_vm._v("Crear")]
           ),
         ],
         1
@@ -1022,33 +1022,33 @@ var render = function () {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.documentos, function (Documentos) {
-                return _c("tr", { key: Documentos.id }, [
-                  _c("td", [_vm._v(_vm._s(Documentos.id))]),
+              _vm._l(_vm.documentos, function (documents) {
+                return _c("tr", { key: documents.id }, [
+                  _c("td", [_vm._v(_vm._s(documents.id))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.codigo))]),
+                  _c("td", [_vm._v(_vm._s(documents.codigo))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.prioridad))]),
+                  _c("td", [_vm._v(_vm._s(documents.prioridad))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.estado))]),
+                  _c("td", [_vm._v(_vm._s(documents.estado))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.fecha_ingreso))]),
+                  _c("td", [_vm._v(_vm._s(documents.fecha_ingreso))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.hora_ingreso))]),
+                  _c("td", [_vm._v(_vm._s(documents.hora_ingreso))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.fecha_salida))]),
+                  _c("td", [_vm._v(_vm._s(documents.fecha_salida))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.hora_ingreso))]),
+                  _c("td", [_vm._v(_vm._s(documents.hora_ingreso))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.num_folios))]),
+                  _c("td", [_vm._v(_vm._s(documents.num_folios))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.dni_solicitante))]),
+                  _c("td", [_vm._v(_vm._s(documents.dni_solicitante))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.ruc_solicitante))]),
+                  _c("td", [_vm._v(_vm._s(documents.ruc_solicitante))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.observacion))]),
+                  _c("td", [_vm._v(_vm._s(documents.observacion))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Documentos.doc_adjunto))]),
+                  _c("td", [_vm._v(_vm._s(documents.doc_adjunto))]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -1060,7 +1060,7 @@ var render = function () {
                           attrs: {
                             to: {
                               name: "editDocuments",
-                              params: { id: Documentos.id },
+                              params: { id: documents.id },
                             },
                           },
                         },
@@ -1074,7 +1074,7 @@ var render = function () {
                           attrs: { type: "button" },
                           on: {
                             click: function ($event) {
-                              return _vm.borrarDocumento(Documentos.id)
+                              return _vm.borrarDocumento(documents.id)
                             },
                           },
                         },

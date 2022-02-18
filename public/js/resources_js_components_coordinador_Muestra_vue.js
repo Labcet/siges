@@ -109,10 +109,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/Coordindor').then(function (response) {
+                return _this.axios.get('/api/coordinadores').then(function (response) {
                   _this.coordinadores = response.data;
                 })["catch"](function (error) {
-                  _this.Coordinador = [];
+                  console.log(error);
                 });
 
               case 2:
@@ -127,10 +127,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (confirm("¿confirma eliminar el registro")) {
-        this.axios["delete"]('/api/Coordinador/${id}').then(function (response) {
+        this.axios["delete"]('/api/coordinadores/' + id).then(function (response) {
           _this2.muestraCoordinador();
         })["catch"](function (error) {
-          console;
+          console.log(error);
         });
       }
     }
@@ -1003,7 +1003,7 @@ var render = function () {
               staticClass: "btn btn-success",
               attrs: { to: { name: "creaCoordinador" } },
             },
-            [_c("i", { staticClass: "fa-solid fa-circle-plus" })]
+            [_vm._v("Crear")]
           ),
         ],
         1
@@ -1016,27 +1016,27 @@ var render = function () {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.coordinadores, function (Coordinador) {
-                return _c("tr", { key: Coordinador.id }, [
-                  _c("td", [_vm._v(_vm._s(Coordinador.id))]),
+              _vm._l(_vm.coordinadores, function (coordinador) {
+                return _c("tr", { key: coordinador.id }, [
+                  _c("td", [_vm._v(_vm._s(coordinador.id))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.nombre))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.nombre))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.paterno))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.paterno))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.materno))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.materno))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.direccion))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.direccion))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.dni))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.dni))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.telefono))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.telefono))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.email))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.email))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.password))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.password))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(Coordinador.estado))]),
+                  _c("td", [_vm._v(_vm._s(coordinador.estado))]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -1048,7 +1048,7 @@ var render = function () {
                           attrs: {
                             to: {
                               name: "editaCoordinador",
-                              params: { id: Coordinador.id },
+                              params: { id: coordinador.id },
                             },
                           },
                         },
@@ -1062,7 +1062,7 @@ var render = function () {
                           attrs: { type: "button" },
                           on: {
                             click: function ($event) {
-                              return _vm.borrarCoordinador(Coordinador.id)
+                              return _vm.borrarCoordinador(coordinador.id)
                             },
                           },
                         },

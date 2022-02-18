@@ -127,11 +127,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
     return {
-      Documentos: {
+      documents: {
         codigo: "",
         prioridad: "",
         estado: "",
@@ -157,7 +158,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.post('/api/Documentos', _this.Documentos).then(function (response) {
+                return _this.axios.post('/api/documentos', _this.documents).then(function (response) {
                   _this.$router.push({
                     name: "showDocuments"
                   });
@@ -1058,20 +1059,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.codigo,
-                            expression: "Documentos.codigo",
+                            value: _vm.documents.codigo,
+                            expression: "documents.codigo",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.codigo },
+                        domProps: { value: _vm.documents.codigo },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "codigo",
                               $event.target.value
                             )
@@ -1090,20 +1091,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.prioridad,
-                            expression: "Documentos.prioridad",
+                            value: _vm.documents.prioridad,
+                            expression: "documents.prioridad",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.prioridad },
+                        domProps: { value: _vm.documents.prioridad },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "prioridad",
                               $event.target.value
                             )
@@ -1122,20 +1123,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.estado,
-                            expression: "Documentos.estado",
+                            value: _vm.documents.estado,
+                            expression: "documents.estado",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.estado },
+                        domProps: { value: _vm.documents.estado },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "estado",
                               $event.target.value
                             )
@@ -1154,20 +1155,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.fecha_ingreso,
-                            expression: "Documentos.fecha_ingreso",
+                            value: _vm.documents.fecha_ingreso,
+                            expression: "documents.fecha_ingreso",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "date" },
-                        domProps: { value: _vm.Documentos.fecha_ingreso },
+                        domProps: { value: _vm.documents.fecha_ingreso },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "fecha_ingreso",
                               $event.target.value
                             )
@@ -1186,20 +1187,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.hora_ingreso,
-                            expression: "Documentos.hora_ingreso",
+                            value: _vm.documents.hora_ingreso,
+                            expression: "documents.hora_ingreso",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "time" },
-                        domProps: { value: _vm.Documentos.hora_ingreso },
+                        domProps: { value: _vm.documents.hora_ingreso },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "hora_ingreso",
                               $event.target.value
                             )
@@ -1218,20 +1219,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.fecha_salida,
-                            expression: "Documentos.fecha_salida",
+                            value: _vm.documents.fecha_salida,
+                            expression: "documents.fecha_salida",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "date" },
-                        domProps: { value: _vm.Documentos.fecha_salida },
+                        domProps: { value: _vm.documents.fecha_salida },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "fecha_salida",
                               $event.target.value
                             )
@@ -1250,20 +1251,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.hora_salida,
-                            expression: "Documentos.hora_salida",
+                            value: _vm.documents.hora_salida,
+                            expression: "documents.hora_salida",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "time" },
-                        domProps: { value: _vm.Documentos.hora_salida },
+                        domProps: { value: _vm.documents.hora_salida },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "hora_salida",
                               $event.target.value
                             )
@@ -1282,20 +1283,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.num_folios,
-                            expression: "Documentos.num_folios",
+                            value: _vm.documents.num_folios,
+                            expression: "documents.num_folios",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.num_folios },
+                        domProps: { value: _vm.documents.num_folios },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "num_folios",
                               $event.target.value
                             )
@@ -1314,20 +1315,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.dni_solicitante,
-                            expression: "Documentos.dni_solicitante",
+                            value: _vm.documents.dni_solicitante,
+                            expression: "documents.dni_solicitante",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.dni_solicitante },
+                        domProps: { value: _vm.documents.dni_solicitante },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "dni_solicitante",
                               $event.target.value
                             )
@@ -1346,20 +1347,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.ruc_solicitante,
-                            expression: "Documentos.ruc_solicitante",
+                            value: _vm.documents.ruc_solicitante,
+                            expression: "documents.ruc_solicitante",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.ruc_solicitante },
+                        domProps: { value: _vm.documents.ruc_solicitante },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "ruc_solicitante",
                               $event.target.value
                             )
@@ -1378,20 +1379,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.observacion,
-                            expression: "Documentos.observacion",
+                            value: _vm.documents.observacion,
+                            expression: "documents.observacion",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.observacion },
+                        domProps: { value: _vm.documents.observacion },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "observacion",
                               $event.target.value
                             )
@@ -1410,20 +1411,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Documentos.doc_adjunto,
-                            expression: "Documentos.doc_adjunto",
+                            value: _vm.documents.doc_adjunto,
+                            expression: "documents.doc_adjunto",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Documentos.doc_adjunto },
+                        domProps: { value: _vm.documents.doc_adjunto },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Documentos,
+                              _vm.documents,
                               "doc_adjunto",
                               $event.target.value
                             )

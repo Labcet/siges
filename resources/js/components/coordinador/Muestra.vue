@@ -4,7 +4,7 @@
 
 <div class="row">
    <div class="col-lg-12 mb-4">
-       <router-link :to='{name:"creaCoordinador"}'class="btn btn-success"><i class="fa-solid fa-circle-plus"></i></router-link>
+       <router-link :to='{name:"creaCoordinador"}'class="btn btn-success">Crear</router-link>
     </div>
 <div class="col-12">
 	<div class ="table-responsive">
@@ -26,21 +26,21 @@
 			 </tr>
 			  </thead>
 			<tbody>
-			      <tr v-for="Coordinador in coordinadores" :key="Coordinador.id">
-			      <td>{{Coordinador.id}}</td>
-			      <td>{{Coordinador.nombre}}</td>
-			      <td>{{Coordinador.paterno}}</td>
-			      <td>{{Coordinador.materno}}</td>
-			      <td>{{Coordinador.direccion}}</td>
-			      <td>{{Coordinador.dni}}</td>
-			      <td>{{Coordinador.telefono}}</td>
-			      <td>{{Coordinador.email}}</td>
-			      <td>{{Coordinador.password}}</td>
-			      <td>{{Coordinador.estado}}</td>
+			      <tr v-for="coordinador in coordinadores" :key="coordinador.id">
+			      <td>{{coordinador.id}}</td>
+			      <td>{{coordinador.nombre}}</td>
+			      <td>{{coordinador.paterno}}</td>
+			      <td>{{coordinador.materno}}</td>
+			      <td>{{coordinador.direccion}}</td>
+			      <td>{{coordinador.dni}}</td>
+			      <td>{{coordinador.telefono}}</td>
+			      <td>{{coordinador.email}}</td>
+			      <td>{{coordinador.password}}</td>
+			      <td>{{coordinador.estado}}</td>
 
 			      <td> 
-			      	<router-link :to='{name:"editaCoordinador", params:{id:Coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
-			      	<a type="button" @click="borrarCoordinador(Coordinador.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
+			      	<router-link :to='{name:"editaCoordinador", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
+			      	<a type="button" @click="borrarCoordinador(coordinador.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
 
 
 			       </td>
@@ -70,22 +70,22 @@ mounted(){
 },
 methods:{
 	async muestraCoordinador(){
-		await this.axios.get('/api/Coordindor')
+		await this.axios.get('/api/coordinadores')
 		.then(response=>{
 			this.coordinadores =response.data
 		})
 		.catch(error=>{
-			this.Coordinador = []
+			console.log(error)
 		})
 	},
 	borrarCoordinador(id){
 		if(confirm("¿confirma eliminar el registro")){
-			this.axios.delete('/api/Coordinador/${id}')
+			this.axios.delete('/api/coordinadores/' + id)
 			.then(response=>{
 			this.muestraCoordinador()
 			})
 			.catch(error=>{
-			console
+			console.log(error)
 			})			
 		}
 	}

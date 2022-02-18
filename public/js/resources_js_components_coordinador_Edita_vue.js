@@ -113,7 +113,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   name: "Edita-Coordinador",
   data: function data() {
     return {
-      Coordinador: {
+      coordinador: {
         nombre: "",
         paterno: "",
         materno: "",
@@ -127,10 +127,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   mounted: function mounted() {
-    this.muestraCoordinador();
+    this.buscarCoordinador();
   },
   methods: {
-    mostrarOficinas: function mostrarOficinas() {
+    buscarCoordinador: function buscarCoordinador() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -139,7 +139,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/Coordinador/${this.$route.params.id}').then(function (response) {
+                return _this.axios.get('/api/coordinadores/' + _this.$route.params.id).then(function (response) {
                   var _response$data = response.data,
                       nombre = _response$data.nombre,
                       paterno = _response$data.paterno,
@@ -150,7 +150,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       email = _response$data.email,
                       password = _response$data.password,
                       estado = _response$data.estado;
-                  _this.Coordinador.nombre = nombre, _this.Coordinador.paterno = paterno, _this.Coordinador.materno = materno, _this.Coordinador.direccion = direccion, _this.Coordinador.dni = dni, _this.Coordinador.telefono = telefono, _this.Coordinador.email = email, _this.Coordinador.password = password, _this.Coordinador.estado = estado;
+                  _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, _this.coordinador.email = email, _this.coordinador.password = password, _this.coordinador.estado = estado;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -167,12 +167,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
-                return _this2.axios.put('/api/Coordinador/${this.$route.params.id}', _this2.Coordinador).then(function (response) {
+                data = {
+                  id: _this2.$route.params.id,
+                  oficina: _this2.coordinador
+                };
+                _context2.next = 3;
+                return _this2.axios.put('/api/coordinadores/' + _this2.$route.params.id, _this2.coordinador).then(function (response) {
                   _this2.$router.push({
                     name: "muestraCoordinador"
                   });
@@ -180,7 +185,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -1073,20 +1078,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.nombre,
-                            expression: "Coordinador.nombre",
+                            value: _vm.coordinador.nombre,
+                            expression: "coordinador.nombre",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.nombre },
+                        domProps: { value: _vm.coordinador.nombre },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "nombre",
                               $event.target.value
                             )
@@ -1105,20 +1110,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.paterno,
-                            expression: "Coordinador.paterno",
+                            value: _vm.coordinador.paterno,
+                            expression: "coordinador.paterno",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.paterno },
+                        domProps: { value: _vm.coordinador.paterno },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "paterno",
                               $event.target.value
                             )
@@ -1137,20 +1142,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.materno,
-                            expression: "Coordinador.materno",
+                            value: _vm.coordinador.materno,
+                            expression: "coordinador.materno",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.materno },
+                        domProps: { value: _vm.coordinador.materno },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "materno",
                               $event.target.value
                             )
@@ -1169,20 +1174,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.direccion,
-                            expression: "Coordinador.direccion",
+                            value: _vm.coordinador.direccion,
+                            expression: "coordinador.direccion",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.direccion },
+                        domProps: { value: _vm.coordinador.direccion },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "direccion",
                               $event.target.value
                             )
@@ -1329,20 +1334,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.estado,
-                            expression: "Coordinador.estado",
+                            value: _vm.coordinador.estado,
+                            expression: "coordinador.estado",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.estado },
+                        domProps: { value: _vm.coordinador.estado },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "estado",
                               $event.target.value
                             )

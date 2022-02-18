@@ -46,9 +46,10 @@ class documentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(documents $Documentos)
+    public function show($id)
     {
-             return response()->json($Documentos);
+        $documents = documents::find($id);
+        return response()->json($documents);
     }
 
     /**
@@ -69,11 +70,31 @@ class documentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, documents $Documentos)
+    public function update(Request $request,$id)
     {
-        $Documentos->fill($request->post())->save();
+       /* $Documentos->fill($request->post())->save();
         return response()->json([
         'Documentos'=>$Documentos
+        ]);
+        */
+            documents::where('Id',$id)
+            ->update([
+                'codigo' => $request->codigo,
+                'prioridad' => $request->prioridad,
+                'estado' => $request->estado,
+                'fecha_ingreso' => $request->fecha_ingreso,
+                'hora_ingreso' => $request->hora_ingreso,
+                'fecha_salida' => $request->fecha_salida,
+                'hora_salida' => $request->hora_Salida,
+                'num_folios' => $request->num_folios,
+                'dni_solicitante' => $request->dni_solicitante,
+                'ruc_solicitante' => $request->ruc_solicitante,
+                'observacion' => $request->observacion,
+                'doc_adjunto' => $request->doc_adjunto
+            ]);
+        //return $request->nombre_oficina;
+        return response()->json([
+            'mensaje' => 'actualizado'
         ]);
     }
 
@@ -83,11 +104,13 @@ class documentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(documents $Documentos)
+    public function destroy($id)
     {
-       $Documentos->delete();
-       return response()->json([
-            'mensaje'=>'eliminado'
+        $documents = oficina::find($id);
+        $documents->delete();
+        return response()->json([
+            'mensaje' => 'eliminado'
+        ]);
        ]);
     }
 }

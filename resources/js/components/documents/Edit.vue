@@ -12,74 +12,74 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Codigo</label>
-										<input type="text" class="form-control" v-model="Documentos.codigo">
+										<input type="text" class="form-control" v-model="documents.codigo">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Prioridad </label>
-										<input type="text" class="form-control" v-model="Documentos.prioridad">
+										<input type="text" class="form-control" v-model="documents.prioridad">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="Documentos.estado">
+										<input type="text" class="form-control" v-model="documents.estado">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Fecha Ingreso </label>
-										<input type="date" class="form-control" v-model="Documentos.fecha_ingreso">
+										<input type="date" class="form-control" v-model="documents.fecha_ingreso">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Hora Ingreso </label>
-										<input type="text" class="form-control" v-model="Documentos.hora_ingreso">
+										<input type="text" class="form-control" v-model="documents.hora_ingreso">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Fecha Salida </label>
-										<input type="date" class="form-control" v-model="Documentos.fecha_salida">
+										<input type="date" class="form-control" v-model="documents.fecha_salida">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Hora Salida </label>
-										<input type="text" class="form-control" v-model="Documentos.hora_salida">
+										<input type="text" class="form-control" v-model="documents.hora_salida">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>N° de folios </label>
-										<input type="text" class="form-control" v-model="Documentos.num_folios">
+										<input type="text" class="form-control" v-model="documents.num_folios">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>DNI solicitante </label>
-										<input type="text" class="form-control" v-model="Documentos.dni_solicitante">
+										<input type="text" class="form-control" v-model="documents.dni_solicitante">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>RUC solicitante </label>
-										<input type="text" class="form-control" v-model="Documentos.ruc_solicitante">
+										<input type="text" class="form-control" v-model="documents.ruc_solicitante">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Observacion </label>
-										<input type="text" class="form-control" v-model="Documentos.observacion">
+										<input type="text" class="form-control" v-model="documents.observacion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
-										<input type="text" class="form-control" v-model="Documentos.doc_adjunto">
+										<input type="text" class="form-control" v-model="documents.doc_adjunto">
 									</div>
 								</div>
 
@@ -97,10 +97,10 @@
 </template>
 <script>
 export default{
-	name:"create-Documentos",
+	name:"edit-Documentos",
 	data(){
 	return{
-		Documentos:{
+		documents:{
 			codigo:"",
 			prioridad:"",
 			estado:"",
@@ -112,38 +112,44 @@ export default{
 			dni_solicitante:"",
 			ruc_solicitante:"",
 			observacion:"",
-			doc_adjunto:"",
+			doc_adjunto:""
 		}
 
 			}
 	},
 	mounted(){
-		this.showDocuments()
+		this.buscarDocuments()
 	},
 	methods:{
-		async showDocuments(){
-			await this.axios.get('/api/Documentos/${this.$route.params.id}')
+		async buscarDocuments(){
+		
+			await this.axios.get('/api/documentos/' + this.$route.params.id)
 				.then(response=>{
 					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto} = response.data
-					this.Documentos.codigo = codigo,
-					this.Documentos.prioridad = prioridad,
-					this.Documentos.estado = estado,
-					this.Documentos.fecha_ingreso = fecha_ingreso,
-					this.Documentos.hora_ingreso = hora_ingreso,
-					this.Documentos.fecha_ingreso = fecha_salida,
-					this.Documentos.hora_salida = hora_salida,
-					this.Documentos.num_folios = num_folios,
-					this.Documentos.dni_solicitante = dni_solicitante,
-					this.Documentos.ruc_solicitante = ruc_solicitante,
-					this.Documentos.observacion = observacion,
-					this.Documentos.doc_adjunto = doc_adjunto
+					this.documents.codigo = codigo,
+					this.documents.prioridad = prioridad,
+					this.documents.estado = estado,
+					this.documents.fecha_ingreso = fecha_ingreso,
+					this.documents.hora_ingreso = hora_ingreso,
+					this.documents.fecha_ingreso = fecha_salida,
+					this.documents.hora_salida = hora_salida,
+					this.documents.num_folios = num_folios,
+					this.documents.dni_solicitante = dni_solicitante,
+					this.documents.ruc_solicitante = ruc_solicitante,
+					this.documents.observacion = observacion,
+					this.documents.doc_adjunto = doc_adjunto
 				})
 				.catch(error=>{
 					console.log(error)
 				})
 		},
 		async actualiza(){
-			await this.axios.put('/api/Documentos/${this.$route.params.id}', this.Documentos)
+        		const data = {
+				id: this.$route.params.id,
+				oficina: this.documents 
+			};
+
+			await this.axios.put('/api/documentos/' + this.$route.params.id, this.documents)
 			.then(response=>{
 				this.$router.push({
 					name:"showDocuments"

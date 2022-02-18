@@ -46,9 +46,10 @@ class coordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(coordinador $Coordinador)
+    public function show($id)
     {
-             return response()->json($Coordinador);
+            $coordinador = coordinador::find($id);
+             return response()->json($coordinador);
     }
 
     /**
@@ -69,11 +70,28 @@ class coordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, coordinador $Coordinador)
+    public function update(Request $request,$id)
     {
-        $Coordinador->fill($request->post())->save();
+       /* $Coordinador->fill($request->post())->save();
         return response()->json([
-        'Coordinador'=>$Coordinador
+        'Coordinador'=>Coordinador
+        ]);
+        */
+            coordinador::where('Id',$id)
+             ->update([
+                'nombre' => $request->nombre,
+                'paterno' => $request->paterno,
+                'materno' => $request->materno,
+                'direccion' => $request->direccion,
+                'dni' => $request->dni,
+                'telefono' => $request->telefono,
+                'email' => $request->email,
+                'password' => $request->password,
+                'estado' => $request->estado
+            ]);
+        //return $request->nombre_oficina;
+        return response()->json([
+            'mensaje' => 'actualizado'
         ]);
     }
 
@@ -83,11 +101,13 @@ class coordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(coordinador $Coordinador)
+    public function destroy($id)
     {
-       $Coordinador->delete();
-       return response()->json([
-            'mensaje'=>'eliminado'
+        $coordinador = coordinador::find($id);
+        $coordinador->delete();
+        return response()->json([
+            'mensaje' => 'eliminado'
+        
        ]);
     }
 }
