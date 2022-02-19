@@ -85,12 +85,13 @@ class documentsController extends Controller
                 'fecha_ingreso' => $request->fecha_ingreso,
                 'hora_ingreso' => $request->hora_ingreso,
                 'fecha_salida' => $request->fecha_salida,
-                'hora_salida' => $request->hora_Salida,
+                'hora_salida' => $request->hora_salida,
                 'num_folios' => $request->num_folios,
                 'dni_solicitante' => $request->dni_solicitante,
                 'ruc_solicitante' => $request->ruc_solicitante,
                 'observacion' => $request->observacion,
-                'doc_adjunto' => $request->doc_adjunto
+                'doc_adjunto' => $request->doc_adjunto,
+                'coordinador_id' => $request->coordinador_id
             ]);
         //return $request->nombre_oficina;
         return response()->json([
@@ -106,11 +107,10 @@ class documentsController extends Controller
      */
     public function destroy($id)
     {
-        $documents = oficina::find($id);
+        $documents = documents::find($id);
         $documents->delete();
         return response()->json([
             'mensaje' => 'eliminado'
         ]);
-       ]);
     }
 }

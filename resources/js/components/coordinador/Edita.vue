@@ -37,31 +37,37 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>DNI </label>
-										<input type="text" class="form-control" v-model="Coordinador.dni">
+										<input type="text" class="form-control" v-model="coordinador.dni">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Telefono</label>
-										<input type="text" class="form-control" v-model="Coordinador.telefono">
+										<input type="text" class="form-control" v-model="coordinador.telefono">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>email </label>
-										<input type="email" class="form-control" v-model="Coordinador.email">
+										<input type="email" class="form-control" v-model="coordinador.email">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Password</label>
-										<input type="password" class="form-control" v-model="Coordinador.password">
+										<input type="password" class="form-control" v-model="coordinador.password">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
 										<input type="text" class="form-control" v-model="coordinador.estado">
+									</div>
+								</div>
+								<div class="col-12 mb-2">
+									<div class="form-group">
+										<label>Oficina</label>
+										<input type="text" class="form-control" v-model="coordinador.oficina_id">
 									</div>
 								</div>
 
@@ -91,7 +97,8 @@ export default{
 			telefono:"",
 			email:"",
 			password:"",
-			estado:""
+			estado:"",
+			oficina_id:""
 		}
 
 	 }
@@ -103,7 +110,7 @@ export default{
 		async buscarCoordinador(){
 			await this.axios.get('/api/coordinadores/' + this.$route.params.id)
 				.then(response=>{
-					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado} = response.data
+					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado, coordinador_id} = response.data
 					this.coordinador.nombre = nombre,
 					this.coordinador.paterno = paterno,
 					this.coordinador.materno = materno,
@@ -112,7 +119,8 @@ export default{
 					this.coordinador.telefono = telefono,
 					this.coordinador.email = email,
 					this.coordinador.password = password,
-					this.coordinador.estado = estado
+					this.coordinador.estado = estado,
+					this.coordinador.oficina_id = oficina_id
 				})
 				.catch(error=>{
 					console.log(error)

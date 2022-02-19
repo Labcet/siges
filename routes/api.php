@@ -25,3 +25,5 @@ Route::resource('oficinas', App\Http\Controllers\oficinaController::class)->only
 Route::resource('coordinadores', App\Http\Controllers\coordinadorController::class)->only (['index','store', 'update', 'show','destroy']);
 
 Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy']);
+
+Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);

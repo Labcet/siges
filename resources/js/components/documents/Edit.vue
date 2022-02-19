@@ -82,6 +82,13 @@
 										<input type="text" class="form-control" v-model="documents.doc_adjunto">
 									</div>
 								</div>
+								<div class="col-12 mb-2">
+									<div class="form-group">
+										<label>coordinador</label>
+										<input type="text" class="form-control" v-model="documents.coordinador_id">
+									</div>
+								</div>
+
 
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
@@ -112,7 +119,8 @@ export default{
 			dni_solicitante:"",
 			ruc_solicitante:"",
 			observacion:"",
-			doc_adjunto:""
+			doc_adjunto:"",
+			coordinador_id:""
 		}
 
 			}
@@ -131,13 +139,14 @@ export default{
 					this.documents.estado = estado,
 					this.documents.fecha_ingreso = fecha_ingreso,
 					this.documents.hora_ingreso = hora_ingreso,
-					this.documents.fecha_ingreso = fecha_salida,
+					this.documents.fecha_salida = fecha_salida,
 					this.documents.hora_salida = hora_salida,
 					this.documents.num_folios = num_folios,
 					this.documents.dni_solicitante = dni_solicitante,
 					this.documents.ruc_solicitante = ruc_solicitante,
 					this.documents.observacion = observacion,
-					this.documents.doc_adjunto = doc_adjunto
+					this.documents.doc_adjunto = doc_adjunto,
+					this.documents.coordinador_id = coordinador_id
 				})
 				.catch(error=>{
 					console.log(error)

@@ -127,6 +127,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "edit-Documentos",
   data: function data() {
@@ -143,7 +150,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: ""
+        doc_adjunto: "",
+        coordinador_id: ""
       }
     };
   },
@@ -174,7 +182,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       ruc_solicitante = _response$data.ruc_solicitante,
                       observacion = _response$data.observacion,
                       doc_adjunto = _response$data.doc_adjunto;
-                  _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_ingreso = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto;
+                  _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.coordinador_id = coordinador_id;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -1469,6 +1477,38 @@ var render = function () {
                             _vm.$set(
                               _vm.documents,
                               "doc_adjunto",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("coordinador")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.documents.coordinador_id,
+                            expression: "documents.coordinador_id",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.documents.coordinador_id },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.documents,
+                              "coordinador_id",
                               $event.target.value
                             )
                           },

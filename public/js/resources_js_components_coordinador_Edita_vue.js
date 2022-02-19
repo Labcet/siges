@@ -109,6 +109,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
@@ -122,7 +128,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         telefono: "",
         email: "",
         password: "",
-        estado: ""
+        estado: "",
+        oficina_id: ""
       }
     };
   },
@@ -149,8 +156,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       telefono = _response$data.telefono,
                       email = _response$data.email,
                       password = _response$data.password,
-                      estado = _response$data.estado;
-                  _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, _this.coordinador.email = email, _this.coordinador.password = password, _this.coordinador.estado = estado;
+                      estado = _response$data.estado,
+                      coordinador_id = _response$data.coordinador_id;
+                  _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, _this.coordinador.email = email, _this.coordinador.password = password, _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -1206,20 +1214,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.dni,
-                            expression: "Coordinador.dni",
+                            value: _vm.coordinador.dni,
+                            expression: "coordinador.dni",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.dni },
+                        domProps: { value: _vm.coordinador.dni },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "dni",
                               $event.target.value
                             )
@@ -1238,20 +1246,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.telefono,
-                            expression: "Coordinador.telefono",
+                            value: _vm.coordinador.telefono,
+                            expression: "coordinador.telefono",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.Coordinador.telefono },
+                        domProps: { value: _vm.coordinador.telefono },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "telefono",
                               $event.target.value
                             )
@@ -1270,20 +1278,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.email,
-                            expression: "Coordinador.email",
+                            value: _vm.coordinador.email,
+                            expression: "coordinador.email",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "email" },
-                        domProps: { value: _vm.Coordinador.email },
+                        domProps: { value: _vm.coordinador.email },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "email",
                               $event.target.value
                             )
@@ -1302,20 +1310,20 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.Coordinador.password,
-                            expression: "Coordinador.password",
+                            value: _vm.coordinador.password,
+                            expression: "coordinador.password",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "password" },
-                        domProps: { value: _vm.Coordinador.password },
+                        domProps: { value: _vm.coordinador.password },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.Coordinador,
+                              _vm.coordinador,
                               "password",
                               $event.target.value
                             )
@@ -1349,6 +1357,38 @@ var render = function () {
                             _vm.$set(
                               _vm.coordinador,
                               "estado",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Oficina")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.coordinador.oficina_id,
+                            expression: "coordinador.oficina_id",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.coordinador.oficina_id },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.coordinador,
+                              "oficina_id",
                               $event.target.value
                             )
                           },

@@ -87,7 +87,8 @@ class coordinadorController extends Controller
                 'telefono' => $request->telefono,
                 'email' => $request->email,
                 'password' => $request->password,
-                'estado' => $request->estado
+                'estado' => $request->estado,
+                'oficina_id'=>$request->oficina_id
             ]);
         //return $request->nombre_oficina;
         return response()->json([

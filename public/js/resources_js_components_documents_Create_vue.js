@@ -128,6 +128,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
@@ -144,7 +150,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: ""
+        doc_adjunto: "",
+        coordinador_id: 1
       }
     };
   },
@@ -1434,6 +1441,38 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("coordinador ")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.documents.coordinador_id,
+                            expression: "documents.coordinador_id",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.documents.coordinador_id },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.documents,
+                              "coordinador_id",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
                   _vm._m(1),
                 ]),
               ]
@@ -1461,7 +1500,7 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v(" Guardar")]
+        [_vm._v("Guardar")]
       ),
     ])
   },

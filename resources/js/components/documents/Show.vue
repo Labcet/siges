@@ -25,6 +25,7 @@
 			 	<th> ruc_solicitante </th>
 			 	<th> observacion </th>
 			 	<th> doc_adjunto </th>
+			 	<th> coordinador </th>
 			 	<th> acciones </th>
 			 </tr>
 			  </thead>
@@ -43,6 +44,7 @@
 			      <td>{{documents.ruc_solicitante}}</td>
 			      <td>{{documents.observacion}}</td>
 			      <td>{{documents.doc_adjunto}}</td>
+			      <td>{{documents.coordinador_id}}</td>
 
 			      <td> 
 			      	<router-link :to='{name:"editDocuments", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>

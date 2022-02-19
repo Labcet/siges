@@ -82,9 +82,15 @@
 										<input type="text" class="form-control" v-model="documents.doc_adjunto">
 									</div>
 								</div>
+								<div class="col-12 mb-2">
+									<div class="form-group">
+										<label>coordinador </label>
+										<input type="text" class="form-control" v-model="documents.coordinador_id">
+									</div>
+								</div>
 
 								<div class="col-12">
-									<button type="submit" class="btn btn-primary"> Guardar</button>
+									<button type="submit" class="btn btn-primary">Guardar</button>
 								</div>
 								
 							</div>
@@ -114,6 +120,7 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
+			coordinador_id: 1,
 		}
 
 	}
