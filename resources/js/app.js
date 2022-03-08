@@ -28,8 +28,16 @@ const router = new VueRouter({
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 //Vue.component('oficina-component', require('./components/OficinaComponent.vue'));
+
+const login = new Vue({
+     el: '#login',
+     router:router,
+    render: h=> h(Login)
+})
+
 const app = new Vue({
     el: '#app',
    router:router,
-   render: h => h(App)
+ render: h => h(App)
 });
+

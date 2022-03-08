@@ -11,25 +11,17 @@
          
          <link reel="stylescheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-         <link href="{{mix('css/app.css')}} type="text/css" reel="stylescheet"/>
+         <link href="{{mix('css/app.css')}} type="text/css reel="stylescheet"/>
 
-      <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        
-
-      <!--  <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style> 
-    -->
     </head>
     <body>
+
         <div id="app">
-            
         </div>
+
         <script src="{{mix('js/app.js')}}" type="text/javascript"> </script>
+
     </body>
    
 
@@ -38,3 +30,4 @@
 
 -->
 </html>
+

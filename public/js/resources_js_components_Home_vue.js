@@ -78,10 +78,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container mt -4" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col text-center" }, [
-          _c("h1", [
-            _vm._v(" componente "),
-            _c("span", { staticClass: "bagde bg-succes " }, [_vm._v("HOME ")]),
-          ]),
+          _c("h1", [_c("span", { staticClass: "bagde bg-succes " })]),
         ]),
       ]),
     ])

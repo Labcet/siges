@@ -1,4 +1,5 @@
 
+const Login = ()=> import('./components/Login.vue');
 const Home = ()=> import('./components/Home.vue');
 
 //componentes para oficina
@@ -18,6 +19,12 @@ const Edit = ()=> import('./components/documents/Edit.vue');
 
 
 export const routes = [
+{
+	name:'login',
+	path: '/',
+	component:Login
+},
+
 {
 	name:'home',
 	path: '/',

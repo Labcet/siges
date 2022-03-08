@@ -5290,6 +5290,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]({
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('oficina-component', require('./components/OficinaComponent.vue'));
 
+var login = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
+  el: '#login',
+  router: router,
+  render: function render(h) {
+    return h(Login);
+  }
+});
 var app = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
   el: '#app',
   router: router,
@@ -5347,6 +5354,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "routes": () => (/* binding */ routes)
 /* harmony export */ });
+var Login = function Login() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Login.vue */ "./resources/js/components/Login.vue"));
+};
+
 var Home = function Home() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Home.vue */ "./resources/js/components/Home.vue"));
 }; //componentes para oficina
@@ -5391,6 +5402,10 @@ var Edit = function Edit() {
 };
 
 var routes = [{
+  name: 'login',
+  path: '/',
+  component: Login
+}, {
   name: 'home',
   path: '/',
   component: Home
@@ -43570,7 +43585,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Login_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
