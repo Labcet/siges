@@ -5290,13 +5290,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]({
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('oficina-component', require('./components/OficinaComponent.vue'));
 
-var login = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
-  el: '#login',
-  router: router,
-  render: function render(h) {
-    return h(Login);
-  }
-});
 var app = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
   el: '#app',
   router: router,
@@ -5354,10 +5347,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "routes": () => (/* binding */ routes)
 /* harmony export */ });
-var Login = function Login() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Login.vue */ "./resources/js/components/Login.vue"));
-};
-
 var Home = function Home() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Home.vue */ "./resources/js/components/Home.vue"));
 }; //componentes para oficina
@@ -5402,10 +5391,6 @@ var Edit = function Edit() {
 };
 
 var routes = [{
-  name: 'login',
-  path: '/',
-  component: Login
-}, {
   name: 'home',
   path: '/',
   component: Home
@@ -27981,154 +27966,56 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", [
-    _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-lg navbar-dark bg-primary" },
-      [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("MDAI"),
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarSupportedContent" },
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link active",
-                        attrs: {
-                          "exact-active-class": "active",
-                          to: "/",
-                          "aria-current": "page",
-                        },
-                      },
-                      [_vm._v("Inicio ")]
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          "exact-active-class": "active",
-                          to: "/oficinas",
-                        },
-                      },
-                      [_vm._v("Oficinas ")]
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          "exact-active-class": "active",
-                          to: "/coordinadores",
-                        },
-                      },
-                      [_vm._v("Coordinadores ")]
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          "exact-active-class": "active",
-                          to: "/documentos",
-                        },
-                      },
-                      [_vm._v("Documentos ")]
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-            ]
-          ),
-        ]),
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", [_c("router-view")], 1),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarSupportedContent",
-          "aria-controls": "navbarSupportedContent",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation",
-        },
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { staticClass: "d-flex" }, [
-      _c("input", {
-        staticClass: "form-control me-2",
-        attrs: {
-          type: "search",
-          placeholder: "Search",
-          "aria-label": "Search",
-        },
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-outline-success", attrs: { type: "submit" } },
-        [_vm._v("Search")]
-      ),
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "col-md-4 offset-md-4 mt-5" }, [
+        _c("h1", { staticClass: "my-3 text center" }, [
+          _vm._v("Iniciar sesion"),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("form", { attrs: { id: "formulario-login" } }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "usuario " } }, [_vm._v(" Usuario")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "email",
+                  name: "usuario",
+                  id: "usuario",
+                  placeholder: "usuario",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "pass" } }, [_vm._v("Contraseña")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "password",
+                  id: "pass",
+                  placeholder: "ingresa tu clave",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", attrs: { type: "button" } },
+              [_vm._v("Enviar")]
+            ),
+          ]),
+        ]),
+      ]),
     ])
   },
 ]
@@ -43585,7 +43472,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Login_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

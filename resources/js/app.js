@@ -29,12 +29,6 @@ const router = new VueRouter({
 
 //Vue.component('oficina-component', require('./components/OficinaComponent.vue'));
 
-const login = new Vue({
-     el: '#login',
-     router:router,
-    render: h=> h(Login)
-})
-
 const app = new Vue({
     el: '#app',
    router:router,
