@@ -23,4 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
    return view('app');
 
+Route::resource('/login', 'loginController')->middleware ('auth');
+
+
 });
