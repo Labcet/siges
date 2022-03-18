@@ -27,3 +27,7 @@ Route::resource('coordinadores', App\Http\Controllers\coordinadorController::cla
 Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy']);
 
 Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);
+
+/* LOGIN */
+
+Route::post('login', 'App\Http\Controllers\LoginController@login');

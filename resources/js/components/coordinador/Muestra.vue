@@ -60,37 +60,36 @@
 </template>
 <script>
 export default{
-name:"coordinadores",
-data(){
-	return{
-		 coordinadores:[]
-	}
-},
-mounted(){
-	this.muestraCoordinador()
-},
-methods:{
-	async muestraCoordinador(){
-		await this.axios.get('/api/coordinadores')
-		.then(response=>{
-			this.coordinadores =response.data
-		})
-		.catch(error=>{
-			console.log(error)
-		})
+	name:"coordinadores",
+	data(){
+		return{
+			 coordinadores:[]
+		}
 	},
-	borrarCoordinador(id){
-		if(confirm("¿confirma eliminar el registro")){
-			this.axios.delete('/api/coordinadores/' + id)
+	mounted(){
+		this.muestraCoordinador()
+	},
+	methods:{
+		muestraCoordinador(){
+			this.axios.get('/api/coordinadores')
 			.then(response=>{
-			this.muestraCoordinador()
+				this.coordinadores =response.data
 			})
 			.catch(error=>{
-			console.log(error)
-			})			
+				console.log(error)
+			})
+		},
+		borrarCoordinador(id){
+			if(confirm("¿confirma eliminar el registro")){
+				this.axios.delete('/api/coordinadores/' + id)
+				.then(response=>{
+				this.muestraCoordinador()
+				})
+				.catch(error=>{
+				console.log(error)
+				})			
+			}
 		}
 	}
-}
-	
 }
 </script>

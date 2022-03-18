@@ -5,33 +5,33 @@
  */
 
 require('./bootstrap');
-//import vue from 'vue';
 
-window.Vue = require('vue');
+window.Vue = require('vue').default;
 
-import App from './components/App.vue';
+//import App from './components/App.vue';
+//import App from './components/coordinador/Muestra.vue';
+
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-
 import VueRouter from 'vue-router';
 import { routes} from './routes';
 import Vue from 'vue';
-Vue.use(VueRouter);
-Vue.use(VueAxios, axios);
+
+Vue.use(VueRouter, VueAxios, axios);
+
 const router = new VueRouter({
     mode:'history',
     routes: routes
-
 })
 
 //window.Vue = require('vue').default;
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-//Vue.component('oficina-component', require('./components/OficinaComponent.vue'));
+Vue.component('coordinador-component', require('./components/coordinador/Muestra.vue').default);
 
 const app = new Vue({
     el: '#app',
-   router:router,
- render: h => h(App)
+    router:router,
+    //render: h => h(App)
 });
 

@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//  return view('welcome');
-//});
+Route::get('/', function () {
+  return view('app');
+});
 
 //Route::get('/intro', function () {
   //  return view('saludo');
 //});
-Route::get('/', function(){
+/*Route::get('/', function(){
    return view('app');
 
 Route::resource('/login', 'loginController')->middleware ('auth');
 
 
-});
+});*/

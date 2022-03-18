@@ -17,17 +17,28 @@
     </head>
     <body>
 
-        <div id="app">
+        <div class="container">
+            <div class="col-md-4 offset-md-4 mt-5">
+                <h1 class="my-3 text center">Iniciar sesion</h1>
+                <div class="card-body">
+                    <form @submit.prevent="enviar">
+                        <div class="form-group">
+                            <label for="usuario "> Email</label>
+                            <input v-model = "form.email" type="text" name="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Contraseña</label>
+                            <input v-model="form.password" type="password" class="form-control" id="password" placeholder="Password"> 
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <script src="{{mix('js/app.js')}}" type="text/javascript"> </script>
 
     </body>
    
-
-  <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
--->
+    <!--<script src="{{mix('js/app.js')}}" type="text/javascript"> </script>-->
 </html>
 

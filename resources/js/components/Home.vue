@@ -5,7 +5,7 @@
 				<h1> <span class="bagde bg-succes "> </span></h1>
 			 </div>
 			</div>
-	</div
+	</div>
 
 	
 </template>

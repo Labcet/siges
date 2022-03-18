@@ -126,7 +126,13 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+
+                <div id="app">
+                    <coordinador-component/>
+                </div>
+
             </div>
         </div>
     </body>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

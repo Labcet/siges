@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\coordinador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
+    public function login(Request $request)
+    {
+        //return $request->email;
+        if (DB::table('coordinadores')->where([['email', '=', $request->email],['password', '=', $request->password]])->exists()) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
