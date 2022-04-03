@@ -8,7 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
-//import App from './components/App.vue';
+import App from './components/App.vue';
 //import App from './components/coordinador/Muestra.vue';
 
 import VueAxios from 'vue-axios';
@@ -27,11 +27,11 @@ const router = new VueRouter({
 //window.Vue = require('vue').default;
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-Vue.component('coordinador-component', require('./components/coordinador/Muestra.vue').default);
+//Vue.component('coordinador-component', require('./components/coordinador/Muestra.vue').default);
 
 const app = new Vue({
     el: '#app',
     router:router,
-    //render: h => h(App)
+    render: h => h(App)
 });
 

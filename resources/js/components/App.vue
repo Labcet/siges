@@ -1,55 +1,47 @@
 <template>
-       <div class="container">
-        <div class="col-md-4 offset-md-4 mt-5">
-            <h1 class="my-3 text center">Iniciar sesion</h1>
-            <div class="card-body">
-            <form @submit.prevent="enviar">
-                <div class="form-group">
-                    <label for="usuario "> Email</label>
-                    <input v-model = "form.email" type="text" name="email" class="form-control" id="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="pass">Contraseña</label>
-                    <input v-model="form.password" type="password" class="form-control" id="password" placeholder="Password"> 
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-        </div>
-        </div>
+<main>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MDAI</a>
 
-  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/"class="nav-link active" aria-current="page">Inicio </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/oficinas" class="nav-link">Oficinas </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/coordinadores" class="nav-link">Coordinadores </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/documentos" class="nav-link">Documentos </router-link>
+        </li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div>
+      <router-view></router-view>
+</div>
+
+</main>
+
 </template>
-<script>
-export default {
-    data: () => ({
-      form: {
-        email:"",
-        password:""
-      }
-    }),
-
-    methods: {
-
-      /*enviar(){
-        console.log("enviando");
-      }*/
-
-      enviar(){
-       this.axios.post('/api/login', this.form)
-        .then(response=>{
-          if(response.data == 0){
-            this.$router.push({name:"muestraCoordinador"});
-          } else {
-            alert("Error de autenticacion!");
-          }
-        })
-        .catch(error=>{
-          console.log(error)
-        })
-      },
-    }
-
-};
-</script>

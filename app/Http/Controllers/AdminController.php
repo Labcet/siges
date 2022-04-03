@@ -8,6 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return 'Admin hola';
+        //return 'Admin hola';
+        return redirect()->to('/');
     }
 }

@@ -30,4 +30,4 @@ Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['in
 
 /* LOGIN */
 
-Route::post('login', 'App\Http\Controllers\LoginController@login');
+//Route::post('login', 'App\Http\Controllers\LoginController@login');
