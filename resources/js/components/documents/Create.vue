@@ -127,12 +127,13 @@ export default{
 },
 
 	methods:{
-		async create(){
-			await this.axios.post('/api/documentos', this.documents)
+		create(){
+			axios.post('/api/documentos', this.documents)
 			.then(response=>{
-				this.$router.push({name:"showDocuments"})
+				this.$router.push({name:"mostrarDocumentos"})
 			})
 			.catch(error=>{
+				alert(error);
 				console.log(error)
 			})
 		},

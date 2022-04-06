@@ -107,10 +107,11 @@ export default{
 		this.buscarCoordinador()
 	},
 	methods:{
-		async buscarCoordinador(){
-			await this.axios.get('/api/coordinadores/' + this.$route.params.id)
+		buscarCoordinador(){
+			
+			axios.get('/api/coordinadores/' + this.$route.params.id)
 				.then(response=>{
-					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado, coordinador_id} = response.data
+					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado, oficina_id} = response.data
 					this.coordinador.nombre = nombre,
 					this.coordinador.paterno = paterno,
 					this.coordinador.materno = materno,
@@ -126,18 +127,20 @@ export default{
 					console.log(error)
 				})
 		},
-		async update(){
+		update(){
+
 			const data = {
 				id: this.$route.params.id,
 				oficina: this.coordinador 
 			};
-			await this.axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador)
+			axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador)
 			.then(response=>{
 				this.$router.push({
-					name:"muestraCoordinador"
+					name:"mostrarCoordinadores"
 				})
 			})
 			.catch(error=>{
+				alert(error);
 				console.log(error)
 			})
 		}

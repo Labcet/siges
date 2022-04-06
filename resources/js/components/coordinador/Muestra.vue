@@ -4,7 +4,7 @@
 
 <div class="row">
    <div class="col-lg-12 mb-4">
-       <router-link :to='{name:"creaCoordinador"}'class="btn btn-success">Crear</router-link>
+       <router-link :to='{name:"crearCoordinadores"}'class="btn btn-success">Crear</router-link>
     </div>
 <div class="col-12">
 	<div class ="table-responsive">
@@ -40,7 +40,7 @@
 			      <td>{{coordinador.estado}}</td>
 			      <td>{{coordinador.oficina_id}}</td>
 			      <td> 
-			      	<router-link :to='{name:"editaCoordinador", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
+			      	<router-link :to='{name:"editarCoordinadores", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
 			      	<a type="button" @click="borrarCoordinador(coordinador.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
 
 
@@ -71,22 +71,26 @@ export default{
 	},
 	methods:{
 		muestraCoordinador(){
-			this.axios.get('/api/coordinadores')
+
+			axios.get('/api/coordinadores')
 			.then(response=>{
-				this.coordinadores =response.data
+				this.coordinadores = response.data
 			})
 			.catch(error=>{
 				console.log(error)
 			})
 		},
+
 		borrarCoordinador(id){
+
 			if(confirm("¿confirma eliminar el registro")){
-				this.axios.delete('/api/coordinadores/' + id)
+				axios.delete('/api/coordinadores/' + id)
 				.then(response=>{
-				this.muestraCoordinador()
+					this.muestraCoordinador()
 				})
 				.catch(error=>{
-				console.log(error)
+					alert(error);
+					console.log(error)
 				})			
 			}
 		}

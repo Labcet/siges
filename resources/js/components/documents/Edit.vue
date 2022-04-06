@@ -129,11 +129,12 @@ export default{
 		this.buscarDocuments()
 	},
 	methods:{
-		async buscarDocuments(){
 		
-			await this.axios.get('/api/documentos/' + this.$route.params.id)
+		buscarDocuments(){
+		
+			axios.get('/api/documentos/' + this.$route.params.id)
 				.then(response=>{
-					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto} = response.data
+					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, coordinador_id} = response.data
 					this.documents.codigo = codigo,
 					this.documents.prioridad = prioridad,
 					this.documents.estado = estado,
@@ -149,22 +150,25 @@ export default{
 					this.documents.coordinador_id = coordinador_id
 				})
 				.catch(error=>{
+					alert(error);
 					console.log(error)
 				})
 		},
-		async actualiza(){
+		
+		actualiza(){
         		const data = {
 				id: this.$route.params.id,
 				oficina: this.documents 
 			};
 
-			await this.axios.put('/api/documentos/' + this.$route.params.id, this.documents)
+			axios.put('/api/documentos/' + this.$route.params.id, this.documents)
 			.then(response=>{
 				this.$router.push({
-					name:"showDocuments"
+					name:"mostrarDocumentos"
 				})
 			})
 			.catch(error=>{
+				alert(error);
 				console.log(error)
 			})
 		}

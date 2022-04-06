@@ -54,10 +54,11 @@ export default{
 		this.mostrarOficinas()
 	},
 	methods:{
-		async mostrarOficinas(){
-			await this.axios.get('/api/oficinas')
+
+		mostrarOficinas(){
+			axios.get('/api/oficinas')
 			.then(response=>{
-				this.oficinas=response.data
+				this.oficinas = response.data
 			})
 			.catch(error=>{
 				console.log(error)
@@ -65,14 +66,14 @@ export default{
 		},
 
 		borrarOficina(id){
-			if(confirm("¿confirma eliminar el registro")){
-				this.axios.delete('/api/oficinas/' + id)
+			if(confirm("¿confirma eliminar el registro?")){
+				axios.delete('/api/oficinas/' + id)
 				.then(response=>{
 					this.mostrarOficinas()
 				})
 				.catch(error=>{
 					console.log(error)
-				})			
+				})
 			}
 		}
 	}

@@ -85,7 +85,7 @@ __webpack_require__.r(__webpack_exports__);
     muestraCoordinador: function muestraCoordinador() {
       var _this = this;
 
-      this.axios.get('/api/coordinadores').then(function (response) {
+      axios.get('/api/coordinadores').then(function (response) {
         _this.coordinadores = response.data;
       })["catch"](function (error) {
         console.log(error);
@@ -95,9 +95,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       if (confirm("¿confirma eliminar el registro")) {
-        this.axios["delete"]('/api/coordinadores/' + id).then(function (response) {
+        axios["delete"]('/api/coordinadores/' + id).then(function (response) {
           _this2.muestraCoordinador();
         })["catch"](function (error) {
+          alert(error);
           console.log(error);
         });
       }
@@ -201,7 +202,7 @@ var render = function () {
             "router-link",
             {
               staticClass: "btn btn-success",
-              attrs: { to: { name: "creaCoordinador" } },
+              attrs: { to: { name: "crearCoordinadores" } },
             },
             [_vm._v("Crear")]
           ),
@@ -249,7 +250,7 @@ var render = function () {
                           staticClass: "btn btn-info",
                           attrs: {
                             to: {
-                              name: "editaCoordinador",
+                              name: "editarCoordinadores",
                               params: { id: coordinador.id },
                             },
                           },

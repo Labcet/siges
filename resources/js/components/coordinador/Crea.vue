@@ -105,12 +105,14 @@ export default{
 },
 
 	methods:{
-		async crea(){
-			await this.axios.post('/api/coordinadores', this.coordinador)
+		crea(){
+
+			axios.post('/api/coordinadores', this.coordinador)
 			.then(response=>{
-				this.$router.push({name:"muestraCoordinador"})
+				this.$router.push({name:"mostrarCoordinadores"})
 			})
 			.catch(error=>{
+				alert(error);
 				console.log(error)
 			})
 		},

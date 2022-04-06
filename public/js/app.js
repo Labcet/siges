@@ -5347,80 +5347,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "routes": () => (/* binding */ routes)
 /* harmony export */ });
 //componentes para oficina
-var Mostrar = function Mostrar() {
+var mostrarOficinasComponent = function mostrarOficinasComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_oficina_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/oficina/Mostrar.vue */ "./resources/js/components/oficina/Mostrar.vue"));
 };
 
-var Crear = function Crear() {
+var crearOficinasComponent = function crearOficinasComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_oficina_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/oficina/Crear.vue */ "./resources/js/components/oficina/Crear.vue"));
 };
 
-var Editar = function Editar() {
+var editarOficinasComponent = function editarOficinasComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_oficina_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/oficina/Editar.vue */ "./resources/js/components/oficina/Editar.vue"));
 }; //componentes para coordinadores
 
 
-var Muestra = function Muestra() {
+var mostrarCoordinadoresComponent = function mostrarCoordinadoresComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_coordinador_Muestra_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/coordinador/Muestra.vue */ "./resources/js/components/coordinador/Muestra.vue"));
 };
 
-var Crea = function Crea() {
+var crearCoordinadoresComponent = function crearCoordinadoresComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_coordinador_Crea_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/coordinador/Crea.vue */ "./resources/js/components/coordinador/Crea.vue"));
 };
 
-var Edita = function Edita() {
+var editarCoordinadoresComponent = function editarCoordinadoresComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_coordinador_Edita_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/coordinador/Edita.vue */ "./resources/js/components/coordinador/Edita.vue"));
 }; //componentes para documento
 
 
-var Show = function Show() {
+var mostrarDocumentosComponent = function mostrarDocumentosComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_documents_Show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/documents/Show.vue */ "./resources/js/components/documents/Show.vue"));
 };
 
-var Create = function Create() {
+var crearDocumentosComponent = function crearDocumentosComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_documents_Create_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/documents/Create.vue */ "./resources/js/components/documents/Create.vue"));
 };
 
-var Edit = function Edit() {
+var editarDocumentosComponent = function editarDocumentosComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_documents_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/documents/Edit.vue */ "./resources/js/components/documents/Edit.vue"));
 };
 
 var routes = [{
   name: 'mostrarOficinas',
   path: '/oficinas',
-  component: Mostrar
+  component: mostrarOficinasComponent
 }, {
   name: 'crearOficinas',
   path: '/crear',
-  component: Crear
+  component: crearOficinasComponent
 }, {
   name: 'editarOficinas',
   path: '/editar/:id',
-  component: Editar
+  component: editarOficinasComponent
 }, {
-  name: 'muestraCoordinador',
+  name: 'mostrarCoordinadores',
   path: '/coordinadores',
-  component: Muestra
+  component: mostrarCoordinadoresComponent
 }, {
-  name: 'creaCoordinador',
-  path: '/crea',
-  component: Crea
+  name: 'crearCoordinadores',
+  path: '/crear',
+  component: crearCoordinadoresComponent
 }, {
-  name: 'editaCoordinador',
-  path: '/edita/:id',
-  component: Edita
+  name: 'editarCoordinadores',
+  path: '/editar/:id',
+  component: editarCoordinadoresComponent
 }, {
-  name: 'showDocuments',
+  name: 'mostrarDocumentos',
   path: '/documentos',
-  component: Show
+  component: mostrarDocumentosComponent
 }, {
-  name: 'createDocuments',
-  path: '/create',
-  component: Create
+  name: 'crearDocumentos',
+  path: '/crear',
+  component: crearDocumentosComponent
 }, {
-  name: 'editDocuments',
-  path: '/edit/:id',
-  component: Edit
+  name: 'editarDocumentos',
+  path: '/editar/:id',
+  component: editarDocumentosComponent
 }];
 
 /***/ }),

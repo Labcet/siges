@@ -1,18 +1,18 @@
 
 //componentes para oficina
-const Mostrar = ()=> import('./components/oficina/Mostrar.vue');
-const Crear = ()=> import('./components/oficina/Crear.vue');
-const Editar = ()=> import('./components/oficina/Editar.vue');
+const mostrarOficinasComponent = ()=> import('./components/oficina/Mostrar.vue');
+const crearOficinasComponent = ()=> import('./components/oficina/Crear.vue');
+const editarOficinasComponent = ()=> import('./components/oficina/Editar.vue');
 
 //componentes para coordinadores
-const Muestra = ()=> import('./components/coordinador/Muestra.vue');
-const Crea = ()=> import('./components/coordinador/Crea.vue');
-const Edita = ()=> import('./components/coordinador/Edita.vue');
+const mostrarCoordinadoresComponent = ()=> import('./components/coordinador/Muestra.vue');
+const crearCoordinadoresComponent = ()=> import('./components/coordinador/Crea.vue');
+const editarCoordinadoresComponent = ()=> import('./components/coordinador/Edita.vue');
 
 //componentes para documento
-const Show = ()=> import('./components/documents/Show.vue');
-const Create = ()=> import('./components/documents/Create.vue');
-const Edit = ()=> import('./components/documents/Edit.vue');
+const mostrarDocumentosComponent = ()=> import('./components/documents/Show.vue');
+const crearDocumentosComponent = ()=> import('./components/documents/Create.vue');
+const editarDocumentosComponent = ()=> import('./components/documents/Edit.vue');
 
 
 export const routes = [
@@ -20,51 +20,51 @@ export const routes = [
 {
 	name:'mostrarOficinas',
 	path: '/oficinas',
-	component:Mostrar
+	component:mostrarOficinasComponent
 },
 {
 	name:'crearOficinas',
 	path: '/crear',
-	component:Crear
+	component:crearOficinasComponent
 },
 {
 	name:'editarOficinas',
 	path: '/editar/:id',
-	component:Editar
+	component:editarOficinasComponent
 },
 
 
 {
-	name:'muestraCoordinador',
+	name:'mostrarCoordinadores',
 	path: '/coordinadores',
-	component:Muestra
+	component:mostrarCoordinadoresComponent
 },
 {
-	name:'creaCoordinador',
-	path: '/crea',
-	component:Crea
+	name:'crearCoordinadores',
+	path: '/crear',
+	component:crearCoordinadoresComponent
 },
 {
-	name:'editaCoordinador',
-	path: '/edita/:id',
-	component:Edita
+	name:'editarCoordinadores',
+	path: '/editar/:id',
+	component:editarCoordinadoresComponent
 },
 
 
 {
-	name:'showDocuments',
+	name:'mostrarDocumentos',
 	path: '/documentos',
-	component:Show
+	component:mostrarDocumentosComponent
 },
 {
-	name:'createDocuments',
-	path: '/create',
-	component:Create
+	name:'crearDocumentos',
+	path: '/crear',
+	component:crearDocumentosComponent
 },
 {
-	name:'editDocuments',
-	path: '/edit/:id',
-	component:Edit
+	name:'editarDocumentos',
+	path: '/editar/:id',
+	component:editarDocumentosComponent
 },
 
 

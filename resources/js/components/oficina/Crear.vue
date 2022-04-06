@@ -61,8 +61,8 @@ export default{
 	},
 
 	methods:{
-		async crear(){
-			await this.axios.post('/api/oficinas', this.oficina)
+		crear(){
+			axios.post('/api/oficinas', this.oficina)
 			.then(response=>{
 				this.$router.push({name:"mostrarOficinas"})
 			})
