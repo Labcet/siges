@@ -19,7 +19,7 @@
 			 	<th> direccion </th>
 			 	<th> dni </th>
 			 	<th> telefono </th>
-			 	<th> email </th>
+			 	<th> rol </th>
 			 	<th> estado </th>
 			 	<th> oficina </th>
 			 	<th> acciones </th>
@@ -34,7 +34,7 @@
 			      <td>{{coordinador.direccion}}</td>
 			      <td>{{coordinador.dni}}</td>
 			      <td>{{coordinador.telefono}}</td>
-			      <td>{{coordinador.email}}</td>
+			      <td>{{coordinador.role}}</td>
 			      <td>{{coordinador.estado}}</td>
 			      <td>{{coordinador.oficina_id}}</td>
 			      <td> 

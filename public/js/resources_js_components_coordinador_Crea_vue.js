@@ -96,6 +96,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "crea-Coordinador",
   data: function data() {
@@ -109,6 +115,7 @@ __webpack_require__.r(__webpack_exports__);
         telefono: "",
         email: "",
         password: "",
+        role: "",
         estado: "",
         oficina_id: 1
       }
@@ -483,6 +490,38 @@ var render = function () {
                             _vm.$set(
                               _vm.coordinador,
                               "password",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Rol ")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.coordinador.role,
+                            expression: "coordinador.role",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.coordinador.role },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.coordinador,
+                              "role",
                               $event.target.value
                             )
                           },

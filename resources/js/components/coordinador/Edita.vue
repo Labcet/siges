@@ -46,7 +46,7 @@
 										<input type="text" class="form-control" v-model="coordinador.telefono">
 									</div>
 								</div>
-								<div class="col-12 mb-2">
+								<!--<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>email </label>
 										<input type="email" class="form-control" v-model="coordinador.email">
@@ -56,6 +56,12 @@
 									<div class="form-group">
 										<label>Password</label>
 										<input type="password" class="form-control" v-model="coordinador.password">
+									</div>
+								</div>-->
+								<div class="col-12 mb-2">
+									<div class="form-group">
+										<label>Rol </label>
+										<input type="text" class="form-control" v-model="coordinador.role">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -95,8 +101,9 @@ export default{
 			direccion:"",
 			dni:"",
 			telefono:"",
-			email:"",
-			password:"",
+			//email:"",
+			//password:"",
+			role:"",
 			estado:"",
 			oficina_id:""
 		}
@@ -111,15 +118,16 @@ export default{
 			
 			axios.get('/api/coordinadores/' + this.$route.params.id)
 				.then(response=>{
-					const{nombre, paterno, materno, direccion, dni, telefono, email, password, estado, oficina_id} = response.data
+					const{nombre, paterno, materno, direccion, dni, telefono, role, estado, oficina_id} = response.data
 					this.coordinador.nombre = nombre,
 					this.coordinador.paterno = paterno,
 					this.coordinador.materno = materno,
 					this.coordinador.direccion = direccion,
 					this.coordinador.dni = dni,
 					this.coordinador.telefono = telefono,
-					this.coordinador.email = email,
-					this.coordinador.password = password,
+					//this.coordinador.email = email,
+					//this.coordinador.password = password,
+					this.coordinador.role = role,
 					this.coordinador.estado = estado,
 					this.coordinador.oficina_id = oficina_id
 				})

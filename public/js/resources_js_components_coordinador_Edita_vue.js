@@ -96,6 +96,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
@@ -107,8 +113,9 @@ __webpack_require__.r(__webpack_exports__);
         direccion: "",
         dni: "",
         telefono: "",
-        email: "",
-        password: "",
+        //email:"",
+        //password:"",
+        role: "",
         estado: "",
         oficina_id: ""
       }
@@ -129,11 +136,12 @@ __webpack_require__.r(__webpack_exports__);
             direccion = _response$data.direccion,
             dni = _response$data.dni,
             telefono = _response$data.telefono,
-            email = _response$data.email,
-            password = _response$data.password,
+            role = _response$data.role,
             estado = _response$data.estado,
             oficina_id = _response$data.oficina_id;
-        _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, _this.coordinador.email = email, _this.coordinador.password = password, _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
+        _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, //this.coordinador.email = email,
+        //this.coordinador.password = password,
+        _this.coordinador.role = role, _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -456,20 +464,20 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("email ")]),
+                      _c("label", [_vm._v("Rol ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.coordinador.email,
-                            expression: "coordinador.email",
+                            value: _vm.coordinador.role,
+                            expression: "coordinador.role",
                           },
                         ],
                         staticClass: "form-control",
-                        attrs: { type: "email" },
-                        domProps: { value: _vm.coordinador.email },
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.coordinador.role },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
@@ -477,39 +485,7 @@ var render = function () {
                             }
                             _vm.$set(
                               _vm.coordinador,
-                              "email",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Password")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.password,
-                            expression: "coordinador.password",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "password" },
-                        domProps: { value: _vm.coordinador.password },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "password",
+                              "role",
                               $event.target.value
                             )
                           },

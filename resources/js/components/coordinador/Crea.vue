@@ -60,6 +60,12 @@
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
+										<label>Rol </label>
+										<input type="text" class="form-control" v-model="coordinador.role">
+									</div>
+								</div>
+								<div class="col-12 mb-2">
+									<div class="form-group">
 										<label>Estado </label>
 										<input type="text" class="form-control" v-model="coordinador.estado">
 									</div>
@@ -97,6 +103,7 @@ export default{
 			telefono:"",
 			email:"",
 			password:"",
+			role:"",
 			estado:"",
 			oficina_id: 1,
 		}

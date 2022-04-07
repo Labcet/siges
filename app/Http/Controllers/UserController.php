@@ -85,8 +85,7 @@ class UserController extends Controller
                 'direccion' => $request->direccion,
                 'dni' => $request->dni,
                 'telefono' => $request->telefono,
-                'email' => $request->email,
-                'password' => $request->password,
+                'role' => $request->role,
                 'estado' => $request->estado,
                 'oficina_id'=>$request->oficina_id
             ]);
