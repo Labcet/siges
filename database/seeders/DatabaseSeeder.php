@@ -14,13 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $user = new User;
-         $user->name = 'Admin';
-         $user->email = 'admin@gmail.com';
-         $user->password = '1234';
-         $user->role = 'admin';
-         $user->save();
-
+        $this->call([
+            OficinaSeeder::class,
+            UserSeeder::class,
+        ]);
     }
 
 }

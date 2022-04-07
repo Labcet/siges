@@ -65,12 +65,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -235,8 +229,6 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.email))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.password))]),
-                  _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.estado))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.oficina_id))]),
@@ -306,8 +298,6 @@ var staticRenderFns = [
         _c("th", [_vm._v(" telefono ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" email ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" password ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" estado ")]),
         _vm._v(" "),

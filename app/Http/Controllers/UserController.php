@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\coordinador;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class coordinadorController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class coordinadorController extends Controller
      */
     public function index()
     {
-       $coordinadores = coordinador::all();
-       return response()->json($coordinadores); 
+       $usuarios = User::all();
+       return response()->json($usuarios); 
     }
 
     /**
@@ -36,8 +36,8 @@ class coordinadorController extends Controller
      */
     public function store(Request $request)
     {
-        $Coordinador=coordinador::create($request->post());
-        return response()->json(['Coordinador'=>$Coordinador]);
+        $Usuario = User::create($request->post());
+        return response()->json(['Usuario'=>$Usuario]);
     }
 
     /**
@@ -48,8 +48,8 @@ class coordinadorController extends Controller
      */
     public function show($id)
     {
-            $coordinador = coordinador::find($id);
-             return response()->json($coordinador);
+        $usuario = User::find($id);
+        return response()->json($usuario);
     }
 
     /**
@@ -70,14 +70,14 @@ class coordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
        /* $Coordinador->fill($request->post())->save();
         return response()->json([
         'Coordinador'=>Coordinador
         ]);
         */
-            coordinador::where('Id',$id)
+            User::where('Id',$id)
              ->update([
                 'nombre' => $request->nombre,
                 'paterno' => $request->paterno,
@@ -104,11 +104,11 @@ class coordinadorController extends Controller
      */
     public function destroy($id)
     {
-        $coordinador = coordinador::find($id);
-        $coordinador->delete();
+        $usuario = User::find($id);
+        $usuario->delete();
         return response()->json([
+            
             'mensaje' => 'eliminado'
-        
        ]);
     }
 }
