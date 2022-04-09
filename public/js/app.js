@@ -5383,6 +5383,19 @@ var crearDocumentosComponent = function crearDocumentosComponent() {
 
 var editarDocumentosComponent = function editarDocumentosComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_documents_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/documents/Edit.vue */ "./resources/js/components/documents/Edit.vue"));
+}; //componentes para ruta
+
+
+var mostrarRutasComponent = function mostrarRutasComponent() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_ruta_MostrarRuta_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/ruta/MostrarRuta.vue */ "./resources/js/components/ruta/MostrarRuta.vue"));
+};
+
+var crearRutasComponent = function crearRutasComponent() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_ruta_CrearRuta_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/ruta/CrearRuta.vue */ "./resources/js/components/ruta/CrearRuta.vue"));
+};
+
+var editarRutasComponent = function editarRutasComponent() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_ruta_EditarRuta_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/ruta/EditarRuta.vue */ "./resources/js/components/ruta/EditarRuta.vue"));
 };
 
 var routes = [{
@@ -5421,6 +5434,18 @@ var routes = [{
   name: 'editarDocumentos',
   path: '/editar/:id',
   component: editarDocumentosComponent
+}, {
+  name: 'mostrarRutas',
+  path: '/rutas',
+  component: mostrarRutasComponent
+}, {
+  name: 'crearRutas',
+  path: '/crear',
+  component: crearRutasComponent
+}, {
+  name: 'editarRutas',
+  path: '/editar/:id',
+  component: editarRutasComponent
 }];
 
 /***/ }),
@@ -27883,7 +27908,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ plugin)
 /* harmony export */ });
 /* module decorator */ module = __webpack_require__.hmd(module);
-function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function plugin(e,n){if(!e.vueAxiosInstalled){var o=isAxiosLike(n)?migrateToMultipleInstances(n):n;if(isValidConfig(o)){var t=getVueVersion(e);if(t){var i=t<3?registerOnVue2:registerOnVue3;Object.keys(o).forEach((function(n){i(e,n,o[n])})),e.vueAxiosInstalled=!0}else console.error("[vue-axios] unknown Vue version")}else console.error("[vue-axios] configuration is invalid, expected options are either <axios_instance> or { <registration_key>: <axios_instance> }")}}function registerOnVue2(e,n,o){Object.defineProperty(e.prototype,n,{get:function(){return o}}),e[n]=o}function registerOnVue3(e,n,o){e.config.globalProperties[n]=o,e[n]=o}function isAxiosLike(e){return e&&"function"==typeof e.get&&"function"==typeof e.post}function migrateToMultipleInstances(e){return{axios:e,$http:e}}function isValidConfig(e){return"object"===_typeof(e)&&Object.keys(e).every((function(n){return isAxiosLike(e[n])}))}function getVueVersion(e){return e&&e.version&&Number(e.version.split(".")[0])}"object"==("undefined"==typeof exports?"undefined":_typeof(exports))?module.exports=plugin:"function"==typeof define&&__webpack_require__.amdO?define([],(function(){return plugin})):window.Vue&&window.axios&&window.Vue.use&&Vue.use(plugin,window.axios);
+function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function plugin(e,n){if(!plugin.installed){var o=isAxiosLike(n)?migrateToMultipleInstances(n):n;if(isValidConfig(o)){plugin.installed=!0;var i=getVueVersion(e);if(i){var t=i<3?registerOnVue2:registerOnVue3;Object.keys(o).forEach((function(n){t(e,n,o[n])}))}else console.error("[vue-axios] unknown Vue version")}else console.error("[vue-axios] configuration is invalid, expected options are either <axios_instance> or { <registration_key>: <axios_instance> }")}}function registerOnVue2(e,n,o){Object.defineProperty(e.prototype,n,{get:function(){return o}}),e[n]=o}function registerOnVue3(e,n,o){e.config.globalProperties[n]=o,e[n]=o}function isAxiosLike(e){return e&&"function"==typeof e.get&&"function"==typeof e.post}function migrateToMultipleInstances(e){return{axios:e,$http:e}}function isValidConfig(e){return"object"===_typeof(e)&&Object.keys(e).every((function(n){return isAxiosLike(e[n])}))}function getVueVersion(e){return e&&e.version&&Number(e.version.split(".")[0])}"object"==("undefined"==typeof exports?"undefined":_typeof(exports))?module.exports=plugin:"function"==typeof define&&__webpack_require__.amdO?define([],(function(){return plugin})):window.Vue&&window.axios&&window.Vue.use&&Vue.use(plugin,window.axios);
 
 /***/ }),
 
@@ -28049,6 +28074,22 @@ var render = function () {
                         },
                       },
                       [_vm._v("Documentos ")]
+                    ),
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { "exact-active-class": "active", to: "/rutas" },
+                      },
+                      [_vm._v("Rutas ")]
                     ),
                   ],
                   1
@@ -43561,7 +43602,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_oficina_Mostrar_vue":1,"resources_js_components_oficina_Crear_vue":1,"resources_js_components_oficina_Editar_vue":1,"resources_js_components_coordinador_Muestra_vue":1,"resources_js_components_coordinador_Crea_vue":1,"resources_js_components_coordinador_Edita_vue":1,"resources_js_components_documents_Show_vue":1,"resources_js_components_documents_Create_vue":1,"resources_js_components_documents_Edit_vue":1,"resources_js_components_ruta_MostrarRuta_vue":1,"resources_js_components_ruta_CrearRuta_vue":1,"resources_js_components_ruta_EditarRuta_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

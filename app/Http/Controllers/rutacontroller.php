@@ -14,7 +14,7 @@ class rutacontroller extends Controller
      */
     public function index()
     {
-        $rutas= oficina::all();
+        $rutas= ruta::all();
        return response()->json($rutas);
     }
 
@@ -72,17 +72,34 @@ class rutacontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
-
+            ruta::where('Id',$id)
+            ->update([
+                'documento_id' => $request->documento_id,
+                'oficina_id' => $request->oficina_id,
+                'descripcion' => $request->descripcion,
+                'fecha_ingreso' => $request->fecha_ingreso,
+                'hora_ingreso' => $request->hora_ingreso,
+                'fecha_salida' => $request->fecha_salida,
+                'hora_salida' => $request->hora_salida
+            ]);
+        //return $request->nombre_oficina;
+        return response()->json([
+            'mensaje' => 'actualizado'
+        ]);
+       
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     }
     public function destroy($id)
     {
-        //
+        $ruta = ruta::find($id);
+        $ruta->delete();
+        return response()->json([
+            'mensaje' => 'eliminado'
+        ]);
     }
 }

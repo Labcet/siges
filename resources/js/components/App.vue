@@ -26,6 +26,10 @@
           <router-link exact-active-class="active" to="/documentos" class="nav-link">Documentos </router-link>
         </li>
 
+        <li class="nav-item">
+          <router-link exact-active-class="active" to="/rutas" class="nav-link">Rutas </router-link>
+        </li>
+
           </ul>
 
         </li>

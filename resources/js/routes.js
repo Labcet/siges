@@ -14,6 +14,11 @@ const mostrarDocumentosComponent = ()=> import('./components/documents/Show.vue'
 const crearDocumentosComponent = ()=> import('./components/documents/Create.vue');
 const editarDocumentosComponent = ()=> import('./components/documents/Edit.vue');
 
+//componentes para ruta
+const mostrarRutasComponent = ()=> import('./components/ruta/MostrarRuta.vue');
+const crearRutasComponent = ()=> import('./components/ruta/CrearRuta.vue');
+const editarRutasComponent = ()=> import('./components/ruta/EditarRuta.vue');
+
 
 export const routes = [
 
@@ -65,6 +70,22 @@ export const routes = [
 	name:'editarDocumentos',
 	path: '/editar/:id',
 	component:editarDocumentosComponent
+},
+
+{
+	name:'mostrarRutas',
+	path: '/rutas',
+	component:mostrarRutasComponent
+},
+{
+	name:'crearRutas',
+	path: '/crear',
+	component:crearRutasComponent
+},
+{
+	name:'editarRutas',
+	path: '/editar/:id',
+	component:editarRutasComponent
 },
 
 
