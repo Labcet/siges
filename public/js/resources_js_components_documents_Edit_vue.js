@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
         ruc_solicitante: "",
         observacion: "",
         doc_adjunto: "",
-        coordinador_id: ""
+        user_id: ""
       }
     };
   },
@@ -157,8 +157,8 @@ __webpack_require__.r(__webpack_exports__);
             ruc_solicitante = _response$data.ruc_solicitante,
             observacion = _response$data.observacion,
             doc_adjunto = _response$data.doc_adjunto,
-            coordinador_id = _response$data.coordinador_id;
-        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.coordinador_id = coordinador_id;
+            user_id = _response$data.user_id;
+        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.user_id = user_id;
       })["catch"](function (error) {
         alert(error);
         console.log(error);
@@ -681,13 +681,13 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.documents.coordinador_id,
-                            expression: "documents.coordinador_id",
+                            value: _vm.documents.user_id,
+                            expression: "documents.user_id",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.documents.coordinador_id },
+                        domProps: { value: _vm.documents.user_id },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
@@ -695,7 +695,7 @@ var render = function () {
                             }
                             _vm.$set(
                               _vm.documents,
-                              "coordinador_id",
+                              "user_id",
                               $event.target.value
                             )
                           },

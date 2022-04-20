@@ -44,7 +44,7 @@
 			      <td>{{documents.ruc_solicitante}}</td>
 			      <td>{{documents.observacion}}</td>
 			      <td>{{documents.doc_adjunto}}</td>
-			      <td>{{documents.coordinador_id}}</td>
+			      <td>{{documents.user_id}}</td>
 
 			      <td> 
 			      	<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>

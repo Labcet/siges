@@ -24,8 +24,8 @@
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Descripción </label>
-											<input type="text" class="form-control" v-model="ruta.descripción">
+										<label>Descripcion </label>
+											<input type="text" class="form-control" v-model="ruta.descripcion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -75,7 +75,7 @@ export default {
 			ruta:{
 				documento_id:"",
 				oficina_id:"",
-				descripción:"",
+				descripcion:"",
 				fecha_ingreso:"",
 				hora_ingreso:"",
 				fecha_salida:"",
@@ -92,10 +92,10 @@ export default {
 			
 			axios.get('/api/rutas/' + this.$route.params.id)
 			.then(response=>{
-				const{documento_id, oficina_id, descripción, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida } = response.data
+				const{documento_id, oficina_id, descripcion, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida } = response.data
 				this.ruta.documento_id = documento_id,
 				this.ruta.oficina_id = oficina_id,
-				this.ruta.descripción = descripción,
+				this.ruta.descripcion = descripcion,
 				this.ruta.fecha_ingreso = fecha_ingreso,
 				this.ruta.hora_ingreso = hora_ingreso,
 				this.ruta.fecha_salida = fecha_salida,

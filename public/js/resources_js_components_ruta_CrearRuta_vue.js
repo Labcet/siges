@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
       ruta: {
         documento_id: "",
         oficina_id: "",
-        descripción: "",
+        descripcion: "",
         fecha_ingreso: "",
         hora_ingreso: "",
         fecha_salida: "",
@@ -217,7 +217,7 @@ var render = function () {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Documendo id")]),
+                      _c("label", [_vm._v("Documento id")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -281,20 +281,20 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Descripción ")]),
+                      _c("label", [_vm._v("Descripcion ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.ruta.descripción,
-                            expression: "ruta.descripción",
+                            value: _vm.ruta.descripcion,
+                            expression: "ruta.descripcion",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.ruta.descripción },
+                        domProps: { value: _vm.ruta.descripcion },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
@@ -302,7 +302,7 @@ var render = function () {
                             }
                             _vm.$set(
                               _vm.ruta,
-                              "descripción",
+                              "descripcion",
                               $event.target.value
                             )
                           },

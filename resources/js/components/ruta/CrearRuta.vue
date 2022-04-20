@@ -11,7 +11,7 @@ j<template>
 							<div class="row">
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Documendo id</label>
+										<label>Documento id</label>
 										<input type="text" class="form-control" v-model="ruta.documento_id">
 									</div>
 								</div>
@@ -24,8 +24,8 @@ j<template>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Descripción </label>
-										<input type="text" class="form-control" v-model="ruta.descripción">
+										<label>Descripcion </label>
+										<input type="text" class="form-control" v-model="ruta.descripcion">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -75,7 +75,7 @@ export default{
 			ruta:{
 				documento_id:"",
 				oficina_id:"",
-				descripción:"",
+				descripcion:"",
 				fecha_ingreso:"",
 				hora_ingreso:"",
 				fecha_salida:"",

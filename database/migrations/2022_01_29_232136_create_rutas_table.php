@@ -19,11 +19,12 @@ class CreateRutasTable extends Migration
             $table->foreign('documento_id')->references('id')->on('documentos');
             $table->unsignedBigInteger('oficina_id');
             $table->foreign('oficina_id')->references('id')->on('oficinas');
-            $table->text('descripción');
+            $table->text('descripcion');
             $table->date('fecha_ingreso');
             $table->time('hora_ingreso');
             $table->date('fecha_salida');
             $table->time('hora_salida');
+            $table->timestamps();
         });
     }
 

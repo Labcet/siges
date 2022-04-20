@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
         ruc_solicitante: "",
         observacion: "",
         doc_adjunto: "",
-        coordinador_id: 1
+        user_id: 1
       }
     };
   },
@@ -650,13 +650,13 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.documents.coordinador_id,
-                            expression: "documents.coordinador_id",
+                            value: _vm.documents.user_id,
+                            expression: "documents.user_id",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.documents.coordinador_id },
+                        domProps: { value: _vm.documents.user_id },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
@@ -664,7 +664,7 @@ var render = function () {
                             }
                             _vm.$set(
                               _vm.documents,
-                              "coordinador_id",
+                              "user_id",
                               $event.target.value
                             )
                           },

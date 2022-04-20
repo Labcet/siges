@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ruta extends Model
 {
     use HasFactory;
-        protected $fillable = ['documento_id','oficina_id', 'descripción','fecha_ingreso', 'hora_ingreso','fecha_salida','hora_salida'];
+        protected $fillable = ['documento_id','oficina_id', 'descripcion','fecha_ingreso', 'hora_ingreso','fecha_salida','hora_salida'];
         public $table = "rutas";
 }

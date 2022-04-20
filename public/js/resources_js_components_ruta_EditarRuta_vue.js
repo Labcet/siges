@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
       ruta: {
         documento_id: "",
         oficina_id: "",
-        descripción: "",
+        descripcion: "",
         fecha_ingreso: "",
         hora_ingreso: "",
         fecha_salida: "",
@@ -106,12 +106,12 @@ __webpack_require__.r(__webpack_exports__);
         var _response$data = response.data,
             documento_id = _response$data.documento_id,
             oficina_id = _response$data.oficina_id,
-            descripción = _response$data.descripción,
+            descripcion = _response$data.descripcion,
             fecha_ingreso = _response$data.fecha_ingreso,
             hora_ingreso = _response$data.hora_ingreso,
             fecha_salida = _response$data.fecha_salida,
             hora_salida = _response$data.hora_salida;
-        _this.ruta.documento_id = documento_id, _this.ruta.oficina_id = oficina_id, _this.ruta.descripción = descripción, _this.ruta.fecha_ingreso = fecha_ingreso, _this.ruta.hora_ingreso = hora_ingreso, _this.ruta.fecha_salida = fecha_salida, _this.ruta.hora_salida = hora_salida;
+        _this.ruta.documento_id = documento_id, _this.ruta.oficina_id = oficina_id, _this.ruta.descripcion = descripcion, _this.ruta.fecha_ingreso = fecha_ingreso, _this.ruta.hora_ingreso = hora_ingreso, _this.ruta.fecha_salida = fecha_salida, _this.ruta.hora_salida = hora_salida;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -305,20 +305,20 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Descripción ")]),
+                      _c("label", [_vm._v("Descripcion ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.ruta.descripción,
-                            expression: "ruta.descripción",
+                            value: _vm.ruta.descripcion,
+                            expression: "ruta.descripcion",
                           },
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text" },
-                        domProps: { value: _vm.ruta.descripción },
+                        domProps: { value: _vm.ruta.descripcion },
                         on: {
                           input: function ($event) {
                             if ($event.target.composing) {
@@ -326,7 +326,7 @@ var render = function () {
                             }
                             _vm.$set(
                               _vm.ruta,
-                              "descripción",
+                              "descripcion",
                               $event.target.value
                             )
                           },

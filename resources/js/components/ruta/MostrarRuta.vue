@@ -15,7 +15,7 @@
 			 	<th> ID</th>
 			 	<th> documento_id </th>
 			 	<th> oficina_id </th>
-			 	<th> descripción </th>
+			 	<th> descripcion </th>
 			 	<th> fecha_ingreso </th>
 			 	<th> hora_ingreso </th>
 			 	<th> fecha_salida </th>
@@ -28,7 +28,7 @@
 			      <td>{{ruta.id}}</td>
 			      <td>{{ruta.documento_id}}</td>
 			      <td>{{ruta.oficina_id}}</td>
-			      <td>{{ruta.descripción}}</td>
+			      <td>{{ruta.descripcion}}</td>
 			      <td>{{ruta.fecha_ingreso}}</td>
 			      <td>{{ruta.hora_ingreso}}</td>
 			      <td>{{ruta.fecha_salida}}</td>

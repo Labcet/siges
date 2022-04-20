@@ -85,7 +85,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>coordinador </label>
-										<input type="text" class="form-control" v-model="documents.coordinador_id">
+										<input type="text" class="form-control" v-model="documents.user_id">
 									</div>
 								</div>
 
@@ -120,7 +120,7 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
-			coordinador_id: 1,
+			user_id: 1,
 		}
 
 	}

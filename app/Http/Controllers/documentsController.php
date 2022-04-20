@@ -91,7 +91,7 @@ class documentsController extends Controller
                 'ruc_solicitante' => $request->ruc_solicitante,
                 'observacion' => $request->observacion,
                 'doc_adjunto' => $request->doc_adjunto,
-                'coordinador_id' => $request->coordinador_id
+                'user_id' => $request->user_id
             ]);
         //return $request->nombre_oficina;
         return response()->json([

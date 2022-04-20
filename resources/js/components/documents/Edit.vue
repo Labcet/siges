@@ -85,7 +85,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>coordinador</label>
-										<input type="text" class="form-control" v-model="documents.coordinador_id">
+										<input type="text" class="form-control" v-model="documents.user_id">
 									</div>
 								</div>
 
@@ -120,7 +120,7 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
-			coordinador_id:""
+			user_id:""
 		}
 
 			}
@@ -134,7 +134,7 @@ export default{
 		
 			axios.get('/api/documentos/' + this.$route.params.id)
 				.then(response=>{
-					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, coordinador_id} = response.data
+					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, user_id} = response.data
 					this.documents.codigo = codigo,
 					this.documents.prioridad = prioridad,
 					this.documents.estado = estado,
@@ -147,7 +147,7 @@ export default{
 					this.documents.ruc_solicitante = ruc_solicitante,
 					this.documents.observacion = observacion,
 					this.documents.doc_adjunto = doc_adjunto,
-					this.documents.coordinador_id = coordinador_id
+					this.documents.user_id = user_id
 				})
 				.catch(error=>{
 					alert(error);
