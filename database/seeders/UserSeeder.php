@@ -29,5 +29,6 @@ class UserSeeder extends Seeder
             'estado' => 'A',
             'oficina_id' => 1,
         ]);
+
     }
 }

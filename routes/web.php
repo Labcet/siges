@@ -38,3 +38,6 @@ Route::get('/admin', [AdminController::class, 'index'])
    ->middleware('auth.admin')
    ->name('admin.index');
 
+Route::get('/documentos', [CoorController::class, 'index'])
+   ->middleware('auth')
+   ->name('coordinador.index');
