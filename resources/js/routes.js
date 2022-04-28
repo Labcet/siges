@@ -24,67 +24,67 @@ export const routes = [
 
 {
 	name:'mostrarOficinas',
-	path: '/oficinas',
+	path: '/Dashboard/mostrarOficinas',
 	component:mostrarOficinasComponent
 },
 {
 	name:'crearOficinas',
-	path: '/crear',
+	path: '/Dashboard/crearOficinas',
 	component:crearOficinasComponent
 },
 {
 	name:'editarOficinas',
-	path: '/editar/:id',
+	path: '/Dashboard/editarOficinas/:id',
 	component:editarOficinasComponent
 },
 
 
 {
 	name:'mostrarCoordinadores',
-	path: '/coordinadores',
+	path: '/Dashboard/mostrarCoordinadores',
 	component:mostrarCoordinadoresComponent
 },
 {
 	name:'crearCoordinadores',
-	path: '/crear',
+	path: '/Dashboard/crearCoordinadores',
 	component:crearCoordinadoresComponent
 },
 {
 	name:'editarCoordinadores',
-	path: '/editar/:id',
+	path: '/Dashboard/editarCoordinadores/:id',
 	component:editarCoordinadoresComponent
 },
 
 
 {
 	name:'mostrarDocumentos',
-	path: '/documentos',
+	path: '/Dashboard/mostrarDocumentos',
 	component:mostrarDocumentosComponent
 },
 {
 	name:'crearDocumentos',
-	path: '/crear',
+	path: '/Dashboard/crearDocumentos',
 	component:crearDocumentosComponent
 },
 {
 	name:'editarDocumentos',
-	path: '/editar/:id',
+	path: '/Dashboard/editarDocumentos/:id',
 	component:editarDocumentosComponent
 },
 
 {
 	name:'mostrarRutas',
-	path: '/rutas',
+	path: '/Dashboard/mostrarRutas',
 	component:mostrarRutasComponent
 },
 {
 	name:'crearRutas',
-	path: '/crear',
+	path: '/Dashboard/crearRutas',
 	component:crearRutasComponent
 },
 {
 	name:'editarRutas',
-	path: '/editar/:id',
+	path: '/Dashboard/editarRutas/:id',
 	component:editarRutasComponent
 },
 

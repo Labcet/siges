@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function dashboard(){
+
+        return view('dashboard');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +43,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $Usuario = User::create($request->post());
+
+        $idLastUser = User::select('id')->orderBy('id','desc')->first();
+
+        $assignPermission = Permission::create([
+            'role_id' => 2,
+            'model_type' => 'App\Models\User',
+            'model_id' => $idLastUser->id
+
+        ]);
+
         return response()->json(['Usuario'=>$Usuario]);
     }
 
@@ -72,24 +88,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-       /* $Coordinador->fill($request->post())->save();
-        return response()->json([
-        'Coordinador'=>Coordinador
+        User::where('Id',$id)
+         ->update([
+            'nombre' => $request->nombre,
+            'paterno' => $request->paterno,
+            'materno' => $request->materno,
+            'direccion' => $request->direccion,
+            'dni' => $request->dni,
+            'telefono' => $request->telefono,
+            'estado' => $request->estado,
+            'oficina_id'=>$request->oficina_id
         ]);
-        */
-            User::where('Id',$id)
-             ->update([
-                'nombre' => $request->nombre,
-                'paterno' => $request->paterno,
-                'materno' => $request->materno,
-                'direccion' => $request->direccion,
-                'dni' => $request->dni,
-                'telefono' => $request->telefono,
-                'role' => $request->role,
-                'estado' => $request->estado,
-                'oficina_id'=>$request->oficina_id
-            ]);
-        //return $request->nombre_oficina;
         return response()->json([
             'mensaje' => 'actualizado'
         ]);

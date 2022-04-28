@@ -63,8 +63,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -227,8 +225,6 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.telefono))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.role))]),
-                  _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.estado))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(coordinador.oficina_id))]),
@@ -285,25 +281,23 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v(" ID ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" nombre ")]),
+        _c("th", [_vm._v(" Nombre ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" paterno ")]),
+        _c("th", [_vm._v(" Paterno ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" materno ")]),
+        _c("th", [_vm._v(" Materno ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" direccion ")]),
+        _c("th", [_vm._v(" Direccion ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" dni ")]),
+        _c("th", [_vm._v(" Dni ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" telefono ")]),
+        _c("th", [_vm._v(" Telefono ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" rol ")]),
+        _c("th", [_vm._v(" Estado ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" estado ")]),
+        _c("th", [_vm._v(" Oficina ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" oficina ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" acciones ")]),
+        _c("th", [_vm._v(" Acciones ")]),
       ]),
     ])
   },

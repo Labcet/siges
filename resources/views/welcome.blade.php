@@ -29,9 +29,9 @@
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
+                        <!--@if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
+                        @endif-->
                     @endauth
                 </div>
             @endif
@@ -126,13 +126,8 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
-
-                <div id="app">
-                    <coordinador-component/>
-                </div>
-
             </div>
         </div>
     </body>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!--<script src="{{ mix('js/app.js') }}" defer></script>-->
 </html>

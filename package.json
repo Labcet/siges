@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "bootstrap-icons": "^1.8.1",
+        "laravel-permission-to-vuejs": "^3.0.0",
         "vue-axios": "^3.4.1",
         "vue-router": "^3.5.3"
     }

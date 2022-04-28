@@ -76,10 +76,6 @@ class oficinaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /*$office->fill($request->post())->save();
-        return response()->json([
-            'office'=>$office
-        ]);*/
         oficina::where('Id',$id)
             ->update([
                 'nombre_oficina' => $request->nombre_oficina,
@@ -87,7 +83,7 @@ class oficinaController extends Controller
                 'descripcion' => $request->descripcion,
                 'estado' => $request->estado
             ]);
-        //return $request->nombre_oficina;
+        
         return response()->json([
             'mensaje' => 'actualizado'
         ]);

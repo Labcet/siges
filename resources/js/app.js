@@ -6,32 +6,30 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue').default;
+window.Vue = require('vue');
 
 import App from './components/App.vue';
-//import App from './components/coordinador/Muestra.vue';
 
+import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-import VueRouter from 'vue-router';
 import { routes} from './routes';
 import Vue from 'vue';
+import LaravelPermissionToVueJS from 'laravel-permission-to-vuejs'
 
-Vue.use(VueRouter, VueAxios, axios);
+Vue.use(VueRouter, VueAxios, axios, LaravelPermissionToVueJS);
 
 const router = new VueRouter({
     mode:'history',
     routes: routes
-})
-
-//window.Vue = require('vue').default;
-//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-//Vue.component('coordinador-component', require('./components/coordinador/Muestra.vue').default);
-
-const app = new Vue({
-    el: '#app',
-    router:router,
-    render: h => h(App)
 });
+
+Vue.prototype.can = function(value){
+    return window.Laravel.jsPermissions.permissions.includes(value);
+}
+Vue.prototype.is = function(value){
+    return window.Laravel.jsPermissions.roles.includes(value);
+}
+
+new Vue(Vue.util.extend({ router }, App)).$mount('#app');
 

@@ -96,12 +96,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
@@ -115,7 +109,6 @@ __webpack_require__.r(__webpack_exports__);
         telefono: "",
         //email:"",
         //password:"",
-        role: "",
         estado: "",
         oficina_id: ""
       }
@@ -136,12 +129,11 @@ __webpack_require__.r(__webpack_exports__);
             direccion = _response$data.direccion,
             dni = _response$data.dni,
             telefono = _response$data.telefono,
-            role = _response$data.role,
             estado = _response$data.estado,
             oficina_id = _response$data.oficina_id;
         _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, //this.coordinador.email = email,
         //this.coordinador.password = password,
-        _this.coordinador.role = role, _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
+        _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -454,38 +446,6 @@ var render = function () {
                             _vm.$set(
                               _vm.coordinador,
                               "telefono",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Rol ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.role,
-                            expression: "coordinador.role",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.role },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "role",
                               $event.target.value
                             )
                           },

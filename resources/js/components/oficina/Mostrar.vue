@@ -27,8 +27,10 @@
 			      <td>{{oficina.nombre_jefe}}</td>
 			      <td>{{oficina.descripcion}}</td>
 			      <td>{{oficina.estado}}</td>
-			      <td> 
-			      	<router-link :to='{name:"editarOficinas", params:{id:oficina.id}}' class="btn btn-info"><i class="bi bi-pencil-square"></i></router-link>
+			      <td>
+			      	<div v-if="is('coordinador')">
+							<router-link :to='{name:"editarOficinas", params:{id:oficina.id}}' class="btn btn-info"><i class="bi bi-pencil-square"></i></router-link>
+						</div>
 			      	<a type="button" @click="borrarOficina(oficina.id)" class="btn btn-danger "><i class="bi bi-trash"></i></a>
 			      </td>
 			   </tr>

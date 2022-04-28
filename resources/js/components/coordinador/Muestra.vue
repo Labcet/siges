@@ -13,16 +13,15 @@
 			
 			 <tr>
 			 	<th> ID </th>
-			 	<th> nombre </th>
-			 	<th> paterno </th>
-			 	<th> materno </th>
-			 	<th> direccion </th>
-			 	<th> dni </th>
-			 	<th> telefono </th>
-			 	<th> rol </th>
-			 	<th> estado </th>
-			 	<th> oficina </th>
-			 	<th> acciones </th>
+			 	<th> Nombre </th>
+			 	<th> Paterno </th>
+			 	<th> Materno </th>
+			 	<th> Direccion </th>
+			 	<th> Dni </th>
+			 	<th> Telefono </th>
+			 	<th> Estado </th>
+			 	<th> Oficina </th>
+			 	<th> Acciones </th>
 			 </tr>
 			  </thead>
 			<tbody>
@@ -34,7 +33,6 @@
 			      <td>{{coordinador.direccion}}</td>
 			      <td>{{coordinador.dni}}</td>
 			      <td>{{coordinador.telefono}}</td>
-			      <td>{{coordinador.role}}</td>
 			      <td>{{coordinador.estado}}</td>
 			      <td>{{coordinador.oficina_id}}</td>
 			      <td> 

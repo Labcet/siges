@@ -8,9 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/* SPATIE PACKAGE */
+
+use Spatie\Permission\Traits\HasRoles;
+
+/* LARAVEL PERMISSION TO VUEJS */
+
+use LaravelAndVueJS\Traits\LaravelPermissionToVueJS;
+
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasRoles, HasApiTokens, HasFactory, Notifiable, LaravelPermissionToVueJS;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +34,6 @@ class User extends Authenticatable
         'telefono',
         'email',
         'password',
-        'role',
         'estado',
         'oficina_id'
     ];
@@ -52,5 +59,13 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($password){
         $this->attributes['password']=bcrypt($password);
+    }
+
+    public function jsPermissions()
+    {
+        return json_encode([
+                'roles' => $this->getRoleNames(),
+                'permissions' => $this->getAllPermissions()->pluck('name'),
+            ]);
     }
 }

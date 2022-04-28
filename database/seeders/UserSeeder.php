@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
             'telefono' => '000000000',
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin1234'),
-            'role' => 'admin',
             'estado' => 'A',
             'oficina_id' => 1,
         ]);

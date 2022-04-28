@@ -18,8 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::get('of', App\Http\Controllers\oficinaController::class);
-
 Route::resource('oficinas', App\Http\Controllers\oficinaController::class)->only (['index','store', 'update', 'show','destroy']);
 
 Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['index','store', 'update', 'show','destroy']);
@@ -28,6 +26,3 @@ Route::resource('documentos', App\Http\Controllers\documentsController::class)->
 
 Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);
 
-/* LOGIN */
-
-//Route::post('login', 'App\Http\Controllers\LoginController@login');

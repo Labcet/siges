@@ -3,41 +3,27 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\AdminController;
-
-
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-  return view('home');
-})->middleware('auth');
+  return view('welcome');
+})->middleware('guest');
 
-//Route::get('/intro', function () {
-  //  return view('saludo');
-//});
+/* LOGIN */
 
-Route::get('/register', [RegisterController::class, 'create'])
+Route::get('/Login', [SessionController::class, 'create'])
   ->middleware('guest')
-  ->name('register.index');
+  ->name('login');
 
-Route::post('/register', [RegisterController::class, 'store'])
-  ->name('register.store');
-
-Route::get('/Logn', [SessionController::class, 'create'])
-  ->middleware('guest')
-  ->name('Logn.index');
-
-Route::post('/Logn', [SessionController::class, 'store'])
+Route::post('/Login', [SessionController::class, 'store'])
   ->name('Logn.store');
 
 Route::get('/Logout', [SessionController::class, 'destroy'])
   ->middleware('auth')
   ->name('Logn.destroy');
 
+/* DASHBOARD */
 
-Route::get('/admin', [AdminController::class, 'index'])
-   ->middleware('auth.admin')
-   ->name('admin.index');
-
-Route::get('/documentos', [CoorController::class, 'index'])
+Route::get('/Dashboard', [UserController::class, 'dashboard'])
    ->middleware('auth')
-   ->name('coordinador.index');
+   ->name('dashboard');
