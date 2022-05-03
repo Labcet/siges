@@ -77,10 +77,24 @@ __webpack_require__.r(__webpack_exports__);
     muestraCoordinador: function muestraCoordinador() {
       var _this = this;
 
-      axios.get('/api/coordinadores').then(function (response) {
-        _this.coordinadores = response.data;
-      })["catch"](function (error) {
-        console.log(error);
+      var data = {
+        name: "Token Name",
+        scopes: []
+      };
+      var respuesta = {};
+      axios.post("/oauth/personal-access-tokens", data).then(function (response) {
+        var config = {
+          headers: {
+            Authorization: "Bearer " + response.data.accessToken
+          }
+        };
+        axios.get('/api/coordinadores', config).then(function (response) {
+          _this.coordinadores = response.data; //console.log(response.data);
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      })["catch"](function (response) {
+        console.log(response);
       });
     },
     borrarCoordinador: function borrarCoordinador(id) {

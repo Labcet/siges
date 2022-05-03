@@ -5312,6 +5312,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -5359,7 +5360,12 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.can = function (value) {
 
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.is = function (value) {
   return window.Laravel.jsPermissions.roles.includes(value);
-};
+}; //Vue.prototype.$Name = auth()->user()->Nombre;
+
+/*Vue.prototype.user = function(){
+    return auth();
+}*/
+
 
 new vue__WEBPACK_IMPORTED_MODULE_5__["default"](vue__WEBPACK_IMPORTED_MODULE_5__["default"].util.extend({
   router: router

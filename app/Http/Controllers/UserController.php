@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Permission;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class UserController extends Controller
 {
+
     public function dashboard(){
 
         return view('dashboard');
@@ -20,8 +23,15 @@ class UserController extends Controller
      */
     public function index()
     {
-       $usuarios = User::all();
-       return response()->json($usuarios); 
+        $user = auth('api')->user();
+
+        if($user->hasRole('administrador')){
+            $usuarios = User::all();
+        } else {
+            $usuarios = User::where('id',$user->id)->get();
+        }
+
+        return response()->json($usuarios);
     }
 
     /**

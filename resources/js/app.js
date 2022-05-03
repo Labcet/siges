@@ -31,5 +31,10 @@ Vue.prototype.is = function(value){
     return window.Laravel.jsPermissions.roles.includes(value);
 }
 
+//Vue.prototype.$Name = auth()->user()->Nombre;
+/*Vue.prototype.user = function(){
+    return auth();
+}*/
+
 new Vue(Vue.util.extend({ router }, App)).$mount('#app');
 

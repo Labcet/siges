@@ -23,7 +23,8 @@ class SessionController extends Controller
 
         }  else {
 
-            return redirect()->route('dashboard');
+            $request->session()->regenerate();
+            return redirect()->to('/Dashboard');
         }
     
     }

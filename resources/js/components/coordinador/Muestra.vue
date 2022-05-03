@@ -64,13 +64,34 @@ export default{
 	methods:{
 		muestraCoordinador(){
 
-			axios.get('/api/coordinadores')
-			.then(response=>{
-				this.coordinadores = response.data
-			})
-			.catch(error=>{
-				console.log(error)
-			})
+			const data = {
+			  name: "Token Name",
+			  scopes: [],
+			};
+
+			let respuesta = {};
+
+			axios
+				.post("/oauth/personal-access-tokens", data)
+				.then((response) => {
+					const config = {
+				      headers: {
+				        Authorization: "Bearer " + response.data.accessToken,
+				      },
+				   };
+
+					axios.get('/api/coordinadores', config)
+						.then((response) => {
+							this.coordinadores = response.data;
+							//console.log(response.data);
+						})
+						.catch(error=>{
+							console.log(error)
+						});
+				})
+				.catch((response)=>{
+					console.log(response);
+				})
 		},
 
 		borrarCoordinador(id){
