@@ -26,7 +26,7 @@ class CreateDocumentosTable extends Migration
             $table->char('dni_solicitante', 8);
             $table->char('ruc_solicitante', 11)->nullable();
             $table->text('observacion');
-            $table->string('doc_adjunto');
+            $table->binary('doc_adjunto');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id') ->on('users');
             $table->timestamp('updated_at')->nullable();

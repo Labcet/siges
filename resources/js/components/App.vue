@@ -28,7 +28,7 @@
 						</li>
 						<div v-if="is('administrador')">
 							<li class="nav-item">
-								<router-link exact-active-class="active" to="/Dashboard/mostrarRutas" class="nav-link">Rutas </router-link>
+								<router-link exact-active-class="active" to="/Dashboard/mostrarRutas" class="nav-link"> Rutas </router-link>
 							</li>
 						</div>
 					</ul>

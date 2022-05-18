@@ -623,7 +623,7 @@ var render = function () {
                           },
                         ],
                         staticClass: "form-control",
-                        attrs: { type: "text" },
+                        attrs: { type: "submit" },
                         domProps: { value: _vm.documents.doc_adjunto },
                         on: {
                           input: function ($event) {

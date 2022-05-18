@@ -37,8 +37,12 @@ class oficinaController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         $office=oficina::create($request->post());
+    
         return response()->json(['office'=>$office]);
+
     }
 
     /**

@@ -3,8 +3,10 @@
 <div class="container">
 
 <div class="row">
+	<div v-if="is('administrador')">
    <div class="col-lg-12 mb-4">
        <router-link :to='{name:"crearCoordinadores"}'class="btn btn-success">Crear</router-link>
+    </div>
     </div>
 <div class="col-12">
 	<div class ="table-responsive">
@@ -37,7 +39,9 @@
 			      <td>{{coordinador.oficina_id}}</td>
 			      <td> 
 			      	<router-link :to='{name:"editarCoordinadores", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
+			      	<div v-if="is('administrador')">
 			      	<a type="button" @click="borrarCoordinador(coordinador.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
+			      	</div>
 			      </td>
 			   </tr>
 			</tbody>

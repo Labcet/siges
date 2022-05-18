@@ -79,7 +79,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
-										<input type="text" class="form-control" v-model="documents.doc_adjunto">
+										<input type="submit" class="form-control" v-model="documents.doc_adjunto">
 									</div>
 								</div>
 								<div class="col-12 mb-2">

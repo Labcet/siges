@@ -57,6 +57,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "oficinas",
   data: function data() {
@@ -179,21 +182,25 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-4" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-success",
-              attrs: { to: { name: "crearOficinas" } },
-            },
-            [_vm._v("Crear")]
-          ),
-        ],
-        1
-      ),
+      _vm.is("administrador")
+        ? _c("div", [
+            _c(
+              "div",
+              { staticClass: "col-lg-12 mb-4" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { to: { name: "crearOficinas" } },
+                  },
+                  [_vm._v("Crear")]
+                ),
+              ],
+              1
+            ),
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "table-responsive" }, [
@@ -215,7 +222,7 @@ var render = function () {
                   _c("td", [_vm._v(_vm._s(oficina.estado))]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm.is("coordinador")
+                    _vm.is("administrador")
                       ? _c(
                           "div",
                           [
@@ -232,24 +239,24 @@ var render = function () {
                               },
                               [_c("i", { staticClass: "bi bi-pencil-square" })]
                             ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn-danger ",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.borrarOficina(oficina.id)
+                                  },
+                                },
+                              },
+                              [_c("i", { staticClass: "bi bi-trash" })]
+                            ),
                           ],
                           1
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-danger ",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function ($event) {
-                            return _vm.borrarOficina(oficina.id)
-                          },
-                        },
-                      },
-                      [_c("i", { staticClass: "bi bi-trash" })]
-                    ),
                   ]),
                 ])
               }),

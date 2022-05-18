@@ -63,6 +63,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -200,21 +204,25 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-4" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-success",
-              attrs: { to: { name: "crearCoordinadores" } },
-            },
-            [_vm._v("Crear")]
-          ),
-        ],
-        1
-      ),
+      _vm.is("administrador")
+        ? _c("div", [
+            _c(
+              "div",
+              { staticClass: "col-lg-12 mb-4" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { to: { name: "crearCoordinadores" } },
+                  },
+                  [_vm._v("Crear")]
+                ),
+              ],
+              1
+            ),
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "table-responsive" }, [
@@ -260,19 +268,23 @@ var render = function () {
                         [_c("i", { staticClass: "far fa-edit" })]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-danger ",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.borrarCoordinador(coordinador.id)
-                            },
-                          },
-                        },
-                        [_c("i", { staticClass: "far fa-trash-alt" })]
-                      ),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn-danger ",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.borrarCoordinador(coordinador.id)
+                                  },
+                                },
+                              },
+                              [_c("i", { staticClass: "far fa-trash-alt" })]
+                            ),
+                          ])
+                        : _vm._e(),
                     ],
                     1
                   ),

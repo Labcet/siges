@@ -28240,7 +28240,7 @@ var render = function () {
                                 to: "/Dashboard/mostrarRutas",
                               },
                             },
-                            [_vm._v("Rutas ")]
+                            [_vm._v(" Rutas ")]
                           ),
                         ],
                         1
