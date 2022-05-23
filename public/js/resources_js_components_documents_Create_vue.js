@@ -148,6 +148,17 @@ __webpack_require__.r(__webpack_exports__);
         alert(error);
         console.log(error);
       });
+    },
+    archivo: function archivo(e) {
+      var file = e.target.files[0];
+      var reader = new filereader();
+
+      reader.onloadend = function () {
+        //console.log('RESULT', reader.result)
+        this.doc_adjunto = reader.result;
+      };
+
+      reader.readAsDataURL(file);
     }
   }
 });
@@ -616,7 +627,9 @@ var render = function () {
                       _c("input", {
                         staticClass: "form-control",
                         attrs: { type: "file" },
-                        on: { change: _vm.documents.doc_adjunto },
+                        on: {
+                          change: [_vm.archivo, _vm.documents.doc_adjunto],
+                        },
                       }),
                     ]),
                   ]),

@@ -40,6 +40,7 @@ class documentsController extends Controller
         return response()->json(['Documentos'=>$Documentos]);
     }
 
+
     /**
      * Display the specified resource.
      *

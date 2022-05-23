@@ -645,29 +645,9 @@ var render = function () {
                       _c("label", [_vm._v("Documento Adjunto ")]),
                       _vm._v(" "),
                       _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.documents.doc_adjunto,
-                            expression: "documents.doc_adjunto",
-                          },
-                        ],
                         staticClass: "form-control",
-                        attrs: { type: "submit" },
-                        domProps: { value: _vm.documents.doc_adjunto },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.documents,
-                              "doc_adjunto",
-                              $event.target.value
-                            )
-                          },
-                        },
+                        attrs: { type: "file" },
+                        on: { change: _vm.documents.doc_adjunto },
                       }),
                     ]),
                   ]),
