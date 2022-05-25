@@ -150,12 +150,13 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     archivo: function archivo(e) {
-      var file = e.target.files[0];
-      var reader = new filereader();
+      var _this2 = this;
 
-      reader.onloadend = function () {
-        //console.log('RESULT', reader.result)
-        this.doc_adjunto = reader.result;
+      var file = e.target.files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function (file) {
+        _this2.form.doc_adjunto = reader.result;
       };
 
       reader.readAsDataURL(file);
@@ -624,13 +625,13 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Documento Adjunto ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: [_vm.archivo, _vm.documents.doc_adjunto],
-                        },
-                      }),
+                      _c(
+                        "input",
+                        _vm._g({
+                          staticClass: "form-control",
+                          attrs: { type: "file", change: "archivo" },
+                        })
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),

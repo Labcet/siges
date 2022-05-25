@@ -79,7 +79,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
-										<input type="file" @change="archivo" class="form-control" v-on:change="documents.doc_adjunto">
+										<input type="file" v-on change="archivo" class="form-control">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -138,12 +138,13 @@ export default{
 			})
 		},
 
-		archivo (e){
-		let file=e.target.files[0];
-		let reader = new filereader();
-		reader.onloadend = function(){
-		 	//console.log('RESULT', reader.result)
-		 	this.doc_adjunto = reader.result
+		archivo(e){
+		let file = e.target.files[0];
+		let reader = new FileReader();
+
+		reader.onloadend = (file) => {
+		 	
+		 	this.form.doc_adjunto = reader.result;
 		}
 		reader.readAsDataURL(file);
 
