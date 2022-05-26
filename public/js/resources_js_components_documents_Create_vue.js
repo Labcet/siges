@@ -131,35 +131,44 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: "",
+        doc_adjunto: "as",
         user_id: 1
       }
     };
   },
   methods: {
-    create: function create() {
+    formSubmit: function formSubmit() {
       var _this = this;
 
       axios.post('/api/documentos', this.documents).then(function (response) {
         _this.$router.push({
           name: "mostrarDocumentos"
-        });
+        }); //console.log(response.data);
+
       })["catch"](function (error) {
         alert(error);
         console.log(error);
       });
     },
     archivo: function archivo(e) {
-      var _this2 = this;
+      //this.doc_adjunto = e.target.files[0];
 
-      var file = e.target.files[0];
+      /*let file = e.target.files[0];
+      let reader = new FileReader();
+      		reader.onload = (file) => {
+       	
+       	this.form.doc_adjunto = reader.result;
+       	console.log(reader.result);
+      }
+      reader.readAsDataURL(file);*/
+      var self = this;
       var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
 
-      reader.onloadend = function (file) {
-        _this2.form.doc_adjunto = reader.result;
+      reader.onload = function () {
+        //console.log(reader.result);
+        self.documents.doc_adjunto = reader.result; //console.log(self.documents.doc_adjunto);
       };
-
-      reader.readAsDataURL(file);
     }
   }
 });
@@ -263,7 +272,7 @@ var render = function () {
                 on: {
                   submit: function ($event) {
                     $event.preventDefault()
-                    return _vm.create.apply(null, arguments)
+                    return _vm.formSubmit.apply(null, arguments)
                   },
                 },
               },
@@ -625,13 +634,11 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Documento Adjunto ")]),
                       _vm._v(" "),
-                      _c(
-                        "input",
-                        _vm._g({
-                          staticClass: "form-control",
-                          attrs: { type: "file", change: "archivo" },
-                        })
-                      ),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "file" },
+                        on: { change: _vm.archivo },
+                      }),
                     ]),
                   ]),
                   _vm._v(" "),

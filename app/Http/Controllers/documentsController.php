@@ -38,6 +38,7 @@ class documentsController extends Controller
     {
         $Documentos=documents::create($request->post());
         return response()->json(['Documentos'=>$Documentos]);
+
     }
 
 

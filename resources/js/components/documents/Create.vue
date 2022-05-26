@@ -6,7 +6,7 @@
 					<div class="card-header"><h4>Crear Documentos</h4></div>
 					
 					<div class="card-body">
-						<form @submit.prevent="create">
+						<form @submit.prevent="formSubmit">
 
 							<div class="row">
 								<div class="col-12 mb-2">
@@ -79,7 +79,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
-										<input type="file" v-on change="archivo" class="form-control">
+										<input type="file" v-on:change="archivo" class="form-control">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -119,7 +119,7 @@ export default{
 			dni_solicitante:"",
 			ruc_solicitante:"",
 			observacion:"",
-			doc_adjunto:"",
+			doc_adjunto:"as",
 			user_id: 1,
 		}
 
@@ -127,31 +127,28 @@ export default{
 },
 
 	methods:{
-		create(){
+		formSubmit(){
+
 			axios.post('/api/documentos', this.documents)
 			.then(response=>{
-				this.$router.push({name:"mostrarDocumentos"})
+				this.$router.push({name:"mostrarDocumentos"});
 			})
 			.catch(error=>{
 				alert(error);
-				console.log(error)
+				console.log(error);
 			})
 		},
 
 		archivo(e){
-		let file = e.target.files[0];
-		let reader = new FileReader();
 
-		reader.onloadend = (file) => {
-		 	
-		 	this.form.doc_adjunto = reader.result;
-		}
-		reader.readAsDataURL(file);
+			var self = this;
 
-		}
-
-
-
+			var reader = new FileReader()
+                reader.readAsDataURL(e.target.files[0])
+                reader.onload = function () {
+                    self.documents.doc_adjunto = reader.result;
+                };
+		},
 	}
 }
 </script>
