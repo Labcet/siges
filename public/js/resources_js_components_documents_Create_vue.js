@@ -143,31 +143,19 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/documentos', this.documents).then(function (response) {
         _this.$router.push({
           name: "mostrarDocumentos"
-        }); //console.log(response.data);
-
+        });
       })["catch"](function (error) {
         alert(error);
         console.log(error);
       });
     },
     archivo: function archivo(e) {
-      //this.doc_adjunto = e.target.files[0];
-
-      /*let file = e.target.files[0];
-      let reader = new FileReader();
-      		reader.onload = (file) => {
-       	
-       	this.form.doc_adjunto = reader.result;
-       	console.log(reader.result);
-      }
-      reader.readAsDataURL(file);*/
       var self = this;
       var reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
 
       reader.onload = function () {
-        //console.log(reader.result);
-        self.documents.doc_adjunto = reader.result; //console.log(self.documents.doc_adjunto);
+        self.documents.doc_adjunto = reader.result;
       };
     }
   }

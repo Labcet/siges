@@ -43,7 +43,7 @@
 			      <td>{{documents.dni_solicitante}}</td>
 			      <td>{{documents.ruc_solicitante}}</td>
 			      <td>{{documents.observacion}}</td>
-			      <td>{{documents.doc_adjunto}}</td>
+			      <td><a download=documento_Adjunto :href="documents.doc_adjunto">PDF</a></td>
 			      <td>{{documents.user_id}}</td>
 
 			      <td> 

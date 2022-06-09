@@ -247,7 +247,18 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(documents.observacion))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.doc_adjunto))]),
+                  _c("td", [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          download: "documento_Adjunto",
+                          href: documents.doc_adjunto,
+                        },
+                      },
+                      [_vm._v("PDF")]
+                    ),
+                  ]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(documents.user_id))]),
                   _vm._v(" "),
