@@ -82,10 +82,11 @@
 										<input type="file" v-on:change="archivo" class="form-control">
 									</div>
 								</div>
+
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>coordinador </label>
-										<input type="text" class="form-control" v-model="documents.user_id">
+										<input type="select" class="form-control" v-model="documents.user_id">
 									</div>
 								</div>
 

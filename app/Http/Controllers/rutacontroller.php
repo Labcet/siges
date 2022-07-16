@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ruta;
+use App\Models\documents;
 use Illuminate\Http\Request;
 
 class rutacontroller extends Controller
@@ -37,6 +38,7 @@ class rutacontroller extends Controller
     public function store(Request $request)
     {
         $Ruta=ruta::create($request->post());
+        
         return response()->json(['Ruta'=>$Ruta]);
     }
 

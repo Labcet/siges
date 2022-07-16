@@ -49,6 +49,9 @@
 			      <td> 
 			      	<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
 			      	<a type="button" @click="borrarDocumento(documents.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
+
+			      	<a type="button" @click="derivarDocumento(documents.id)" class="btn btn-danger ">D<i class="far fa-trash-alt"></i></a>
+
 			       </td>
 			   </tr>
 			</tbody>

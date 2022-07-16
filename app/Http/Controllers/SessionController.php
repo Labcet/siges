@@ -22,7 +22,7 @@ class SessionController extends Controller
             //return 'Credenciales Incorrectas';
 
         }  else {
-
+            
             $request->session()->regenerate();
             return redirect()->to('/Dashboard');
         }

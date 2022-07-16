@@ -84,6 +84,7 @@ export default{
 		}
 	},
 
+
 	methods:{
 		crearRut(){
 			axios.post('/api/rutas', this.ruta)

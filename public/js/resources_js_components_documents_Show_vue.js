@@ -74,6 +74,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "documentos",
   data: function data() {
@@ -291,6 +294,23 @@ var render = function () {
                           },
                         },
                         [_c("i", { staticClass: "far fa-trash-alt" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger ",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.derivarDocumento(documents.id)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v("D"),
+                          _c("i", { staticClass: "far fa-trash-alt" }),
+                        ]
                       ),
                     ],
                     1
