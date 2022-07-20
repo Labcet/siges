@@ -40,16 +40,16 @@ class documentsController extends Controller
     public function store(Request $request)
     {
         $Documentos=documents::create($request->post());
-
-         ruta::create([
-        'documento_id' => '1',
+        $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
+        ruta::create([
+        'documento_id'=> $idLastdocuments,
         'oficina_id' => '1',
         'descripcion' => 'hola ',
         'fecha_ingreso' => '2022-01-10',
         'hora_ingreso' => '12:50:00',
         'fecha_salida' => '2022-10-10',
         'hora_salida' => '14:00:00',
-         ]);
+         ]);;
 
         return response()->json(['Documentos'=>$Documentos]);
 
