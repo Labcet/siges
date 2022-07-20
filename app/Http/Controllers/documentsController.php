@@ -41,15 +41,16 @@ class documentsController extends Controller
     {
         $Documentos=documents::create($request->post());
         $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
+
         ruta::create([
-        'documento_id'=> $idLastdocuments,
-        'oficina_id' => '1',
-        'descripcion' => 'hola ',
-        'fecha_ingreso' => '2022-01-10',
-        'hora_ingreso' => '12:50:00',
-        'fecha_salida' => '2022-10-10',
-        'hora_salida' => '14:00:00',
-         ]);;
+            'documento_id'=> $idLastdocuments->id,
+            'oficina_id' => '1',
+            'descripcion' => 'hola ',
+            'fecha_ingreso' => '2022-01-10',
+            'hora_ingreso' => '12:50:00',
+            'fecha_salida' => '2022-10-10',
+            'hora_salida' => '14:00:00'
+         ]);
 
         return response()->json(['Documentos'=>$Documentos]);
 
