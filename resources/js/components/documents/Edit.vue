@@ -82,12 +82,6 @@
 										<input type="file" class="form-control" v-on:change="documents.doc_adjunto">
 									</div>
 								</div>
-								<div class="col-12 mb-2">
-									<div class="form-group">
-										<label>coordinador</label>
-										<input type="text" class="form-control" v-model="documents.user_id">
-									</div>
-								</div>
 
 
 								<div class="col-12">
@@ -120,7 +114,7 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
-			user_id:""
+		
 		}
 
 			}
@@ -146,8 +140,7 @@ export default{
 					this.documents.dni_solicitante = dni_solicitante,
 					this.documents.ruc_solicitante = ruc_solicitante,
 					this.documents.observacion = observacion,
-					this.documents.doc_adjunto = doc_adjunto,
-					this.documents.user_id = user_id
+					this.documents.doc_adjunto = doc_adjunto
 				})
 				.catch(error=>{
 					alert(error);

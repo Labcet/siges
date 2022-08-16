@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\documents;
 use App\Models\User;
+use App\Models\oficina;
 use App\Models\ruta;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class documentsController extends Controller
 {
@@ -40,16 +42,23 @@ class documentsController extends Controller
     public function store(Request $request)
     {
         $Documentos=documents::create($request->post());
-        $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
 
+        $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
+        
+       // $user = auth('api')->user();  
+
+        $idLastoficina=oficina::select('id')->orderBy('id','desc')->first();
+        
+        $date = Carbon::now();
         ruta::create([
             'documento_id'=> $idLastdocuments->id,
-            'oficina_id' => '1',
-            'descripcion' => 'hola ',
-            'fecha_ingreso' => '2022-01-10',
-            'hora_ingreso' => '12:50:00',
-            'fecha_salida' => '2022-10-10',
-            'hora_salida' => '14:00:00'
+            'oficina_id' => $idLastoficina->id,
+        //  'oficina_id'=>$user->oficina_id,
+            'descripcion' => 'hola',
+            'fecha_ingreso' => $date->format('y-m-d'),
+            'hora_ingreso' => $date->toTimeString(),
+            'fecha_salida' => $date->format('y-m-d'),
+            'hora_salida' => $date->toTimeString()
          ]);
 
         return response()->json(['Documentos'=>$Documentos]);
@@ -106,8 +115,7 @@ class documentsController extends Controller
                 'dni_solicitante' => $request->dni_solicitante,
                 'ruc_solicitante' => $request->ruc_solicitante,
                 'observacion' => $request->observacion,
-                'doc_adjunto' => $request->doc_adjunto,
-                'user_id' => $request->user_id
+                'doc_adjunto' => $request->doc_adjunto
             ]);
         //return $request->nombre_oficina;
         return response()->json([

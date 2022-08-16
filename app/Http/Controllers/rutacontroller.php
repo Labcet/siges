@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ruta;
+use App\Models\User;
+use Appm\Models\oficina;
 use App\Models\documents;
 use Illuminate\Http\Request;
 
@@ -17,6 +19,7 @@ class rutacontroller extends Controller
     {
         $rutas= ruta::all();
        return response()->json($rutas);
+
     }
 
     /**

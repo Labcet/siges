@@ -7,7 +7,6 @@
 					
 					<div class="card-body">
 						<form @submit.prevent="formSubmit">
-
 							<div class="row">
 								<div class="col-12 mb-2">
 									<div class="form-group">
@@ -83,13 +82,6 @@
 									</div>
 								</div>
 
-								<div class="col-12 mb-2">
-									<div class="form-group">
-										<label>coordinador </label>
-										<input type="select" class="form-control" v-model="documents.user_id">
-									</div>
-								</div>
-
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary">Guardar</button>
 								</div>
@@ -121,7 +113,6 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"as",
-			user_id: 1,
 		}
 
 	}

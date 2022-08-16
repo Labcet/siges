@@ -109,12 +109,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "edit-Documentos",
   data: function data() {
@@ -131,8 +125,7 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: "",
-        user_id: ""
+        doc_adjunto: ""
       }
     };
   },
@@ -158,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
             observacion = _response$data.observacion,
             doc_adjunto = _response$data.doc_adjunto,
             user_id = _response$data.user_id;
-        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.user_id = user_id;
+        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto;
       })["catch"](function (error) {
         alert(error);
         console.log(error);
@@ -648,38 +641,6 @@ var render = function () {
                         staticClass: "form-control",
                         attrs: { type: "file" },
                         on: { change: _vm.documents.doc_adjunto },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("coordinador")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.documents.user_id,
-                            expression: "documents.user_id",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.documents.user_id },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.documents,
-                              "user_id",
-                              $event.target.value
-                            )
-                          },
-                        },
                       }),
                     ]),
                   ]),

@@ -108,14 +108,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
@@ -132,8 +124,7 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: "as",
-        user_id: 1
+        doc_adjunto: "as"
       }
     };
   },
@@ -627,38 +618,6 @@ var render = function () {
                         staticClass: "form-control",
                         attrs: { type: "file" },
                         on: { change: _vm.archivo },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("coordinador ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.documents.user_id,
-                            expression: "documents.user_id",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "select" },
-                        domProps: { value: _vm.documents.user_id },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.documents,
-                              "user_id",
-                              $event.target.value
-                            )
-                          },
-                        },
                       }),
                     ]),
                   ]),

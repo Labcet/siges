@@ -55,6 +55,7 @@ class oficinaController extends Controller
     {
         $oficina = oficina::find($id);
         return response()->json($oficina);
+        
         //return response()->json($office);
         //$office = oficina::find($oficina);
         //return response()->json($request);

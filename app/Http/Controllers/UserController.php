@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+Use App\Models\oficina;
 use App\Models\Permission;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,9 @@ class UserController extends Controller
 
     public function dashboard(){
 
-        return view('dashboard');
+    
+    return view('dashboard');
+
     }
 
     /**
@@ -27,6 +30,7 @@ class UserController extends Controller
 
         if($user->hasRole('administrador')){
             $usuarios = User::all();
+            
         } else {
             $usuarios = User::where('id',$user->id)->get();
         }
@@ -39,8 +43,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function create()
     {
+
         //
     }
 
@@ -53,7 +59,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $Usuario = User::create($request->post());
-
+       
         $idLastUser = User::select('id')->orderBy('id','desc')->first();
 
         $assignPermission = Permission::create([
@@ -62,7 +68,8 @@ class UserController extends Controller
             'model_id' => $idLastUser->id
 
         ]);
-
+        $offic = oficina::all();
+        return response()->json(['offic'=>$offic]);
         return response()->json(['Usuario'=>$Usuario]);
     }
 

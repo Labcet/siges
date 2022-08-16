@@ -59,8 +59,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "rutas",
   data: function data() {
@@ -214,8 +212,6 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(ruta.oficina_id))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(ruta.descripcion))]),
-                  _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(ruta.fecha_ingreso))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(ruta.hora_ingreso))]),
@@ -279,8 +275,6 @@ var staticRenderFns = [
         _c("th", [_vm._v(" documento_id ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" oficina_id ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" descripcion ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" fecha_ingreso ")]),
         _vm._v(" "),
