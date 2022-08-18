@@ -107,7 +107,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
@@ -124,7 +123,8 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: "as"
+        doc_adjunto: "",
+        user_id: this.$userId
       }
     };
   },

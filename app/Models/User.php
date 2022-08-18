@@ -66,8 +66,8 @@ class User extends Authenticatable
     public function jsPermissions()
     {
         return json_encode([
-                'roles' => $this->getRoleNames(),
-                'permissions' => $this->getAllPermissions()->pluck('name'),
-            ]);
+            'roles' => $this->getRoleNames(),
+            'permissions' => $this->getAllPermissions()->pluck('name'),
+        ]);
     }
 }

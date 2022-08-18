@@ -31,6 +31,7 @@
                 @if(auth()->check())
                 <li class="mx-6">
                     <p class="text-xl"> bienvenido <b>{{auth()->user()->nombre}}</b></p>
+                    <meta name="user_id" content="{{ Auth::user()->id }}">
                 </li>
                 <li>
                     <a href="{{ route('Logn.destroy')}}" class="font-bold py-3 px-4 rounded-md bg-red-500 hover:bg-red-600">Log Out</a>

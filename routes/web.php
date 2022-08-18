@@ -27,3 +27,7 @@ Route::get('/Logout', [SessionController::class, 'destroy'])
 Route::get('/Dashboard', [UserController::class, 'dashboard'])
    ->middleware('auth')
    ->name('dashboard');
+
+/*Route::prefix('api')->middleware('auth')->group(function () {
+  Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show', 'destroy']);
+});*/

@@ -76,17 +76,17 @@
 									</div>
 								</div>
 
-								<div class="col-12 mb-2">
+								<!--<div class="col-12 mb-2">
 									<div class="form-group">
 									    <label>Oficina </label>
 									      <select name="oficina_id" id="inputOficina_id" class="form-control">
 										  	 <option value=""> seleccione </option>
 										   @foreach ( $offic as $ofi)
-										   		<option value = "{{ $ofi['id'] }}">{{ $ofi ['nombre_oficina'] }}</option> 
+										   		<option v-bind= "{{ $ofi['id'] }}">{{ $ofi ['nombre_oficina'] }}</option> 
 										   @endforeach
 										   </select>
 									</div>
-								</div>
+								</div>-->
 								
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>

@@ -81,7 +81,6 @@
 										<input type="file" v-on:change="archivo" class="form-control">
 									</div>
 								</div>
-
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary">Guardar</button>
 								</div>
@@ -112,7 +111,8 @@ export default{
 			dni_solicitante:"",
 			ruc_solicitante:"",
 			observacion:"",
-			doc_adjunto:"as",
+			doc_adjunto:"",
+			user_id:this.$userId
 		}
 
 	}

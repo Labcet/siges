@@ -5360,12 +5360,13 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.can = function (value) {
 
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.is = function (value) {
   return window.Laravel.jsPermissions.roles.includes(value);
-}; //Vue.prototype.$Name = auth()->user()->Nombre;
+};
+
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.$userId = document.querySelector("meta[name='user_id']").getAttribute('content'); //Vue.prototype.$Name = auth()->user()->Nombre;
 
 /*Vue.prototype.user = function(){
     return auth();
 }*/
-
 
 new vue__WEBPACK_IMPORTED_MODULE_5__["default"](vue__WEBPACK_IMPORTED_MODULE_5__["default"].util.extend({
   router: router

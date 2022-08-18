@@ -8,6 +8,8 @@ use App\Models\oficina;
 use App\Models\ruta;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Auth;
+//use Illuminate\Support\Facades\Auth;
 
 class documentsController extends Controller
 {
@@ -45,16 +47,14 @@ class documentsController extends Controller
 
         $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
         
-       // $user = auth('api')->user();  
-
-        $idLastoficina=oficina::select('id')->orderBy('id','desc')->first();
+        $user_data = User::where('id',$request->user_id)->get();
         
         $date = Carbon::now();
+
         ruta::create([
             'documento_id'=> $idLastdocuments->id,
-            'oficina_id' => $idLastoficina->id,
-        //  'oficina_id'=>$user->oficina_id,
-            'descripcion' => 'hola',
+            'oficina_id' => $user_data[0]->oficina_id,
+            'descripcion' => 'descripcion',
             'fecha_ingreso' => $date->format('y-m-d'),
             'hora_ingreso' => $date->toTimeString(),
             'fecha_salida' => $date->format('y-m-d'),
@@ -62,7 +62,6 @@ class documentsController extends Controller
          ]);
 
         return response()->json(['Documentos'=>$Documentos]);
-
     }
 
     /**

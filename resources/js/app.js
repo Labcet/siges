@@ -31,6 +31,8 @@ Vue.prototype.is = function(value){
     return window.Laravel.jsPermissions.roles.includes(value);
 }
 
+Vue.prototype.$userId = document.querySelector("meta[name='user_id']").getAttribute('content');
+
 //Vue.prototype.$Name = auth()->user()->Nombre;
 /*Vue.prototype.user = function(){
     return auth();
