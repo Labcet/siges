@@ -8,7 +8,7 @@ use App\Models\oficina;
 use App\Models\ruta;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Auth;
+use Auth;      
 //use Illuminate\Support\Facades\Auth;
 
 class documentsController extends Controller

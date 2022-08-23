@@ -113,7 +113,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "crea-Coordinador",
   data: function data() {
@@ -542,9 +541,95 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(1),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Estado ")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.estado,
+                              expression: "coordinador.estado",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "estado_id", id: "inputEstado_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.coordinador,
+                                "estado",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" seleccione "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" A "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" I "),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                  ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Oficina ")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { name: "oficina_id", id: "inputOficina_id" },
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" seleccione "),
+                          ]),
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t   @foreach ( $offic as $ofi)\n\t\t\t\t\t\t\t\t\t   \t\t"
+                          ),
+                          _c(
+                            "option",
+                            _vm._b({}, "option", _vm.$ofi["id"], false),
+                            [
+                              _vm._v(
+                                " " + _vm._s(_vm.$ofi["nombre_oficina"]) + " "
+                              ),
+                            ]
+                          ),
+                          _vm._v(
+                            " \n\t\t\t\t\t\t\t\t\t   @endforeach\n\t\t\t\t\t\t\t\t\t "
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
                 ]),
               ]
             ),
@@ -561,31 +646,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h4", [_vm._v("Crear Coordinador")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 mb-2" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_vm._v("Estado ")]),
-        _vm._v(" "),
-        _c(
-          "select",
-          {
-            staticClass: "form-control",
-            attrs: { name: "estado_id", id: "inputEstado_id" },
-          },
-          [
-            _c("option", { attrs: { value: "" } }, [_vm._v(" seleccione ")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v(" A ")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v(" I ")]),
-          ]
-        ),
-      ]),
     ])
   },
   function () {

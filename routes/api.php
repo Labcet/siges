@@ -26,3 +26,5 @@ Route::resource('documentos', App\Http\Controllers\documentsController::class)->
 
 Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);
 
+//Route::resource('Coor', resource\components\coordinador::class)->only (['crea.vue']);
+

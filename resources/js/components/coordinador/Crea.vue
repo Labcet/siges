@@ -67,26 +67,25 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										   <select name="estado_id" id="inputEstado_id" class="form-control">
+										   <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado">
 										   <option value=""> seleccione </option>
 										   		<option value = ""> A </option> 
 										   		<option value = ""> I </option> 
 										   </select>
-
 									</div>
 								</div>
 
-								<!--<div class="col-12 mb-2">
+								<div class="col-12 mb-2">
 									<div class="form-group">
 									    <label>Oficina </label>
-									      <select name="oficina_id" id="inputOficina_id" class="form-control">
+										   <select name="oficina_id" id="inputOficina_id" class="form-control">
 										  	 <option value=""> seleccione </option>
 										   @foreach ( $offic as $ofi)
-										   		<option v-bind= "{{ $ofi['id'] }}">{{ $ofi ['nombre_oficina'] }}</option> 
+										   		<option v-bind= " $ofi['id']"> {{ $ofi ['nombre_oficina'] }} </option> 
 										   @endforeach
-										   </select>
+										 </select>
 									</div>
-								</div>-->
+								</div>
 								
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
