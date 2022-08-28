@@ -109,14 +109,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "crea-Coordinador",
   data: function data() {
     return {
+      oficinas: [],
+      //selected_oficina_id: 1,
       coordinador: {
         nombre: "",
         paterno: "",
@@ -132,6 +130,9 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
+  mounted: function mounted() {
+    this.getOficinas();
+  },
   methods: {
     crea: function crea() {
       var _this = this;
@@ -140,6 +141,17 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "mostrarCoordinadores"
         });
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      }); //console.log(this.coordinador.oficina_id);
+    },
+    getOficinas: function getOficinas() {
+      var _this2 = this;
+
+      axios.get('/api/consultaOficina').then(function (response) {
+        console.log(response.data);
+        _this2.oficinas = response.data;
       })["catch"](function (error) {
         alert(error);
         console.log(error);
@@ -583,11 +595,11 @@ var render = function () {
                             _vm._v(" seleccione "),
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "A" } }, [
                             _vm._v(" A "),
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "I" } }, [
                             _vm._v(" I "),
                           ]),
                         ]
@@ -602,29 +614,44 @@ var render = function () {
                       _c(
                         "select",
                         {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.oficina_id,
+                              expression: "coordinador.oficina_id",
+                            },
+                          ],
                           staticClass: "form-control",
                           attrs: { name: "oficina_id", id: "inputOficina_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.coordinador,
+                                "oficina_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
                         },
-                        [
-                          _c("option", { attrs: { value: "" } }, [
-                            _vm._v(" seleccione "),
-                          ]),
-                          _vm._v(
-                            "\n\t\t\t\t\t\t\t\t\t   @foreach ( $offic as $ofi)\n\t\t\t\t\t\t\t\t\t   \t\t"
-                          ),
-                          _c(
+                        _vm._l(_vm.oficinas, function (oficina) {
+                          return _c(
                             "option",
-                            _vm._b({}, "option", _vm.$ofi["id"], false),
-                            [
-                              _vm._v(
-                                " " + _vm._s(_vm.$ofi["nombre_oficina"]) + " "
-                              ),
-                            ]
-                          ),
-                          _vm._v(
-                            " \n\t\t\t\t\t\t\t\t\t   @endforeach\n\t\t\t\t\t\t\t\t\t "
-                          ),
-                        ]
+                            { domProps: { value: oficina.id } },
+                            [_vm._v(_vm._s(oficina.nombre_oficina))]
+                          )
+                        }),
+                        0
                       ),
                     ]),
                   ]),

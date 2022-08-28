@@ -69,8 +69,8 @@
 										<label>Estado </label>
 										   <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado">
 										   <option value=""> seleccione </option>
-										   		<option value = ""> A </option> 
-										   		<option value = ""> I </option> 
+										   		<option value = "A"> A </option> 
+										   		<option value = "I"> I </option> 
 										   </select>
 									</div>
 								</div>
@@ -78,19 +78,15 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 									    <label>Oficina </label>
-										   <select name="oficina_id" id="inputOficina_id" class="form-control">
-										  	 <option value=""> seleccione </option>
-										   @foreach ( $offic as $ofi)
-										   		<option v-bind= " $ofi['id']"> {{ $ofi ['nombre_oficina'] }} </option> 
-										   @endforeach
-										 </select>
+									   	<select name="oficina_id" id="inputOficina_id" class="form-control" v-model="coordinador.oficina_id">
+									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
+									  	</select>
 									</div>
 								</div>
 								
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
 								</div>
-								
 							</div>
 						</form>
 					</div>
@@ -104,23 +100,33 @@
 export default{
 	name:"crea-Coordinador",
 	data(){
-	return{
-		coordinador:{
-			nombre:"",
-			paterno:"",
-			materno:"",
-			direccion:"",
-			dni:"",
-			telefono:"",
-			email:"",
-			password:"",
-			role:"",
-			estado:"",
-			oficina_id:"",
-		}
+		return{
 
-	 }
-},
+			oficinas: [],
+
+			//selected_oficina_id: 1,
+
+			coordinador:{
+				nombre:"",
+				paterno:"",
+				materno:"",
+				direccion:"",
+				dni:"",
+				telefono:"",
+				email:"",
+				password:"",
+				role:"",
+				estado:"",
+				oficina_id:"",
+			}
+
+		}
+	},
+
+	mounted: function(){
+
+		this.getOficinas()
+	},
 
 	methods:{
 		crea(){
@@ -133,7 +139,21 @@ export default{
 				alert(error);
 				console.log(error)
 			})
+			//console.log(this.coordinador.oficina_id);
 		},
+
+		getOficinas(){
+
+			axios.get('/api/consultaOficina')
+			.then(response=>{
+				console.log(response.data);
+				this.oficinas = response.data;
+			})
+			.catch(error=>{
+				alert(error);
+				console.log(error)
+			})
+		}
 	}
 }
 </script>

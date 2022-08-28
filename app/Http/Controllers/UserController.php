@@ -47,7 +47,8 @@ class UserController extends Controller
     public function create()
     {
 
-        //
+        $offic = oficina::all();
+        return response()->json(['offic'=>$offic]);
     }
 
     /**
@@ -68,8 +69,7 @@ class UserController extends Controller
             'model_id' => $idLastUser->id
 
         ]);
-        $offic = oficina::all();
-        return response()->json(['offic'=>$offic]);
+        
         return response()->json(['Usuario'=>$Usuario]);
     }
 
@@ -135,5 +135,12 @@ class UserController extends Controller
             
             'mensaje' => 'eliminado'
        ]);
+    }
+
+    public function consultaOficina(){
+
+        /*$offic = oficina::all();
+        return response()->json(['offic'=>$offic]);*/
+        return 'hola';
     }
 }

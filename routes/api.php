@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+Use App\Models\oficina;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('oficinas', App\Http\Controllers\oficinaController::class)->only (['index','store', 'update', 'show','destroy']);
 
-Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['index','store', 'update', 'show','destroy']);
+Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['index','create','store', 'update', 'show','destroy']);
+
+Route::get('consultaOficina', function(){
+
+    $offic = oficina::all();
+    //return response()->json(['offic'=>$offic]);
+    return $offic;
+});
 
 Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy']);
 
