@@ -96,10 +96,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
     return {
+      oficinas: [],
       coordinador: {
         nombre: "",
         paterno: "",
@@ -149,6 +156,17 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$router.push({
           name: "mostrarCoordinadores"
         });
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
+    },
+    getOficinas: function getOficinas() {
+      var _this3 = this;
+
+      axios.get('/api/consultaOficina').then(function (response) {
+        console.log(response.data);
+        _this3.oficinas = response.data;
       })["catch"](function (error) {
         alert(error);
         console.log(error);
@@ -458,31 +476,53 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Estado ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.estado,
-                            expression: "coordinador.estado",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.estado },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "estado",
-                              $event.target.value
-                            )
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.estado,
+                              expression: "coordinador.estado",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "estado_id", id: "inputEstado_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.coordinador,
+                                "estado",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
                           },
                         },
-                      }),
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" seleccione "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A" } }, [
+                            _vm._v(" Activo"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "I" } }, [
+                            _vm._v(" Inactivo "),
+                          ]),
+                        ]
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -490,31 +530,48 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Oficina")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.oficina_id,
-                            expression: "coordinador.oficina_id",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.oficina_id },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "oficina_id",
-                              $event.target.value
-                            )
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.oficina_id,
+                              expression: "coordinador.oficina_id",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "oficina_id", id: "inputOficina_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.coordinador,
+                                "oficina_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
                           },
                         },
-                      }),
+                        _vm._l(_vm.oficinas, function (oficina) {
+                          return _c(
+                            "option",
+                            { domProps: { value: oficina.id } },
+                            [_vm._v(_vm._s(oficina.nombre_oficina))]
+                          )
+                        }),
+                        0
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),

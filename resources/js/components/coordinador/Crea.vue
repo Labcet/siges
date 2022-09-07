@@ -69,8 +69,8 @@
 										<label>Estado </label>
 										   <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado">
 										   <option value=""> seleccione </option>
-										   		<option value = "A"> A </option> 
-										   		<option value = "I"> I </option> 
+										   		<option value = "A"> Activo</option> 
+										   		<option value = "I"> Inactivo </option> 
 										   </select>
 									</div>
 								</div>

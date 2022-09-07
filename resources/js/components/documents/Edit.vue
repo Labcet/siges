@@ -19,13 +19,22 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Prioridad </label>
-										<input type="text" class="form-control" v-model="documents.prioridad">
+										   <select name="prioridad_id" id="inputPrioridad_id" class="form-control" v-model="documents.prioridad">
+										   <option value=""> seleccione </option>
+										   		<option value = "A"> Alta</option> 
+										   		<option value = "M"> Media </option>
+										   		<option value = "B"> Baja </option> 
+										   </select>
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="documents.estado">
+										 <select name="estado_id" id="inputEstado_id" class="form-control" v-model="documents.estado">
+										   <option value=""> seleccione </option>
+										   		<option value = "A"> Activo </option> 
+										   		<option value = "I"> Inactivo </option> 
+										   </select>
 									</div>
 								</div>
 								<div class="col-12 mb-2">

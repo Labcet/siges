@@ -61,13 +61,19 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="coordinador.estado">
+										 <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado">
+										   <option value=""> seleccione </option>
+										   		<option value = "A"> Activo</option> 
+										   		<option value = "I"> Inactivo </option> 
+										   </select>
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Oficina</label>
-										<input type="text" class="form-control" v-model="coordinador.oficina_id">
+										<select name="oficina_id" id="inputOficina_id" class="form-control" v-model="coordinador.oficina_id">
+									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
+									  	</select>
 									</div>
 								</div>
 
@@ -88,6 +94,7 @@ export default{
 	name:"Edita-Coordinador",
 	data(){
 	return{
+	oficinas: [],
 		coordinador:{
 			nombre:"",
 			paterno:"",
@@ -138,6 +145,19 @@ export default{
 				this.$router.push({
 					name:"mostrarCoordinadores"
 				})
+			})
+			.catch(error=>{
+				alert(error);
+				console.log(error)
+			})
+		},
+
+		getOficinas(){
+
+			axios.get('/api/consultaOficina')
+			.then(response=>{
+				console.log(response.data);
+				this.oficinas = response.data;
 			})
 			.catch(error=>{
 				alert(error);

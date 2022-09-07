@@ -109,6 +109,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "edit-Documentos",
   data: function data() {
@@ -317,31 +326,60 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Prioridad ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.documents.prioridad,
-                            expression: "documents.prioridad",
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.documents.prioridad,
+                              expression: "documents.prioridad",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "prioridad_id",
+                            id: "inputPrioridad_id",
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.documents.prioridad },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.documents,
-                              "prioridad",
-                              $event.target.value
-                            )
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.documents,
+                                "prioridad",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
                           },
                         },
-                      }),
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" seleccione "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A" } }, [
+                            _vm._v(" Alta"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M" } }, [
+                            _vm._v(" Media "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B" } }, [
+                            _vm._v(" Baja "),
+                          ]),
+                        ]
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -349,31 +387,53 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Estado ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.documents.estado,
-                            expression: "documents.estado",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.documents.estado },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.documents,
-                              "estado",
-                              $event.target.value
-                            )
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.documents.estado,
+                              expression: "documents.estado",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "estado_id", id: "inputEstado_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.documents,
+                                "estado",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
                           },
                         },
-                      }),
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v(" seleccione "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A" } }, [
+                            _vm._v(" Activo "),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "I" } }, [
+                            _vm._v(" Inactivo "),
+                          ]),
+                        ]
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),

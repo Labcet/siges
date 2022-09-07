@@ -596,11 +596,11 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "A" } }, [
-                            _vm._v(" A "),
+                            _vm._v(" Activo"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "I" } }, [
-                            _vm._v(" I "),
+                            _vm._v(" Inactivo "),
                           ]),
                         ]
                       ),

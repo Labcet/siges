@@ -32,7 +32,11 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										<input type="text" class="form-control" v-model="oficina.estado">
+										   <select name="estado_id" id="inputEstado_id" class="form-control" v-model="oficina.estado">
+										   <option value=""> seleccione </option>
+										   		<option value = "A"> A </option> 
+										   		<option value = "I"> I </option> 
+										   </select>
 									</div>
 								</div>
 
