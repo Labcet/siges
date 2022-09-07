@@ -132,7 +132,8 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: ""
+        doc_adjunto: "",
+        user_id: this.$userId
       }
     };
   },

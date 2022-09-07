@@ -120,7 +120,8 @@ export default{
 			dni_solicitante:"",
 			ruc_solicitante:"",
 			observacion:"",
-			doc_adjunto:""
+			doc_adjunto:"",
+			user_id: this.$userId
 		}
 
 	}
