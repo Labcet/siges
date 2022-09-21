@@ -84,12 +84,22 @@
 										<input type="text" class="form-control" v-model="documents.observacion">
 									</div>
 								</div>
+								
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Documento Adjunto </label>
 										<input type="file" v-on:change="archivo" class="form-control">
 									</div>
 								</div>
+								<div class="col-12 mb-2">
+									<div class="form-group">
+									    <label>Oficina Actual </label>
+									   	<select name="oficina_actual" id="inputOficina_actual" class="form-control" v-model="documents.oficina_actual">
+									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
+									  	</select>
+									</div>
+								</div>
+
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary">Guardar</button>
 								</div>
@@ -108,6 +118,9 @@ export default{
 	name:"create-Documentos",
 	data(){
 	return{
+
+		oficinas: [],
+		
 		documents:{
 			codigo:"",
 			prioridad:"",
@@ -121,11 +134,18 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
+			oficina_actual:"",
 			user_id: this.$userId
 		}
 
 	}
 },
+
+	mounted: function(){
+
+		this.getOficinas()
+	},
+
 
 	methods:{
 		formSubmit(){
@@ -150,6 +170,19 @@ export default{
                     self.documents.doc_adjunto = reader.result;
                 };
 		},
+
+				getOficinas(){
+
+			axios.get('/api/consultaOficina')
+			.then(response=>{
+				console.log(response.data);
+				this.oficinas = response.data;
+			})
+			.catch(error=>{
+				alert(error);
+				console.log(error)
+			})
+		}
 	}
 }
 </script>

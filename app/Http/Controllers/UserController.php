@@ -47,8 +47,7 @@ class UserController extends Controller
     public function create()
     {
 
-        $offic = oficina::all();
-        return response()->json(['offic'=>$offic]);
+       
     }
 
     /**

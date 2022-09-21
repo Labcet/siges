@@ -25,6 +25,7 @@
 			 	<th> ruc_solicitante </th>
 			 	<th> observacion </th>
 			 	<th> doc_adjunto </th>
+			 	<th> oficina_actual </th>
 			 	<th> acciones </th>
 			 </tr>
 			  </thead>
@@ -43,6 +44,7 @@
 			      <td>{{documents.ruc_solicitante}}</td>
 			      <td>{{documents.observacion}}</td>
 			      <td><a download=documento_Adjunto :href="documents.doc_adjunto">PDF</a></td>
+			      <td>{{documents.oficina_actual}}</td>
 
 			      <td> 
 			      	<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
@@ -100,10 +102,12 @@ export default{
 					console.log(error)
 				})			
 			}
-		}
+		},
 
-		
-		
+		derivarDocumento(id){
+
+		},
+
 	}
 	
 }

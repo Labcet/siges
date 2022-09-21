@@ -116,10 +116,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
     return {
+      oficinas: [],
       documents: {
         codigo: "",
         prioridad: "",
@@ -133,9 +144,13 @@ __webpack_require__.r(__webpack_exports__);
         ruc_solicitante: "",
         observacion: "",
         doc_adjunto: "",
+        oficina_actual: "",
         user_id: this.$userId
       }
     };
+  },
+  mounted: function mounted() {
+    this.getOficinas();
   },
   methods: {
     formSubmit: function formSubmit() {
@@ -158,6 +173,17 @@ __webpack_require__.r(__webpack_exports__);
       reader.onload = function () {
         self.documents.doc_adjunto = reader.result;
       };
+    },
+    getOficinas: function getOficinas() {
+      var _this2 = this;
+
+      axios.get('/api/consultaOficina').then(function (response) {
+        console.log(response.data);
+        _this2.oficinas = response.data;
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
     }
   }
 });
@@ -679,6 +705,58 @@ var render = function () {
                         attrs: { type: "file" },
                         on: { change: _vm.archivo },
                       }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Oficina Actual ")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.documents.oficina_actual,
+                              expression: "documents.oficina_actual",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "oficina_actual",
+                            id: "inputOficina_actual",
+                          },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.documents,
+                                "oficina_actual",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        _vm._l(_vm.oficinas, function (oficina) {
+                          return _c(
+                            "option",
+                            { domProps: { value: oficina.id } },
+                            [_vm._v(_vm._s(oficina.nombre_oficina))]
+                          )
+                        }),
+                        0
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),

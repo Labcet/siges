@@ -11,6 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+var _name$data$mounted$mo;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -118,10 +122,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_name$data$mounted$mo = {
   name: "edit-Documentos",
   data: function data() {
     return {
+      oficinas: [],
       documents: {
         codigo: "",
         prioridad: "",
@@ -134,56 +147,71 @@ __webpack_require__.r(__webpack_exports__);
         dni_solicitante: "",
         ruc_solicitante: "",
         observacion: "",
-        doc_adjunto: ""
+        doc_adjunto: "",
+        oficina_actual: "",
+        user_id: this.$userId
       }
     };
   },
   mounted: function mounted() {
-    this.buscarDocuments();
-  },
-  methods: {
-    buscarDocuments: function buscarDocuments() {
-      var _this = this;
-
-      axios.get('/api/documentos/' + this.$route.params.id).then(function (response) {
-        var _response$data = response.data,
-            codigo = _response$data.codigo,
-            prioridad = _response$data.prioridad,
-            estado = _response$data.estado,
-            fecha_ingreso = _response$data.fecha_ingreso,
-            hora_ingreso = _response$data.hora_ingreso,
-            fecha_salida = _response$data.fecha_salida,
-            hora_salida = _response$data.hora_salida,
-            num_folios = _response$data.num_folios,
-            dni_solicitante = _response$data.dni_solicitante,
-            ruc_solicitante = _response$data.ruc_solicitante,
-            observacion = _response$data.observacion,
-            doc_adjunto = _response$data.doc_adjunto,
-            user_id = _response$data.user_id;
-        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto;
-      })["catch"](function (error) {
-        alert(error);
-        console.log(error);
-      });
-    },
-    actualiza: function actualiza() {
-      var _this2 = this;
-
-      var data = {
-        id: this.$route.params.id,
-        oficina: this.documents
-      };
-      axios.put('/api/documentos/' + this.$route.params.id, this.documents).then(function (response) {
-        _this2.$router.push({
-          name: "mostrarDocumentos"
-        });
-      })["catch"](function (error) {
-        alert(error);
-        console.log(error);
-      });
-    }
+    this.getOficinas();
   }
-});
+}, _defineProperty(_name$data$mounted$mo, "mounted", function mounted() {
+  this.buscarDocuments();
+}), _defineProperty(_name$data$mounted$mo, "methods", {
+  buscarDocuments: function buscarDocuments() {
+    var _this = this;
+
+    axios.get('/api/documentos/' + this.$route.params.id).then(function (response) {
+      var _response$data = response.data,
+          codigo = _response$data.codigo,
+          prioridad = _response$data.prioridad,
+          estado = _response$data.estado,
+          fecha_ingreso = _response$data.fecha_ingreso,
+          hora_ingreso = _response$data.hora_ingreso,
+          fecha_salida = _response$data.fecha_salida,
+          hora_salida = _response$data.hora_salida,
+          num_folios = _response$data.num_folios,
+          dni_solicitante = _response$data.dni_solicitante,
+          ruc_solicitante = _response$data.ruc_solicitante,
+          observacion = _response$data.observacion,
+          doc_adjunto = _response$data.doc_adjunto,
+          oficina_actual = _response$data.oficina_actual,
+          user_id = _response$data.user_id;
+      _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.oficina_actual = oficina_actual;
+    })["catch"](function (error) {
+      alert(error);
+      console.log(error);
+    });
+  },
+  actualiza: function actualiza() {
+    var _this2 = this;
+
+    var data = {
+      id: this.$route.params.id,
+      oficina: this.documents
+    };
+    axios.put('/api/documentos/' + this.$route.params.id, this.documents).then(function (response) {
+      _this2.$router.push({
+        name: "mostrarDocumentos"
+      });
+    })["catch"](function (error) {
+      alert(error);
+      console.log(error);
+    });
+  },
+  getOficinas: function getOficinas() {
+    var _this3 = this;
+
+    axios.get('/api/consultaOficina').then(function (response) {
+      console.log(response.data);
+      _this3.oficinas = response.data;
+    })["catch"](function (error) {
+      alert(error);
+      console.log(error);
+    });
+  }
+}), _name$data$mounted$mo);
 
 /***/ }),
 
@@ -702,6 +730,58 @@ var render = function () {
                         attrs: { type: "file" },
                         on: { change: _vm.documents.doc_adjunto },
                       }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 mb-2" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Oficina Actual ")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.documents.oficina_actual,
+                              expression: "documents.oficina_actual",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "oficina_actual",
+                            id: "inputOficina_actual",
+                          },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.documents,
+                                "oficina_actual",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        _vm._l(_vm.oficinas, function (oficina) {
+                          return _c(
+                            "option",
+                            { domProps: { value: oficina.id } },
+                            [_vm._v(_vm._s(oficina.nombre_oficina))]
+                          )
+                        }),
+                        0
+                      ),
                     ]),
                   ]),
                   _vm._v(" "),

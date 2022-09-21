@@ -104,11 +104,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "crea-Coordinador",
   data: function data() {
@@ -144,7 +139,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         alert(error);
         console.log(error);
-      }); //console.log(this.coordinador.oficina_id);
+      });
     },
     getOficinas: function getOficinas() {
       var _this2 = this;
@@ -523,38 +518,6 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Rol ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.role,
-                            expression: "coordinador.role",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.role },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "role",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Estado ")]),
                       _vm._v(" "),
                       _c(
@@ -672,7 +635,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Crear Coordinador")]),
+      _c("h4", [_vm._v(" Crear Coordinador ")]),
     ])
   },
   function () {

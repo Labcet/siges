@@ -29,6 +29,8 @@ class CreateDocumentosTable extends Migration
             $table->binary('doc_adjunto');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('oficina_actual');
+            $table->foreign('oficina_actual')->references('id')->on('oficinas');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
           

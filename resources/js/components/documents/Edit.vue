@@ -92,6 +92,14 @@
 									</div>
 								</div>
 
+								<div class="col-12 mb-2">
+									<div class="form-group">
+									    <label>Oficina Actual </label>
+									   	<select name="oficina_actual" id="inputOficina_actual" class="form-control" v-model="documents.oficina_actual">
+									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
+									  	</select>
+									</div>
+								</div>
 
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
@@ -110,6 +118,9 @@ export default{
 	name:"edit-Documentos",
 	data(){
 	return{
+
+	oficinas: [],
+
 		documents:{
 			codigo:"",
 			prioridad:"",
@@ -123,11 +134,19 @@ export default{
 			ruc_solicitante:"",
 			observacion:"",
 			doc_adjunto:"",
+			oficina_actual:"",
+			user_id: this.$userId
 		
 		}
 
-			}
+		}
 	},
+
+	mounted: function(){
+
+		this.getOficinas()
+	},
+	
 	mounted(){
 		this.buscarDocuments()
 	},
@@ -137,7 +156,7 @@ export default{
 		
 			axios.get('/api/documentos/' + this.$route.params.id)
 				.then(response=>{
-					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, user_id} = response.data
+					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, oficina_actual, user_id} = response.data
 					this.documents.codigo = codigo,
 					this.documents.prioridad = prioridad,
 					this.documents.estado = estado,
@@ -149,7 +168,8 @@ export default{
 					this.documents.dni_solicitante = dni_solicitante,
 					this.documents.ruc_solicitante = ruc_solicitante,
 					this.documents.observacion = observacion,
-					this.documents.doc_adjunto = doc_adjunto
+					this.documents.doc_adjunto = doc_adjunto,
+					this.documents.oficina_actual = oficina_actual
 				})
 				.catch(error=>{
 					alert(error);
@@ -168,6 +188,19 @@ export default{
 				this.$router.push({
 					name:"mostrarDocumentos"
 				})
+			})
+			.catch(error=>{
+				alert(error);
+				console.log(error)
+			})
+		},
+
+		getOficinas(){
+
+			axios.get('/api/consultaOficina')
+			.then(response=>{
+				console.log(response.data);
+				this.oficinas = response.data;
 			})
 			.catch(error=>{
 				alert(error);

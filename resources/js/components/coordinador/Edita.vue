@@ -68,14 +68,16 @@
 										   </select>
 									</div>
 								</div>
+
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Oficina</label>
-										<select name="oficina_id" id="inputOficina_id" class="form-control" v-model="coordinador.oficina_id">
-									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
+									    <label>Oficina </label>
+									   	<select name="oficina_id" id="inputOficina_id" class="form-control" 	v-model="coordinador.oficina_id">
+									  	 		<option v-for="oficina in oficinas"
+									  	 		:value="oficina.id">{{oficina.nombre_oficina}}</option>
 									  	</select>
-									</div>
-								</div>
+									 </div>
+								 </div>
 
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary"> Guardar</button>
@@ -93,9 +95,11 @@
 export default{
 	name:"Edita-Coordinador",
 	data(){
-	return{
-	oficinas: [],
-		coordinador:{
+		return{
+
+		  oficinas: [],
+
+			coordinador:{
 			nombre:"",
 			paterno:"",
 			materno:"",
@@ -105,15 +109,23 @@ export default{
 			//email:"",
 			//password:"",
 			estado:"",
-			oficina_id:""
-		}
+			oficina_id:"",
+			}
 
-	 }
+		}
 	},
-		mounted(){
+
+     mounted: function(){
+
+		this.getOficinas()
+	 },
+		
+	mounted(){
 		this.buscarCoordinador()
 	},
+
 	methods:{
+
 		buscarCoordinador(){
 			
 			axios.get('/api/coordinadores/' + this.$route.params.id)
@@ -134,6 +146,7 @@ export default{
 					console.log(error)
 				})
 		},
+
 		update(){
 
 			const data = {
@@ -163,7 +176,8 @@ export default{
 				alert(error);
 				console.log(error)
 			})
-		}
+		},
+
 	}
 }
 </script>

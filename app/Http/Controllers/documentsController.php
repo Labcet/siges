@@ -114,22 +114,19 @@ class documentsController extends Controller
                 'dni_solicitante' => $request->dni_solicitante,
                 'ruc_solicitante' => $request->ruc_solicitante,
                 'observacion' => $request->observacion,
-                'doc_adjunto' => $request->doc_adjunto
-            ]);
-        //return $request->nombre_oficina;
+                'doc_adjunto' => $request->doc_adjunto,
+                'oficina_actual' => $request->oficina_actual
+        ]);
         return response()->json([
             'mensaje' => 'actualizado'
         ]);
+    
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
+        $ruta = ruta::find($id);
+        $ruta->delete();
         $documents = documents::find($id);
         $documents->delete();
         return response()->json([

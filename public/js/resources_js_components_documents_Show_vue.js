@@ -74,6 +74,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "documentos",
   data: function data() {
@@ -106,7 +108,8 @@ __webpack_require__.r(__webpack_exports__);
           console.log(error);
         });
       }
-    }
+    },
+    derivarDocumento: function derivarDocumento(id) {}
   }
 });
 
@@ -260,6 +263,8 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(documents.oficina_actual))]),
+                  _vm._v(" "),
                   _c(
                     "td",
                     [
@@ -352,6 +357,8 @@ var staticRenderFns = [
         _c("th", [_vm._v(" observacion ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" doc_adjunto ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" oficina_actual ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" acciones ")]),
       ]),

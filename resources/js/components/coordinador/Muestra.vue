@@ -28,15 +28,15 @@
 			  </thead>
 			<tbody>
 			   <tr v-for="coordinador in coordinadores" :key="coordinador.id">
-			      <td>{{coordinador.id}}</td>
-			      <td>{{coordinador.nombre}}</td>
-			      <td>{{coordinador.paterno}}</td>
-			      <td>{{coordinador.materno}}</td>
-			      <td>{{coordinador.direccion}}</td>
-			      <td>{{coordinador.dni}}</td>
-			      <td>{{coordinador.telefono}}</td>
-			      <td>{{coordinador.estado}}</td>
-			      <td>{{coordinador.oficina_id}}</td>
+			      <td>{{coordinador.id}} </td>
+			      <td>{{coordinador.nombre}} </td>
+			      <td>{{coordinador.paterno}} </td>
+			      <td>{{coordinador.materno}} </td>
+			      <td>{{coordinador.direccion}} </td>
+			      <td>{{coordinador.dni}} </td>
+			      <td>{{coordinador.telefono}} </td>
+			      <td>{{coordinador.estado}} </td>
+			      <td>{{coordinador.oficina_id}} </td>
 			      <td> 
 			      	<router-link :to='{name:"editarCoordinadores", params:{id:coordinador.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
 			      	<div v-if="is('administrador')">

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
-					<div class="card-header"><h4>Crear Coordinador</h4></div>
+					<div class="card-header"><h4> Crear Coordinador </h4></div>
 					
 					<div class="card-body">
 						<form @submit.prevent="crea">
@@ -58,12 +58,7 @@
 										<input type="password" class="form-control" v-model="coordinador.password">
 									</div>
 								</div>
-								<div class="col-12 mb-2">
-									<div class="form-group">
-										<label>Rol </label>
-										<input type="text" class="form-control" v-model="coordinador.role">
-									</div>
-								</div>
+
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
@@ -94,7 +89,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 </template>
 <script>
 export default{
@@ -139,7 +134,7 @@ export default{
 				alert(error);
 				console.log(error)
 			})
-			//console.log(this.coordinador.oficina_id);
+			
 		},
 
 		getOficinas(){
