@@ -114,14 +114,11 @@ export default{
 
 		}
 	},
-
-     mounted: function(){
-
-		this.getOficinas()
-	 },
 		
 	mounted(){
-		this.buscarCoordinador()
+
+		this.buscarCoordinador(),
+		this.getOficinas()
 	},
 
 	methods:{

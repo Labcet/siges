@@ -146,7 +146,9 @@ __webpack_require__.r(__webpack_exports__);
         observacion: "",
         doc_adjunto: "",
         oficina_actual: "",
-        user_id: this.$userId
+        ciclo: 1,
+        user_id: this.$userId,
+        user_id_destino: this.$userId
       }
     };
   },

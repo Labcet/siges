@@ -76,46 +76,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "documentos",
   data: function data() {
     return {
-      documentos: []
+      documentos: [],
+      user_id: this.$userId,
+      user_oficina: ""
     };
   },
   mounted: function mounted() {
     this.showDocuments();
+    this.getUserOficina();
   },
   methods: {
     showDocuments: function showDocuments() {
       var _this = this;
 
-      axios.get('/api/documentos').then(function (response) {
+      axios.get('/api/showDocuments/' + this.user_id).then(function (response) {
         _this.documentos = response.data;
       })["catch"](function (error) {
-        alert(error);
-        console.log(error);
+        alert(error); //console.log(error)
+      });
+    },
+    getUserOficina: function getUserOficina() {
+      var _this2 = this;
+
+      axios.get('/api/getUserOficina/' + this.user_id).then(function (response) {
+        _this2.user_oficina = response.data;
+        console.log(_this2.user_oficina);
+      })["catch"](function (error) {
+        alert(error); //console.log(error)
       });
     },
     borrarDocumento: function borrarDocumento(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       if (confirm("¿confirma eliminar el registro")) {
         axios["delete"]('/api/documentos/' + id).then(function (response) {
-          _this2.showDocuments();
+          _this3.showDocuments();
         })["catch"](function (error) {
-          alert(error);
-          console.log(error);
+          alert(error); //console.log(error)
         });
       }
     },
     derivarDocumento: function derivarDocumento(id) {
+      var _this4 = this;
+
       if (confirm("¿confirma derivar el registro")) {
-        axios.get('/api/documentos/derivarDoc' + id).then(function (response) {
-          console.log(response.data);
+        axios.get('/api/derivarDoc/' + id).then(function (response) {
+          //console.log(response.data);
+          _this4.$router.push({
+            name: "mostrarDocumentos"
+          });
         })["catch"](function (error) {
-          alert(error);
-          console.log(error);
+          alert(error); //console.log(error)
         });
       }
     }
@@ -249,7 +265,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(documents.fecha_salida))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.hora_ingreso))]),
+                  _c("td", [_vm._v(_vm._s(documents.hora_salida))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(documents.num_folios))]),
                   _vm._v(" "),
@@ -274,56 +290,61 @@ var render = function () {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(documents.oficina_actual))]),
                   _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-info",
-                          attrs: {
-                            to: {
-                              name: "editarDocumentos",
-                              params: { id: documents.id },
-                            },
-                          },
-                        },
-                        [_c("i", { staticClass: "far fa-edit" })]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-danger ",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.borrarDocumento(documents.id)
-                            },
-                          },
-                        },
-                        [_c("i", { staticClass: "far fa-trash-alt" })]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-danger ",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.derivarDocumento(documents.id)
-                            },
-                          },
-                        },
+                  _c("td", [_vm._v(_vm._s(documents.ciclo))]),
+                  _vm._v(" "),
+                  documents.oficina_actual == _vm.user_oficina &&
+                  documents.oficina_actual != 6
+                    ? _c(
+                        "td",
                         [
-                          _vm._v("D"),
-                          _c("i", { staticClass: "far fa-trash-alt" }),
-                        ]
-                      ),
-                    ],
-                    1
-                  ),
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "btn btn-info",
+                              attrs: {
+                                to: {
+                                  name: "editarDocumentos",
+                                  params: { id: documents.id },
+                                },
+                              },
+                            },
+                            [_c("i", { staticClass: "far fa-edit" })]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-danger ",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.borrarDocumento(documents.id)
+                                },
+                              },
+                            },
+                            [_c("i", { staticClass: "far fa-trash-alt" })]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-danger ",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.derivarDocumento(documents.id)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v("D"),
+                              _c("i", { staticClass: "far fa-trash-alt" }),
+                            ]
+                          ),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ])
               }),
               0
@@ -368,6 +389,8 @@ var staticRenderFns = [
         _c("th", [_vm._v(" doc_adjunto ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" oficina_actual ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Ciclo ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" acciones ")]),
       ]),

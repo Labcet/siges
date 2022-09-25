@@ -20,8 +20,8 @@ class CreateDocumentosTable extends Migration
             $table->char('estado', 1);
             $table->date('fecha_ingreso');
             $table->time('hora_ingreso');
-            $table->date('fecha_salida');
-            $table->time('hora_salida');
+            $table->date('fecha_salida')->nullable();
+            $table->time('hora_salida')->nullable();
             $table->double('num_folios');
             $table->char('dni_solicitante', 8);
             $table->char('ruc_solicitante', 11)->nullable();
@@ -29,8 +29,11 @@ class CreateDocumentosTable extends Migration
             $table->binary('doc_adjunto');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id_destino');
+            $table->foreign('user_id_destino')->references('id')->on('users');
             $table->unsignedBigInteger('oficina_actual');
             $table->foreign('oficina_actual')->references('id')->on('oficinas');
+            $table->integer('ciclo');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
           

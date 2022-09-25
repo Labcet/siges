@@ -117,27 +117,27 @@
 export default{
 	name:"edit-Documentos",
 	data(){
-	return{
+		return{
 
-	oficinas: [],
+			oficinas: [],
 
-		documents:{
-			codigo:"",
-			prioridad:"",
-			estado:"",
-			fecha_ingreso:"",
-			hora_ingreso:"",
-			fecha_salida:"",
-			hora_salida:"",
-			num_folios:"",
-			dni_solicitante:"",
-			ruc_solicitante:"",
-			observacion:"",
-			doc_adjunto:"",
-			oficina_actual:"",
-			user_id: this.$userId
-		
-		}
+			documents:{
+				codigo:"",
+				prioridad:"",
+				estado:"",
+				fecha_ingreso:"",
+				hora_ingreso:"",
+				fecha_salida:"",
+				hora_salida:"",
+				num_folios:"",
+				dni_solicitante:"",
+				ruc_solicitante:"",
+				observacion:"",
+				doc_adjunto:"",
+				oficina_actual:"",
+				user_id: this.$userId
+			
+			}
 
 		}
 	},

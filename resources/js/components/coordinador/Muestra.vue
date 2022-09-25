@@ -59,7 +59,7 @@ export default{
 	name:"coordinadores",
 	data(){
 		return{
-			 coordinadores:[]
+			coordinadores:[]
 		}
 	},
 	mounted(){

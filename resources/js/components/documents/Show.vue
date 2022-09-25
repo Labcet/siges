@@ -26,6 +26,7 @@
 			 	<th> observacion </th>
 			 	<th> doc_adjunto </th>
 			 	<th> oficina_actual </th>
+			 	<th> Ciclo </th>
 			 	<th> acciones </th>
 			 </tr>
 			  </thead>
@@ -38,20 +39,20 @@
 			      <td>{{documents.fecha_ingreso}}</td>
 			      <td>{{documents.hora_ingreso}}</td>
 			      <td>{{documents.fecha_salida}}</td>
-			      <td>{{documents.hora_ingreso}}</td>
+			      <td>{{documents.hora_salida}}</td>
 			      <td>{{documents.num_folios}}</td>
 			      <td>{{documents.dni_solicitante}}</td>
 			      <td>{{documents.ruc_solicitante}}</td>
 			      <td>{{documents.observacion}}</td>
 			      <td><a download=documento_Adjunto :href="documents.doc_adjunto">PDF</a></td>
 			      <td>{{documents.oficina_actual}}</td>
+			      <td>{{documents.ciclo}}</td>
 
-			      <td> 
+			      <td v-if="documents.oficina_actual == user_oficina && documents.oficina_actual != 6">
 			      	<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' class="btn btn-info"><i class="far fa-edit"></i></router-link>
 			      	<a type="button" @click="borrarDocumento(documents.id)" class="btn btn-danger "><i class="far fa-trash-alt"></i></a>
 			      	<a type="button" @click="derivarDocumento(documents.id)" class="btn btn-danger ">D<i class="far fa-trash-alt"></i></a>
-
-			       </td>
+			      </td>
 			   </tr>
 			</tbody>
 		</table>
@@ -68,26 +69,44 @@ export default{
 	name:"documentos",
 	data(){
 		return{
-			 documentos:[]
+			documentos:[],
+			user_id: this.$userId,
+			user_oficina: ""
 		}
 	},
 
 
 	mounted(){
+
 		this.showDocuments()
+		this.getUserOficina()
 	},
 
 	methods:{
 
 		showDocuments(){
 
-			axios.get('/api/documentos')
+			axios.get('/api/showDocuments/' + this.user_id)
 			.then(response=>{
-				this.documentos=response.data
+				this.documentos = response.data
 			})
 			.catch(error=>{
 				alert(error);
-				console.log(error)
+				//console.log(error)
+			})
+		},
+
+		getUserOficina(){
+
+			axios.get('/api/getUserOficina/' + this.user_id)
+			.then(response=>{
+
+				this.user_oficina = response.data;
+				console.log(this.user_oficina);
+			})
+			.catch(error=>{
+				alert(error);
+				//console.log(error)
 			})
 		},
 
@@ -100,20 +119,21 @@ export default{
 				})
 				.catch(error=>{
 					alert(error);
-					console.log(error)
+					//console.log(error)
 				})			
 			}
 		},
 
 		derivarDocumento(id){
 			if(confirm("¿confirma derivar el registro")){
-				axios.get('/api/documentos/derivarDoc' + id)
+				axios.get('/api/derivarDoc/' + id)
 				.then(response=>{
-				console.log(response.data);
+					//console.log(response.data);
+					this.$router.push({name:"mostrarDocumentos"})
 				})
 				.catch(error=>{
 					alert(error);
-					console.log(error)
+					//console.log(error)
 				})			
 			}
 		

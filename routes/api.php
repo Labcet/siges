@@ -32,6 +32,12 @@ Route::get('consultaOficina', function(){
 
 Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy','derivarDoc']);
 
+Route::get('showDocuments/{id}', [App\Http\Controllers\documentsController::class, 'showDocuments']);
+
+Route::get('getUserOficina/{id}', [App\Http\Controllers\documentsController::class, 'getUserOficina']);
+
+Route::get('derivarDoc/{id}', [App\Http\Controllers\documentsController::class, 'derivarDoc']);
+
 Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);
 
 //Route::resource('Coor', resource\components\coordinador::class)->only (['crea.vue']);

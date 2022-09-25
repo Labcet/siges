@@ -11,10 +11,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var _name$data$mounted$mo;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -108,7 +104,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_name$data$mounted$mo = {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
     return {
@@ -128,59 +124,58 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
-    this.getOficinas();
-  }
-}, _defineProperty(_name$data$mounted$mo, "mounted", function mounted() {
-  this.buscarCoordinador();
-}), _defineProperty(_name$data$mounted$mo, "methods", {
-  buscarCoordinador: function buscarCoordinador() {
-    var _this = this;
-
-    axios.get('/api/coordinadores/' + this.$route.params.id).then(function (response) {
-      var _response$data = response.data,
-          nombre = _response$data.nombre,
-          paterno = _response$data.paterno,
-          materno = _response$data.materno,
-          direccion = _response$data.direccion,
-          dni = _response$data.dni,
-          telefono = _response$data.telefono,
-          estado = _response$data.estado,
-          oficina_id = _response$data.oficina_id;
-      _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, //this.coordinador.email = email,
-      //this.coordinador.password = password,
-      _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
-    })["catch"](function (error) {
-      console.log(error);
-    });
+    this.buscarCoordinador(), this.getOficinas();
   },
-  update: function update() {
-    var _this2 = this;
+  methods: {
+    buscarCoordinador: function buscarCoordinador() {
+      var _this = this;
 
-    var data = {
-      id: this.$route.params.id,
-      oficina: this.coordinador
-    };
-    axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador).then(function (response) {
-      _this2.$router.push({
-        name: "mostrarCoordinadores"
+      axios.get('/api/coordinadores/' + this.$route.params.id).then(function (response) {
+        var _response$data = response.data,
+            nombre = _response$data.nombre,
+            paterno = _response$data.paterno,
+            materno = _response$data.materno,
+            direccion = _response$data.direccion,
+            dni = _response$data.dni,
+            telefono = _response$data.telefono,
+            estado = _response$data.estado,
+            oficina_id = _response$data.oficina_id;
+        _this.coordinador.nombre = nombre, _this.coordinador.paterno = paterno, _this.coordinador.materno = materno, _this.coordinador.direccion = direccion, _this.coordinador.dni = dni, _this.coordinador.telefono = telefono, //this.coordinador.email = email,
+        //this.coordinador.password = password,
+        _this.coordinador.estado = estado, _this.coordinador.oficina_id = oficina_id;
+      })["catch"](function (error) {
+        console.log(error);
       });
-    })["catch"](function (error) {
-      alert(error);
-      console.log(error);
-    });
-  },
-  getOficinas: function getOficinas() {
-    var _this3 = this;
+    },
+    update: function update() {
+      var _this2 = this;
 
-    axios.get('/api/consultaOficina').then(function (response) {
-      console.log(response.data);
-      _this3.oficinas = response.data;
-    })["catch"](function (error) {
-      alert(error);
-      console.log(error);
-    });
+      var data = {
+        id: this.$route.params.id,
+        oficina: this.coordinador
+      };
+      axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador).then(function (response) {
+        _this2.$router.push({
+          name: "mostrarCoordinadores"
+        });
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
+    },
+    getOficinas: function getOficinas() {
+      var _this3 = this;
+
+      axios.get('/api/consultaOficina').then(function (response) {
+        console.log(response.data);
+        _this3.oficinas = response.data;
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
+    }
   }
-}), _name$data$mounted$mo);
+});
 
 /***/ }),
 
