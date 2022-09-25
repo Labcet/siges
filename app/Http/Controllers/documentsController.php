@@ -115,7 +115,7 @@ class documentsController extends Controller
                 'ruc_solicitante' => $request->ruc_solicitante,
                 'observacion' => $request->observacion,
                 'doc_adjunto' => $request->doc_adjunto,
-                'oficina_actual' => $request->oficina_actual
+                'oficina_actual' => $request->oficina_actual 
         ]);
         return response()->json([
             'mensaje' => 'actualizado'
@@ -133,4 +133,46 @@ class documentsController extends Controller
             'mensaje' => 'eliminado'
         ]);
     }
+
+
+    public function derivarDoc(Request $id)
+    {
+  
+        $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
+        
+        $user_data = User::where('id',$request->user_id)->get();
+        
+        $date = Carbon::now();
+
+        ruta::create([
+            'documento_id'=> $idLastdocuments->id,
+            'oficina_id' => $user_data[0]->oficina_id,
+            'descripcion' => 'descripcion',
+            'fecha_ingreso' => $date->format('y-m-d'),
+            'hora_ingreso' => $date->toTimeString(),
+            'fecha_salida' => $date->format('y-m-d'),
+            'hora_salida' => $date->toTimeString()
+         ]);
+        
+        documents::where('Id',$id)
+        ->update([
+            'codigo' => $request->codigo,
+            'prioridad' => $request->prioridad,
+            'estado' => $request->estado,
+            'fecha_ingreso' => $request->fecha_ingreso,
+            'hora_ingreso' => $request->hora_ingreso,
+            'fecha_salida' => $request->fecha_salida,
+            'hora_salida' => $request->hora_salida,
+            'num_folios' => $request->num_folios,
+            'dni_solicitante' => $request->dni_solicitante,
+            'ruc_solicitante' => $request->ruc_solicitante,
+            'observacion' => $request->observacion,
+            'doc_adjunto' => $request->doc_adjunto,
+            'oficina_actual' => $user_data[0]->oficina_actual + 1
+        ]); 
+
+        return response()->json($documents);
+    }
+
+    
 }

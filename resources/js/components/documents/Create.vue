@@ -91,9 +91,10 @@
 										<input type="file" v-on:change="archivo" class="form-control">
 									</div>
 								</div>
+
 								<div class="col-12 mb-2">
 									<div class="form-group">
-									    <label>Oficina Actual </label>
+									    <label>Oficina Actual</label>
 									   	<select name="oficina_actual" id="inputOficina_actual" class="form-control" v-model="documents.oficina_actual">
 									  	 	<option v-for="oficina in oficinas" :value="oficina.id">{{oficina.nombre_oficina}}</option>
 									  	</select>
@@ -171,7 +172,7 @@ export default{
                 };
 		},
 
-				getOficinas(){
+		getOficinas(){
 
 			axios.get('/api/consultaOficina')
 			.then(response=>{

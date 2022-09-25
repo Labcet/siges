@@ -72,6 +72,7 @@ export default{
 		}
 	},
 
+
 	mounted(){
 		this.showDocuments()
 	},
@@ -105,6 +106,17 @@ export default{
 		},
 
 		derivarDocumento(id){
+			if(confirm("¿confirma derivar el registro")){
+				axios.get('/api/documentos/derivarDoc' + id)
+				.then(response=>{
+				console.log(response.data);
+				})
+				.catch(error=>{
+					alert(error);
+					console.log(error)
+				})			
+			}
+		
 
 		},
 

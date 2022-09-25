@@ -30,7 +30,7 @@ Route::get('consultaOficina', function(){
     return $offic;
 });
 
-Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy']);
+Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show','destroy','derivarDoc']);
 
 Route::resource('rutas', App\Http\Controllers\rutaController::class)->only (['index','store', 'update', 'show','destroy']);
 

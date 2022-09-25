@@ -109,7 +109,16 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
-    derivarDocumento: function derivarDocumento(id) {}
+    derivarDocumento: function derivarDocumento(id) {
+      if (confirm("¿confirma derivar el registro")) {
+        axios.get('/api/documentos/derivarDoc' + id).then(function (response) {
+          console.log(response.data);
+        })["catch"](function (error) {
+          alert(error);
+          console.log(error);
+        });
+      }
+    }
   }
 });
 

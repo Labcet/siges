@@ -108,19 +108,5 @@ class rutacontroller extends Controller
         ]);
     }
 
-    /**
-     * public function derive(Request $oficina_id)
-    {
-  
-        if ($oficina_id==1) {
-            $oficina_id= oficina::all();
-            
-        }
-        elseif () {
-            $oficina_id =>'2';
-        }
-         return response()->json($rutas);
-    }
-    **/
        
 }

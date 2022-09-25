@@ -126,6 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
@@ -710,7 +711,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Oficina Actual ")]),
+                      _c("label", [_vm._v("Oficina Actual")]),
                       _vm._v(" "),
                       _c(
                         "select",
