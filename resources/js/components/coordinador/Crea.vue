@@ -42,13 +42,13 @@
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Telefono</label>
+										<label>Teléfono</label>
 										<input type="text" class="form-control" v-model="coordinador.telefono">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>email </label>
+										<label>Email </label>
 										<input type="email" class="form-control" v-model="coordinador.email">
 									</div>
 								</div>
@@ -88,67 +88,62 @@
 				</div>				
 			</div>
 		</div>
-	</div>
-	
+	</div>	
 </template>
+
 <script>
-export default{
-	name:"crea-Coordinador",
-	data(){
-		return{
-
-			oficinas: [],
-
-			//selected_oficina_id: 1,
-
-			coordinador:{
-				nombre:"",
-				paterno:"",
-				materno:"",
-				direccion:"",
-				dni:"",
-				telefono:"",
-				email:"",
-				password:"",
-				role:"",
-				estado:"",
-				oficina_id:"",
+	export default{
+		name:"crea-Coordinador",
+		data(){
+				return{
+				oficinas: [],
+					coordinador:{
+						nombre:"",
+						paterno:"",
+						materno:"",
+						direccion:"",
+						dni:"",
+						telefono:"",
+						email:"",
+						password:"",
+						role:"",
+						estado:"",
+						oficina_id:"",
+					}
 			}
-
-		}
-	},
-
-	mounted: function(){
-
-		this.getOficinas()
-	},
-
-	methods:{
-		crea(){
-
-			axios.post('/api/coordinadores', this.coordinador)
-			.then(response=>{
-				this.$router.push({name:"mostrarCoordinadores"})
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
-			
 		},
 
-		getOficinas(){
+		mounted: function(){
 
-			axios.get('/api/consultaOficina')
-			.then(response=>{
-				console.log(response.data);
-				this.oficinas = response.data;
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
+			this.getOficinas()
+		},
+
+		methods:{
+			crea(){
+
+				axios.post('/api/coordinadores', this.coordinador)
+				.then(response=>{
+					this.$router.push({name:"mostrarCoordinadores"})
+				})
+				.catch(error=>{
+					alert(error);
+					console.log(error)
+				})
+				
+			},
+
+			getOficinas(){
+
+				axios.get('/api/consultaOficina')
+				.then(response=>{
+					console.log(response.data);
+					this.oficinas = response.data;
+				})
+				.catch(error=>{
+					alert(error);
+					console.log(error)
+				})
+			}
 		}
 	}
-}
 </script>

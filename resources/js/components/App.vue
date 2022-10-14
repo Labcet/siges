@@ -2,7 +2,8 @@
 	<main>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">MDAI</a>
+				<a class="navbar-brand" href="#"> MDAI </a>
+
 				<!--<p>{{user()}}</p>-->
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,22 +16,30 @@
 						  <!--<router-link exact-active-class="active" to="/"class="nav-link active" aria-current="page">Inicio </router-link>-->
 						  <!--<a href="{{ route('dashboard')}}" class="font-bold py-3 px-4 rounded-md bg-red-500 hover:bg-red-600">Inicio</a>-->
 						</li>
+						
 						<li class="nav-item">
-						  	<router-link exact-active-class="active" to="/Dashboard/mostrarOficinas" class="nav-link">Oficinas </router-link>
+						  	<router-link exact-active-class="active" to="/Dashboard/mostrarOficinas" class="nav-link"> OFICINAS </router-link>
 						</li>
 
 						<li class="nav-item">
-						  	<router-link exact-active-class="active" to="/Dashboard/mostrarCoordinadores" class="nav-link">Coordinadores </router-link>
+						  	<router-link exact-active-class="active" to="/Dashboard/mostrarCoordinadores" class="nav-link">COORDINADORES </router-link>
 						</li>
 
 						<li class="nav-item">
-						  	<router-link exact-active-class="active" to="/Dashboard/mostrarDocumentos" class="nav-link">Documentos </router-link>
+						  	<router-link exact-active-class="active" to="/Dashboard/mostrarDocumentos" class="nav-link"> DOCUMENTOS </router-link>
 						</li>
+
+						
 						<div v-if="is('administrador')">
 							<li class="nav-item">
-								<router-link exact-active-class="active" to="/Dashboard/mostrarRutas" class="nav-link"> Rutas </router-link>
+								<router-link exact-active-class="active" to="/Dashboard/mostrarRutas" class="nav-link"> RUTAS </router-link>
 							</li>
 						</div>
+						
+						<li class="nav-item">
+						  	<router-link exact-active-class="active" to="/Dashboard/MostrarCuadro" class="nav-link"> DASHBOARD </router-link>
+						</li>
+
 					</ul>
 					<form class="d-flex">
 						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

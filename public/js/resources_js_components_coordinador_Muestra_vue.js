@@ -63,10 +63,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -257,7 +253,6 @@ var render = function () {
                       _c(
                         "router-link",
                         {
-                          staticClass: "btn btn-info",
                           attrs: {
                             to: {
                               name: "editarCoordinadores",
@@ -265,7 +260,12 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("i", { staticClass: "far fa-edit" })]
+                        [
+                          _c("font-awesome-icon", {
+                            attrs: { icon: "user-edit" },
+                          }),
+                        ],
+                        1
                       ),
                       _vm._v(" "),
                       _vm.is("administrador")
@@ -273,7 +273,6 @@ var render = function () {
                             _c(
                               "a",
                               {
-                                staticClass: "btn btn-danger ",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function ($event) {
@@ -281,7 +280,12 @@ var render = function () {
                                   },
                                 },
                               },
-                              [_c("i", { staticClass: "far fa-trash-alt" })]
+                              [
+                                _c("font-awesome-icon", {
+                                  attrs: { icon: "trash-alt" },
+                                }),
+                              ],
+                              1
                             ),
                           ])
                         : _vm._e(),
@@ -317,7 +321,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v(" Dni ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" Telefono ")]),
+        _c("th", [_vm._v(" Teléfono ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" Estado ")]),
         _vm._v(" "),

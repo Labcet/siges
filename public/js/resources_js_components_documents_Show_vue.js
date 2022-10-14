@@ -73,10 +73,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "documentos",
   data: function data() {
@@ -300,7 +296,6 @@ var render = function () {
                           _c(
                             "router-link",
                             {
-                              staticClass: "btn btn-info",
                               attrs: {
                                 to: {
                                   name: "editarDocumentos",
@@ -308,13 +303,17 @@ var render = function () {
                                 },
                               },
                             },
-                            [_c("i", { staticClass: "far fa-edit" })]
+                            [
+                              _c("font-awesome-icon", {
+                                attrs: { icon: "user-edit" },
+                              }),
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
                             "a",
                             {
-                              staticClass: "btn btn-danger ",
                               attrs: { type: "button" },
                               on: {
                                 click: function ($event) {
@@ -322,7 +321,12 @@ var render = function () {
                                 },
                               },
                             },
-                            [_c("i", { staticClass: "far fa-trash-alt" })]
+                            [
+                              _c("font-awesome-icon", {
+                                attrs: { icon: "trash-alt" },
+                              }),
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
@@ -364,35 +368,35 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v(" ID ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" codigo ")]),
+        _c("th", [_vm._v(" Código ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" prioridad ")]),
+        _c("th", [_vm._v(" Prioridad ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" estado ")]),
+        _c("th", [_vm._v(" Estado ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" fecha_ingreso ")]),
+        _c("th", [_vm._v(" Fecha Ingreso ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" hora_ingreso ")]),
+        _c("th", [_vm._v(" Hora Ingreso ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" fecha_salida ")]),
+        _c("th", [_vm._v(" Fecha Salida ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" hora_salida ")]),
+        _c("th", [_vm._v(" Hora Salida ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" num_folios ")]),
+        _c("th", [_vm._v(" N° de Folios ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" dni_solicitante ")]),
+        _c("th", [_vm._v(" DNI Solicitante ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" ruc_solicitante ")]),
+        _c("th", [_vm._v(" RUC Solicitante ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" observacion ")]),
+        _c("th", [_vm._v(" Observación ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" doc_adjunto ")]),
+        _c("th", [_vm._v(" Documento Adjunto ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" oficina_actual ")]),
+        _c("th", [_vm._v(" Oficina Actual ")]),
         _vm._v(" "),
         _c("th", [_vm._v(" Ciclo ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" acciones ")]),
+        _c("th", [_vm._v(" Acciones ")]),
       ]),
     ])
   },

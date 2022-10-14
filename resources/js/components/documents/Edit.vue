@@ -11,7 +11,7 @@
 							<div class="row">
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Codigo</label>
+										<label>Código</label>
 										<input type="text" class="form-control" v-model="documents.codigo">
 									</div>
 								</div>
@@ -75,7 +75,7 @@
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>RUC solicitante </label>
+										<label>RUC Solicitante </label>
 										<input type="text" class="form-control" v-model="documents.ruc_solicitante">
 									</div>
 								</div>
@@ -111,102 +111,96 @@
 			</div>
 		</div>
 	</div>
-
 </template>
+
 <script>
-export default{
-	name:"edit-Documentos",
-	data(){
-		return{
+	export default{
+		name:"edit-Documentos",
+		data(){
+			return{
 
-			oficinas: [],
+				oficinas: [],
 
-			documents:{
-				codigo:"",
-				prioridad:"",
-				estado:"",
-				fecha_ingreso:"",
-				hora_ingreso:"",
-				fecha_salida:"",
-				hora_salida:"",
-				num_folios:"",
-				dni_solicitante:"",
-				ruc_solicitante:"",
-				observacion:"",
-				doc_adjunto:"",
-				oficina_actual:"",
-				user_id: this.$userId
-			
+				documents:{
+					codigo:"",
+					prioridad:"",
+					estado:"",
+					fecha_ingreso:"",
+					hora_ingreso:"",
+					fecha_salida:"",
+					hora_salida:"",
+					num_folios:"",
+					dni_solicitante:"",
+					ruc_solicitante:"",
+					observacion:"",
+					doc_adjunto:"",
+					oficina_actual:"",
+					user_id: this.$userId
+				}
 			}
-
-		}
-	},
-
-	mounted: function(){
-
-		this.getOficinas()
-	},
+		},
 	
-	mounted(){
-		this.buscarDocuments()
-	},
-	methods:{
-		
-		buscarDocuments(){
-		
-			axios.get('/api/documentos/' + this.$route.params.id)
+		mounted(){
+			this.buscarDocuments(),
+			this.getOficinas()
+		},
+
+		methods:{
+
+			buscarDocuments(){
+				axios.get('/api/documentos/' + this.$route.params.id)
+					.then(response=>{
+						const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, oficina_actual, user_id} = response.data
+						this.documents.codigo = codigo,
+						this.documents.prioridad = prioridad,
+						this.documents.estado = estado,
+						this.documents.fecha_ingreso = fecha_ingreso,
+						this.documents.hora_ingreso = hora_ingreso,
+						this.documents.fecha_salida = fecha_salida,
+						this.documents.hora_salida = hora_salida,
+						this.documents.num_folios = num_folios,
+						this.documents.dni_solicitante = dni_solicitante,
+						this.documents.ruc_solicitante = ruc_solicitante,
+						this.documents.observacion = observacion,
+						this.documents.doc_adjunto = doc_adjunto,
+						this.documents.oficina_actual = oficina_actual
+					})
+					.catch(error=>{
+						alert(error);
+						console.log(error)
+					})
+			},
+			
+			actualiza(){
+	        	const data = {
+					id: this.$route.params.id,
+					oficina: this.documents 
+				};
+
+				axios.put('/api/documentos/' + this.$route.params.id, this.documents)
 				.then(response=>{
-					const{codigo, prioridad, estado, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida, num_folios, dni_solicitante, ruc_solicitante, observacion, doc_adjunto, oficina_actual, user_id} = response.data
-					this.documents.codigo = codigo,
-					this.documents.prioridad = prioridad,
-					this.documents.estado = estado,
-					this.documents.fecha_ingreso = fecha_ingreso,
-					this.documents.hora_ingreso = hora_ingreso,
-					this.documents.fecha_salida = fecha_salida,
-					this.documents.hora_salida = hora_salida,
-					this.documents.num_folios = num_folios,
-					this.documents.dni_solicitante = dni_solicitante,
-					this.documents.ruc_solicitante = ruc_solicitante,
-					this.documents.observacion = observacion,
-					this.documents.doc_adjunto = doc_adjunto,
-					this.documents.oficina_actual = oficina_actual
+					this.$router.push({
+						name:"mostrarDocumentos"
+					})
 				})
 				.catch(error=>{
 					alert(error);
 					console.log(error)
 				})
-		},
-		
-		actualiza(){
-        		const data = {
-				id: this.$route.params.id,
-				oficina: this.documents 
-			};
+			},
 
-			axios.put('/api/documentos/' + this.$route.params.id, this.documents)
-			.then(response=>{
-				this.$router.push({
-					name:"mostrarDocumentos"
+			getOficinas(){
+
+				axios.get('/api/consultaOficina')
+				.then(response=>{
+					console.log(response.data);
+					this.oficinas = response.data;
 				})
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
-		},
-
-		getOficinas(){
-
-			axios.get('/api/consultaOficina')
-			.then(response=>{
-				console.log(response.data);
-				this.oficinas = response.data;
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
+				.catch(error=>{
+					alert(error);
+					console.log(error)
+				})
+			}
 		}
 	}
-}
 </script>

@@ -19,6 +19,10 @@ const mostrarRutasComponent = ()=> import('./components/ruta/MostrarRuta.vue');
 const crearRutasComponent = ()=> import('./components/ruta/CrearRuta.vue');
 const editarRutasComponent = ()=> import('./components/ruta/EditarRuta.vue');
 
+//componete para dashboard
+const MostrarCuadroComponent = ()=> import('./components/cuadro/mostrar_cuadro.vue');
+
+
 
 export const routes = [
 
@@ -87,6 +91,10 @@ export const routes = [
 	path: '/Dashboard/editarRutas/:id',
 	component:editarRutasComponent
 },
-
+{
+	name:'MostrarCuadro',
+	path: '/Dashboard/MostrarCuadro/',
+	component:MostrarCuadroComponent
+},
 
 ];

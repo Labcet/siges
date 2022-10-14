@@ -11,20 +11,20 @@
 							<div class="row">
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Documento id</label>
+										<label>ID Documento</label>
 										<input type="text" class="form-control" v-model="ruta.documento_id">
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label> Oficina id </label>
+										<label> ID Oficina</label>
 										<input type="text" class="form-control" v-model="ruta.oficina_id">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Descripcion </label>
+										<label>Descripción </label>
 										<input type="text" class="form-control" v-model="ruta.descripcion">
 									</div>
 								</div>
@@ -68,33 +68,32 @@
 	</div>
 </template>
 <script>
-export default{
-	name:"crear-Ruta",
-	data(){
-		return{
-			ruta:{
-				documento_id:"",
-				oficina_id:"",
-				descripcion:"",
-				fecha_ingreso:"",
-				hora_ingreso:"",
-				fecha_salida:"",
-				hora_salida:"",
+	export default{
+		name:"crear-Ruta",
+		data(){
+			return{
+				ruta:{
+					documento_id:"",
+					oficina_id:"",
+					descripcion:"",
+					fecha_ingreso:"",
+					hora_ingreso:"",
+					fecha_salida:"",
+					hora_salida:"",
+				}
 			}
-		}
-	},
-
-
-	methods:{
-		crearRut(){
-			axios.post('/api/rutas', this.ruta)
-			.then(response=>{
-				this.$router.push({name:"mostrarRutas"})
-			})
-			.catch(error=>{
-				console.log(error)
-			})
 		},
+
+		methods:{
+			crearRut(){
+				axios.post('/api/rutas', this.ruta)
+				.then(response=>{
+					this.$router.push({name:"mostrarRutas"})
+				})
+				.catch(error=>{
+					console.log(error)
+				})
+			},
+		}
 	}
-}
 </script>

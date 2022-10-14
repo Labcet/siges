@@ -54,13 +54,16 @@ class documentsController extends Controller
      */
     public function store(Request $request)
     {
+
         $Documentos=documents::create($request->post());
 
         $idLastdocuments=documents::select('id')->orderBy('id','desc')->first();
         
         $user_data = User::where('id',$request->user_id)->get();
         
-        $date = Carbon::now();
+        $date = Carbon::now('UTC');
+
+        $date->shiftTimezone('America/Lima');
 
         ruta::create([
             'documento_id'=> $idLastdocuments->id,

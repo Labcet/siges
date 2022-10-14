@@ -58,8 +58,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "oficinas",
   data: function data() {
@@ -205,7 +203,23 @@ var render = function () {
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "table-responsive" }, [
           _c("table", { staticClass: "table table-bordered" }, [
-            _vm._m(0),
+            _c("thead", { staticClass: "bg-primary text-white" }, [
+              _c("tr", [
+                _c("th", [_vm._v(" ID ")]),
+                _vm._v(" "),
+                _c("th", [_vm._v(" Nombre Oficina ")]),
+                _vm._v(" "),
+                _c("th", [_vm._v(" Jefe de la Oficina")]),
+                _vm._v(" "),
+                _c("th", [_vm._v(" Descripción ")]),
+                _vm._v(" "),
+                _c("th", [_vm._v(" Estado ")]),
+                _vm._v(" "),
+                _vm.is("administrador")
+                  ? _c("div", [_c("th", [_vm._v(" Acciones ")])])
+                  : _vm._e(),
+              ]),
+            ]),
             _vm._v(" "),
             _c(
               "tbody",
@@ -229,7 +243,6 @@ var render = function () {
                             _c(
                               "router-link",
                               {
-                                staticClass: "btn btn-info",
                                 attrs: {
                                   to: {
                                     name: "editarOficinas",
@@ -237,13 +250,17 @@ var render = function () {
                                   },
                                 },
                               },
-                              [_c("i", { staticClass: "bi bi-pencil-square" })]
+                              [
+                                _c("font-awesome-icon", {
+                                  attrs: { icon: "user-edit" },
+                                }),
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "a",
                               {
-                                staticClass: "btn btn-danger ",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function ($event) {
@@ -251,7 +268,12 @@ var render = function () {
                                   },
                                 },
                               },
-                              [_c("i", { staticClass: "bi bi-trash" })]
+                              [
+                                _c("font-awesome-icon", {
+                                  attrs: { icon: "trash-alt" },
+                                }),
+                              ],
+                              1
                             ),
                           ],
                           1
@@ -268,28 +290,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "bg-primary text-white" }, [
-      _c("tr", [
-        _c("th", [_vm._v(" ID ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" nombre_oficina ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" nombre_jefe ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" descripcion ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" estado ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v(" acciones ")]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

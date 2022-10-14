@@ -24,9 +24,14 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/vue-fontawesome": "^2.0.8",
         "bootstrap-icons": "^1.8.1",
+        "chart.js": "^3.9.1",
         "laravel-permission-to-vuejs": "^3.0.0",
         "vue-axios": "^3.4.1",
+        "vue-chartjs": "^4.1.2",
         "vue-router": "^3.5.3"
     }
 }

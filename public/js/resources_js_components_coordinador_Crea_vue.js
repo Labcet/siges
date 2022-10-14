@@ -109,7 +109,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       oficinas: [],
-      //selected_oficina_id: 1,
       coordinador: {
         nombre: "",
         paterno: "",
@@ -422,7 +421,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Telefono")]),
+                      _c("label", [_vm._v("Teléfono")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -454,7 +453,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("email ")]),
+                      _c("label", [_vm._v("Email ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [

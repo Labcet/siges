@@ -19,13 +19,13 @@
 
     	<nav class="flex py-5 bg-indigo-500 text-white">
             <div class="w-1/2 px-12 mr-auto">
-                <p class="text 2x1 font-bold"> SISTEMA DE GESTION </p>
+                <p class="text 2x1 font-bold"> SISTEMA DE GESTIÓN </p>
             </div>
 
             <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
                 @if(auth()->check())
                 <li class="mx-6">
-                    <p class="text-xl"> bienvenido <b>{{auth()->user()->name}}</b></p>
+                    <p class="text-xl"> Bienvenido <b>{{auth()->user()->name}}</b></p>
                 </li>
                 <li>
                     <a href="{{ route('Logn.destroy')}}" class="font-bold py-3 px-4 rounded-md bg-red-500 hover:bg-red-600">Log Out</a>

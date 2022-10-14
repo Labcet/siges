@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartController;
 
 Route::get('/', function () {
-  return view('welcome');
+  return view('login');
 })->middleware('guest');
 
 /* LOGIN */
@@ -24,10 +25,7 @@ Route::get('/Logout', [SessionController::class, 'destroy'])
 
 /* DASHBOARD */
 
-Route::get('/Dashboard', [UserController::class, 'dashboard'])
+Route::get('/Dashboard', [UserController::class,'dashboard'])
    ->middleware('auth')
    ->name('dashboard');
 
-/*Route::prefix('api')->middleware('auth')->group(function () {
-  Route::resource('documentos', App\Http\Controllers\documentsController::class)->only (['index','store', 'update', 'show', 'destroy']);
-});*/

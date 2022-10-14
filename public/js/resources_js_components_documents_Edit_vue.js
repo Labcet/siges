@@ -11,10 +11,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var _name$data$mounted$mo;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -130,7 +126,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_name$data$mounted$mo = {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "edit-Documentos",
   data: function data() {
     return {
@@ -154,64 +150,63 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
-    this.getOficinas();
-  }
-}, _defineProperty(_name$data$mounted$mo, "mounted", function mounted() {
-  this.buscarDocuments();
-}), _defineProperty(_name$data$mounted$mo, "methods", {
-  buscarDocuments: function buscarDocuments() {
-    var _this = this;
-
-    axios.get('/api/documentos/' + this.$route.params.id).then(function (response) {
-      var _response$data = response.data,
-          codigo = _response$data.codigo,
-          prioridad = _response$data.prioridad,
-          estado = _response$data.estado,
-          fecha_ingreso = _response$data.fecha_ingreso,
-          hora_ingreso = _response$data.hora_ingreso,
-          fecha_salida = _response$data.fecha_salida,
-          hora_salida = _response$data.hora_salida,
-          num_folios = _response$data.num_folios,
-          dni_solicitante = _response$data.dni_solicitante,
-          ruc_solicitante = _response$data.ruc_solicitante,
-          observacion = _response$data.observacion,
-          doc_adjunto = _response$data.doc_adjunto,
-          oficina_actual = _response$data.oficina_actual,
-          user_id = _response$data.user_id;
-      _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.oficina_actual = oficina_actual;
-    })["catch"](function (error) {
-      alert(error);
-      console.log(error);
-    });
+    this.buscarDocuments(), this.getOficinas();
   },
-  actualiza: function actualiza() {
-    var _this2 = this;
+  methods: {
+    buscarDocuments: function buscarDocuments() {
+      var _this = this;
 
-    var data = {
-      id: this.$route.params.id,
-      oficina: this.documents
-    };
-    axios.put('/api/documentos/' + this.$route.params.id, this.documents).then(function (response) {
-      _this2.$router.push({
-        name: "mostrarDocumentos"
+      axios.get('/api/documentos/' + this.$route.params.id).then(function (response) {
+        var _response$data = response.data,
+            codigo = _response$data.codigo,
+            prioridad = _response$data.prioridad,
+            estado = _response$data.estado,
+            fecha_ingreso = _response$data.fecha_ingreso,
+            hora_ingreso = _response$data.hora_ingreso,
+            fecha_salida = _response$data.fecha_salida,
+            hora_salida = _response$data.hora_salida,
+            num_folios = _response$data.num_folios,
+            dni_solicitante = _response$data.dni_solicitante,
+            ruc_solicitante = _response$data.ruc_solicitante,
+            observacion = _response$data.observacion,
+            doc_adjunto = _response$data.doc_adjunto,
+            oficina_actual = _response$data.oficina_actual,
+            user_id = _response$data.user_id;
+        _this.documents.codigo = codigo, _this.documents.prioridad = prioridad, _this.documents.estado = estado, _this.documents.fecha_ingreso = fecha_ingreso, _this.documents.hora_ingreso = hora_ingreso, _this.documents.fecha_salida = fecha_salida, _this.documents.hora_salida = hora_salida, _this.documents.num_folios = num_folios, _this.documents.dni_solicitante = dni_solicitante, _this.documents.ruc_solicitante = ruc_solicitante, _this.documents.observacion = observacion, _this.documents.doc_adjunto = doc_adjunto, _this.documents.oficina_actual = oficina_actual;
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
       });
-    })["catch"](function (error) {
-      alert(error);
-      console.log(error);
-    });
-  },
-  getOficinas: function getOficinas() {
-    var _this3 = this;
+    },
+    actualiza: function actualiza() {
+      var _this2 = this;
 
-    axios.get('/api/consultaOficina').then(function (response) {
-      console.log(response.data);
-      _this3.oficinas = response.data;
-    })["catch"](function (error) {
-      alert(error);
-      console.log(error);
-    });
+      var data = {
+        id: this.$route.params.id,
+        oficina: this.documents
+      };
+      axios.put('/api/documentos/' + this.$route.params.id, this.documents).then(function (response) {
+        _this2.$router.push({
+          name: "mostrarDocumentos"
+        });
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
+    },
+    getOficinas: function getOficinas() {
+      var _this3 = this;
+
+      axios.get('/api/consultaOficina').then(function (response) {
+        console.log(response.data);
+        _this3.oficinas = response.data;
+      })["catch"](function (error) {
+        alert(error);
+        console.log(error);
+      });
+    }
   }
-}), _name$data$mounted$mo);
+});
 
 /***/ }),
 
@@ -320,7 +315,7 @@ var render = function () {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Codigo")]),
+                      _c("label", [_vm._v("Código")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -659,7 +654,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("RUC solicitante ")]),
+                      _c("label", [_vm._v("RUC Solicitante ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [

@@ -15,6 +15,13 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { routes} from './routes';
 import Vue from 'vue';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrashAlt, faUserEdit} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+library.add(faTrashAlt, faUserEdit)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
 import LaravelPermissionToVueJS from 'laravel-permission-to-vuejs'
 
 Vue.use(VueRouter, VueAxios, axios, LaravelPermissionToVueJS);

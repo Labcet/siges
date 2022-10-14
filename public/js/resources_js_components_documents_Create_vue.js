@@ -125,8 +125,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "create-Documentos",
   data: function data() {
@@ -298,7 +296,7 @@ var render = function () {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Codigo")]),
+                      _c("label", [_vm._v("Código")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -573,7 +571,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("N° de folios ")]),
+                      _c("label", [_vm._v(" N° de folios ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -605,7 +603,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("DNI solicitante ")]),
+                      _c("label", [_vm._v("DNI Solicitante ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -637,7 +635,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("RUC solicitante ")]),
+                      _c("label", [_vm._v("RUC Solicitante ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -669,7 +667,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Observacion ")]),
+                      _c("label", [_vm._v("Observación ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [

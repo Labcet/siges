@@ -56,9 +56,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "rutas",
   data: function data() {
@@ -226,7 +223,6 @@ var render = function () {
                       _c(
                         "router-link",
                         {
-                          staticClass: "btn btn-info",
                           attrs: {
                             to: {
                               name: "editarRutas",
@@ -234,13 +230,17 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("i", { staticClass: "bi bi-pencil-square" })]
+                        [
+                          _c("font-awesome-icon", {
+                            attrs: { icon: "user-edit" },
+                          }),
+                        ],
+                        1
                       ),
                       _vm._v(" "),
                       _c(
                         "a",
                         {
-                          staticClass: "btn btn-danger ",
                           attrs: { type: "button" },
                           on: {
                             click: function ($event) {
@@ -248,7 +248,12 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("i", { staticClass: "bi bi-trash" })]
+                        [
+                          _c("font-awesome-icon", {
+                            attrs: { icon: "trash-alt" },
+                          }),
+                        ],
+                        1
                       ),
                     ],
                     1
@@ -272,19 +277,19 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v(" ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" documento_id ")]),
+        _c("th", [_vm._v(" ID Documento")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" oficina_id ")]),
+        _c("th", [_vm._v(" ID Oficina")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" fecha_ingreso ")]),
+        _c("th", [_vm._v(" Fecha Ingreso ")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" hora_ingreso ")]),
+        _c("th", [_vm._v(" Hora Ingreso")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" fecha_salida ")]),
+        _c("th", [_vm._v(" Fecha Salida")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" hora_salida ")]),
+        _c("th", [_vm._v(" Hora Salida")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" acciones ")]),
+        _c("th", [_vm._v(" Acciones ")]),
       ]),
     ])
   },

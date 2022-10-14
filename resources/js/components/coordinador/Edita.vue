@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
-					<div class="card-header"><h4>Edita Coordinador</h4></div>
+					<div class="card-header"><h4>Editar Coordinador</h4></div>
 					
 					<div class="card-body">
 						<form @submit.prevent="update">
@@ -12,20 +12,35 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Nombre </label>
+										<div v-if="is('administrador')">
 										<input type="text" class="form-control" v-model="coordinador.nombre">
+										</div>
+										<div v-if="is('coordinador')">
+										<input type="text" class="form-control" v-model="coordinador.nombre" readonly>
+										</div>
 									</div>
 								</div>
 
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Apellido Paterno </label>
+										<div v-if="is('administrador')">
 										<input type="text" class="form-control" v-model="coordinador.paterno">
+										</div>
+										<div v-if="is('coordinador')">
+										<input type="text" class="form-control" v-model="coordinador.paterno" readonly>
+										</div>
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Apellido Materno</label>
+										<div v-if="is('administrador')">
 										<input type="text" class="form-control" v-model="coordinador.materno">
+										</div>
+										<div v-if="is('coordinador')">
+										<input type="text" class="form-control" v-model="coordinador.materno" readonly>
+										</div>
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -37,19 +52,24 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>DNI </label>
+										<div v-if="is('administrador')">
 										<input type="text" class="form-control" v-model="coordinador.dni">
+										</div>
+										<div v-if="is('coordinador')">
+										<input type="text" class="form-control" v-model="coordinador.dni" readonly>
+										</div>
 									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>Telefono</label>
+										<label>Teléfono</label>
 										<input type="text" class="form-control" v-model="coordinador.telefono">
 									</div>
 								</div>
 								<!--<div class="col-12 mb-2">
 									<div class="form-group">
-										<label>email </label>
-										<input type="email" class="form-control" v-model="coordinador.email">
+										<label>Email </label>
+										<input type="Email" class="form-control" v-model="coordinador.email">
 									</div>
 								</div>
 								<div class="col-12 mb-2">
@@ -61,7 +81,7 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 										<label>Estado </label>
-										 <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado">
+										 <select name="estado_id" id="inputEstado_id" class="form-control" v-model="coordinador.estado" disabled="true">
 										   <option value=""> seleccione </option>
 										   		<option value = "A"> Activo</option> 
 										   		<option value = "I"> Inactivo </option> 
@@ -72,10 +92,18 @@
 								<div class="col-12 mb-2">
 									<div class="form-group">
 									    <label>Oficina </label>
+									    <div v-if="is('administrador')">
 									   	<select name="oficina_id" id="inputOficina_id" class="form-control" 	v-model="coordinador.oficina_id">
 									  	 		<option v-for="oficina in oficinas"
 									  	 		:value="oficina.id">{{oficina.nombre_oficina}}</option>
 									  	</select>
+									  	</div>
+									  	<div v-if="is('coordinador')">
+									   	<select name="oficina_id" id="inputOficina_id" class="form-control" 	v-model="coordinador.oficina_id" disabled="true">
+									  	 		<option v-for="oficina in oficinas"
+									  	 		:value="oficina.id">{{oficina.nombre_oficina}}</option>
+									  	</select>
+									  	</div>
 									 </div>
 								 </div>
 
@@ -89,92 +117,92 @@
 			</div>
 		</div>
 	</div>
-
 </template>
+
 <script>
-export default{
-	name:"Edita-Coordinador",
-	data(){
-		return{
+	export default{
+		name:"Edita-Coordinador",
+			data(){
+				return{
 
-		  oficinas: [],
+				  oficinas: [],
+				  
+					coordinador:{
+					nombre:"",
+					paterno:"",
+					materno:"",
+					direccion:"",
+					dni:"",
+					telefono:"",
+					//email:"",
+					//password:"",
+					estado:"",
+					oficina_id:"",
+					}
 
-			coordinador:{
-			nombre:"",
-			paterno:"",
-			materno:"",
-			direccion:"",
-			dni:"",
-			telefono:"",
-			//email:"",
-			//password:"",
-			estado:"",
-			oficina_id:"",
-			}
-
-		}
-	},
-		
-	mounted(){
-
-		this.buscarCoordinador(),
-		this.getOficinas()
-	},
-
-	methods:{
-
-		buscarCoordinador(){
+				}
+			},
 			
-			axios.get('/api/coordinadores/' + this.$route.params.id)
-				.then(response=>{
-					const{nombre, paterno, materno, direccion, dni, telefono, estado, oficina_id} = response.data
-					this.coordinador.nombre = nombre,
-					this.coordinador.paterno = paterno,
-					this.coordinador.materno = materno,
-					this.coordinador.direccion = direccion,
-					this.coordinador.dni = dni,
-					this.coordinador.telefono = telefono,
-					//this.coordinador.email = email,
-					//this.coordinador.password = password,
-					this.coordinador.estado = estado,
-					this.coordinador.oficina_id = oficina_id
-				})
-				.catch(error=>{
-					console.log(error)
-				})
-		},
+			mounted(){
 
-		update(){
+				this.buscarCoordinador(),
+				this.getOficinas()
+			},
 
-			const data = {
-				id: this.$route.params.id,
-				oficina: this.coordinador 
-			};
-			axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador)
-			.then(response=>{
-				this.$router.push({
-					name:"mostrarCoordinadores"
-				})
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
-		},
+			methods:{
 
-		getOficinas(){
+				buscarCoordinador(){
+					
+					axios.get('/api/coordinadores/' + this.$route.params.id)
+						.then(response=>{
+							const{nombre, paterno, materno, direccion, dni, telefono, estado, oficina_id} = response.data
+							this.coordinador.nombre = nombre,
+							this.coordinador.paterno = paterno,
+							this.coordinador.materno = materno,
+							this.coordinador.direccion = direccion,
+							this.coordinador.dni = dni,
+							this.coordinador.telefono = telefono,
+							//this.coordinador.email = email,
+							//this.coordinador.password = password,
+							this.coordinador.estado = estado,
+							this.coordinador.oficina_id = oficina_id
+						})
+						.catch(error=>{
+							console.log(error)
+						})
+				},
 
-			axios.get('/api/consultaOficina')
-			.then(response=>{
-				console.log(response.data);
-				this.oficinas = response.data;
-			})
-			.catch(error=>{
-				alert(error);
-				console.log(error)
-			})
-		},
+				update(){
 
+					const data = {
+						id: this.$route.params.id,
+						oficina: this.coordinador 
+					};
+					axios.put('/api/coordinadores/' + this.$route.params.id, this.coordinador)
+					.then(response=>{
+						this.$router.push({
+							name:"mostrarCoordinadores"
+						})
+					})
+					.catch(error=>{
+						alert(error);
+						console.log(error)
+					})
+				},
+
+				getOficinas(){
+
+					axios.get('/api/consultaOficina')
+					.then(response=>{
+						console.log(response.data);
+						this.oficinas = response.data;
+					})
+					.catch(error=>{
+						alert(error);
+						console.log(error)
+					})
+				},
+
+			}
 	}
-}
 </script>

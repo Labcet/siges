@@ -26,7 +26,7 @@ class CreateDocumentosTable extends Migration
             $table->char('dni_solicitante', 8);
             $table->char('ruc_solicitante', 11)->nullable();
             $table->text('observacion');
-            $table->binary('doc_adjunto');
+           /** $table->binary('doc_adjunto'); */
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('user_id_destino');
@@ -38,6 +38,7 @@ class CreateDocumentosTable extends Migration
             $table->timestamp('created_at')->nullable();
           
         });
+        DB::statement("ALTER TABLE documentos ADD doc_adjunto MEDIUMBLOB");
     }
 
     /**

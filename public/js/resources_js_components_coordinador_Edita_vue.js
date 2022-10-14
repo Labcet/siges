@@ -104,6 +104,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Edita-Coordinador",
   data: function data() {
@@ -286,31 +314,65 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Nombre ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.nombre,
-                            expression: "coordinador.nombre",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.nombre },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "nombre",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.nombre,
+                                  expression: "coordinador.nombre",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.coordinador.nombre },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "nombre",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.is("coordinador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.nombre,
+                                  expression: "coordinador.nombre",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", readonly: "" },
+                              domProps: { value: _vm.coordinador.nombre },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "nombre",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -318,31 +380,65 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Apellido Paterno ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.paterno,
-                            expression: "coordinador.paterno",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.paterno },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "paterno",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.paterno,
+                                  expression: "coordinador.paterno",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.coordinador.paterno },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "paterno",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.is("coordinador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.paterno,
+                                  expression: "coordinador.paterno",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", readonly: "" },
+                              domProps: { value: _vm.coordinador.paterno },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "paterno",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -350,31 +446,65 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Apellido Materno")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.materno,
-                            expression: "coordinador.materno",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.materno },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "materno",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.materno,
+                                  expression: "coordinador.materno",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.coordinador.materno },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "materno",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.is("coordinador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.materno,
+                                  expression: "coordinador.materno",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", readonly: "" },
+                              domProps: { value: _vm.coordinador.materno },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "materno",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -414,37 +544,71 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("DNI ")]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.dni,
-                            expression: "coordinador.dni",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.dni },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "dni",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.dni,
+                                  expression: "coordinador.dni",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.coordinador.dni },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "dni",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.is("coordinador")
+                        ? _c("div", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.coordinador.dni,
+                                  expression: "coordinador.dni",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", readonly: "" },
+                              domProps: { value: _vm.coordinador.dni },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.coordinador,
+                                    "dni",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ])
+                        : _vm._e(),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Telefono")]),
+                      _c("label", [_vm._v("Teléfono")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -490,7 +654,11 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { name: "estado_id", id: "inputEstado_id" },
+                          attrs: {
+                            name: "estado_id",
+                            id: "inputEstado_id",
+                            disabled: "true",
+                          },
                           on: {
                             change: function ($event) {
                               var $$selectedVal = Array.prototype.filter
@@ -532,48 +700,114 @@ var render = function () {
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Oficina ")]),
                       _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.coordinador.oficina_id,
-                              expression: "coordinador.oficina_id",
-                            },
-                          ],
-                          staticClass: "form-control",
-                          attrs: { name: "oficina_id", id: "inputOficina_id" },
-                          on: {
-                            change: function ($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function (o) {
-                                  return o.selected
-                                })
-                                .map(function (o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.coordinador,
-                                "oficina_id",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
-                            },
-                          },
-                        },
-                        _vm._l(_vm.oficinas, function (oficina) {
-                          return _c(
-                            "option",
-                            { domProps: { value: oficina.id } },
-                            [_vm._v(_vm._s(oficina.nombre_oficina))]
-                          )
-                        }),
-                        0
-                      ),
+                      _vm.is("administrador")
+                        ? _c("div", [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.coordinador.oficina_id,
+                                    expression: "coordinador.oficina_id",
+                                  },
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "oficina_id",
+                                  id: "inputOficina_id",
+                                },
+                                on: {
+                                  change: function ($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call(
+                                        $event.target.options,
+                                        function (o) {
+                                          return o.selected
+                                        }
+                                      )
+                                      .map(function (o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.coordinador,
+                                      "oficina_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  },
+                                },
+                              },
+                              _vm._l(_vm.oficinas, function (oficina) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: oficina.id } },
+                                  [_vm._v(_vm._s(oficina.nombre_oficina))]
+                                )
+                              }),
+                              0
+                            ),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.is("coordinador")
+                        ? _c("div", [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.coordinador.oficina_id,
+                                    expression: "coordinador.oficina_id",
+                                  },
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "oficina_id",
+                                  id: "inputOficina_id",
+                                  disabled: "true",
+                                },
+                                on: {
+                                  change: function ($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call(
+                                        $event.target.options,
+                                        function (o) {
+                                          return o.selected
+                                        }
+                                      )
+                                      .map(function (o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.coordinador,
+                                      "oficina_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  },
+                                },
+                              },
+                              _vm._l(_vm.oficinas, function (oficina) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: oficina.id } },
+                                  [_vm._v(_vm._s(oficina.nombre_oficina))]
+                                )
+                              }),
+                              0
+                            ),
+                          ])
+                        : _vm._e(),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -593,7 +827,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Edita Coordinador")]),
+      _c("h4", [_vm._v("Editar Coordinador")]),
     ])
   },
   function () {

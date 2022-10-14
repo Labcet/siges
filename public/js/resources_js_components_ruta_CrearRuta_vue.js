@@ -217,7 +217,7 @@ var render = function () {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Documento id")]),
+                      _c("label", [_vm._v("ID Documento")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -249,7 +249,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v(" Oficina id ")]),
+                      _c("label", [_vm._v(" ID Oficina")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -281,7 +281,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 mb-2" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Descripcion ")]),
+                      _c("label", [_vm._v("Descripción ")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
