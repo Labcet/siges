@@ -26,12 +26,16 @@ class UserController extends Controller
         ->groupBy(DB::raw("Month(created_at)"))
         ->pluck('month');
 
-        $datas = array(0,0,0,0,0,0,0,0,0,0,0,0);
-        foreach ($months as $index => $month)
-        {
-            $datas[$month] = $rutas[$index];
-        }
-        return response()->json($datas);
+        $data =[
+            'labels'  => ['Desestimados', 'Fallidos', 'Exitosos', 'No Ejecutados'],
+            'datasets' => [
+                [
+                  'backgroundColor' => ['#013461', '#FF287A','#019500', 'silver'],
+                  'data' => [$desestimados, $fallidos, $exitosos, $pendientes]
+                ],
+            ]
+        ];
+        return response()->json($data);
        // return view ('MostrarCuadro', compact('datas'));
     }
 

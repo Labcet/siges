@@ -21,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('oficinas', App\Http\Controllers\oficinaController::class)->only (['index','store', 'update', 'show','destroy']);
 
-Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['barChart','dashboard','index','create','store', 'update', 'show','destroy']);
+Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['dashboard','index','create','store', 'update', 'show','destroy']);
+
+Route::get('coordinadores/barChart', [App\Http\Controllers\UserController::class, 'barChart']);
 
 Route::get('consultaOficina', function(){
 
