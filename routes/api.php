@@ -23,7 +23,7 @@ Route::resource('oficinas', App\Http\Controllers\oficinaController::class)->only
 
 Route::resource('coordinadores', App\Http\Controllers\UserController::class)->only (['dashboard','index','create','store', 'update', 'show','destroy']);
 
-Route::get('coordinadores/barChart', [App\Http\Controllers\UserController::class, 'barChart']);
+Route::get('barchart', [App\Http\Controllers\UserController::class, 'barchart']);
 
 Route::get('consultaOficina', function(){
 

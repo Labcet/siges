@@ -36,10 +36,11 @@
         },
         async mounted() {
           
-          await axios.get('api/coordinadores/barChart')
+          await axios.get('/api/barchart')
                 .then(response=>{
 
                     this.chartData = response.data
+                    //console.log(response.data);
                 })
                 .catch(error=>{
                     alert(error);

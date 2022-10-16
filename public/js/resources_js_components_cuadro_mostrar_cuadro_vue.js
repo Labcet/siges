@@ -75,8 +75,8 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios.get('api/coordinadores/barChart').then(function (response) {
-                _this.chartData = response.data;
+              return axios.get('/api/barchart').then(function (response) {
+                _this.chartData = response.data; //console.log(response.data);
               })["catch"](function (error) {
                 alert(error);
                 console.log(error);

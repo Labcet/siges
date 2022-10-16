@@ -14,7 +14,7 @@ use Auth;
 class UserController extends Controller
 {
     
-       public function barChart(){
+       public function barchart(){
        
         $rutas=ruta::select(DB::raw("COUNT(*) as count"))
         ->whereYear('created_at', date('Y'))
