@@ -40,16 +40,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_1__.Title, chart_js__WEBPACK_IMPORTED_MODULE_1__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_1__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_1__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_1__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_1__.LinearScale); //let datas= axios.get("api/coordinadores/barChart").then((response)=>{ this.datas= response.data.datas})
@@ -63,7 +53,7 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
   data: function data() {
     return {
       //datas:[],
-      chartData: null
+      chartData: {}
     };
   },
   mounted: function mounted() {
@@ -89,24 +79,18 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__.Chart.register(chart_js__WEBPACK_IMPORTED_
         }
       }, _callee);
     }))();
-  }
-  /*
-     mounted(){
-  	this.MostrarCuadro()
   },
-  
-  methods:{
-  	MostrarCuadro(){
-  		axios.get('/api/coordinadores/barChart')
-  		.then(response=>{
-  			this.datas = response.data
-  		})
-  		.catch(error=>{
-  			console.log(error)
-  		})
-  	},
-  },*/
-
+  methods: {
+    /*MostrarCuadro(){
+    	axios.get('/api/coordinadores/barChart')
+    	.then(response=>{
+    		this.datas = response.data
+    	})
+    	.catch(error=>{
+    		console.log(error)
+    	})
+    },*/
+  }
 });
 
 /***/ }),

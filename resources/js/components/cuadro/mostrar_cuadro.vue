@@ -1,18 +1,8 @@
  
 
 <template>
-  <!--
-      <div class="container">
- <Bar v-if="loaded" :id="barChart" />
 
-   <div style="height: 400px; width: 900px; margin: auto;">
-        <canvas id="barChart"></canvas>
-    </div>
-      -->
-
-    <Bar
-     :chart-data="chartData"
-    /> 
+    <Bar :chart-data="chartData"/> 
 
   </template>
 
@@ -31,7 +21,7 @@
         data() {
           return {
             //datas:[],
-            chartData: null
+            chartData: {}
           }
         },
         async mounted() {
@@ -46,16 +36,10 @@
                     alert(error);
                     console.log(error)
                 })
-    }
-  
-  /*
-
-    mounted(){
-			this.MostrarCuadro()
-		},
+    },
 		
 		methods:{
-			MostrarCuadro(){
+			/*MostrarCuadro(){
 				axios.get('/api/coordinadores/barChart')
 				.then(response=>{
 					this.datas = response.data
@@ -63,8 +47,8 @@
 				.catch(error=>{
 					console.log(error)
 				})
-			},
-  },*/
+			},*/
+  }
 }
   </script>
 
