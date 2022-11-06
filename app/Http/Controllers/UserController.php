@@ -10,33 +10,29 @@ use App\Models\ruta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
     
-       public function barchart(){
+    public function barchart(){
        
-        $rutas=ruta::select(DB::raw("COUNT(*) as count"))
+        /*$rutas=ruta::select(DB::raw("COUNT(*) as count"))
         ->whereYear('created_at', date('Y'))
         ->groupBy(DB::raw("Month(created_at)"))
-        ->pluck('count');
+        ->pluck('count');*/
 
-        $months=ruta::select(DB::raw("Month(created_at) as month"))
-        ->whereYear('created_at', date('Y'))
-        ->groupBy(DB::raw("Month(created_at)"))
-        ->pluck('month');
+        $septiembre = documents::whereMonth('fecha_salida', 9)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
 
-        $dat = array(0,0,0,0,0,0,0,0,0,0,0,0);
-        foreach ($months as $index =>$month)
-        {
-            $dat[$month] = $rutas[$index];
-        }
+        
         $data =[
             'labels'  => ['Enero', 'Febrero', 'Marzo', 'Abril','Mayo','Junio','Julio','Agosto','Setiembre','Octubre','Noviembre','Diciembre'],
             'datasets' => [
                 [
                   'backgroundColor' => ['#013461', '#FF287A','#019500', '#FE9A2E','#298A08','#FA58D0','#FF0000','#2EFEF7','#610B21','#FFFF00','#01DF01','#FF0040'],
-                  'data' => [45,48,68,27,48,96,57,84,47,58,69,47]
+                  'data' => [10,48,68,27,48,96,57,84, $septiembre,58,69,47]
                 ],
             ]
         ];
