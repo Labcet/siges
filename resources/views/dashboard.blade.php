@@ -58,7 +58,7 @@
         </script>
     </head>
     <body>
-        <nav class="flex py-5 bg-green-500 text-white">
+        <nav class="flex py-5 bg-gray-500 text-white">
             <div class="w-1/2 px-12 mr-auto">
                 <p class="text 2x1 font-bold"> SISTEMA DE GESTIÓN </p>
             </div>

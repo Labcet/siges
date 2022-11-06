@@ -36,7 +36,7 @@
         
 		<div class="block mx-auto my-5 p-5 bg-white w-1/3 border-gray-200 rounded-lg shadow-lg">
 
-			<h1 class="text-5x1 text center pt-24">Login</h1>
+			<h1 class="text-5x10 text center pt-24 font bold">Login</h1>
 
 			<form class="mt-4" method="POST" action="{{ route('Logn.store') }}">
                 @csrf
