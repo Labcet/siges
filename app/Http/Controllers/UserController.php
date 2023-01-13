@@ -22,7 +22,40 @@ class UserController extends Controller
         ->groupBy(DB::raw("Month(created_at)"))
         ->pluck('count');*/
 
+        $enero= documents::whereMonth('fecha_salida', 1)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $febrero = documents::whereMonth('fecha_salida', 2)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $marzo = documents::whereMonth('fecha_salida', 3)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $abril = documents::whereMonth('fecha_salida', 4)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $mayo = documents::whereMonth('fecha_salida', 5)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $junio= documents::whereMonth('fecha_salida', 6)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $julio = documents::whereMonth('fecha_salida', 7)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $agosto = documents::whereMonth('fecha_salida', 8)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
         $septiembre = documents::whereMonth('fecha_salida', 9)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $octubre = documents::whereMonth('fecha_salida', 10)
+                        ->where([['oficina_actual', '=', 2], ['ciclo', '=', 1]])
+                        ->count();
+        $noviembre = documents::whereMonth('fecha_salida', 11)
+                        ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
+                        ->count();
+        $diciembre = documents::whereMonth('fecha_salida', 12)
                         ->where([['oficina_actual', '=', 6], ['ciclo', '=', 3]])
                         ->count();
 
@@ -32,7 +65,7 @@ class UserController extends Controller
             'datasets' => [
                 [
                   'backgroundColor' => ['#013461', '#FF287A','#019500', '#FE9A2E','#298A08','#FA58D0','#FF0000','#2EFEF7','#610B21','#FFFF00','#01DF01','#FF0040'],
-                  'data' => [10,48,68,27,48,96,57,84, $septiembre,58,69,47]
+                  'data' => [$enero,$febrero,$marzo,$abril,$mayo,$junio,$julio,$agosto, $septiembre,$octubre,$noviembre,$diciembre]
                 ],
             ]
         ];
