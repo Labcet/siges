@@ -198,8 +198,6 @@ class UserController extends Controller
 
     public function consultaOficina(){
 
-        /*$offic = oficina::all();
-        return response()->json(['offic'=>$offic]);*/
         return 'hola';
     }
 }
