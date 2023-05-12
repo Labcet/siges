@@ -8,8 +8,8 @@ use App\Models\oficina;
 use App\Models\ruta;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Auth;      
-//use Illuminate\Support\Facades\Auth;
+use Auth;
+use Illuminate\Support\Facades\DB;
 
 class documentsController extends Controller
 {
@@ -155,11 +155,21 @@ class documentsController extends Controller
 
         if($id == 1){
 
-            $documentos = documents::all();
+            //$documentos = documents::all();
+            $documentos = DB::table('documentos')
+                            ->leftjoin('oficinas', 'documentos.oficina_actual', '=', 'oficinas.id')
+                            ->select('documentos.*', 'oficinas.nombre_oficina')
+                            ->get();
             
         } else {
 
-            $documentos = documents::where('user_id',$id)->orwhere('user_id_destino',$id)->get();
+            //$documentos = documents::where('user_id',$id)->orwhere('user_id_destino',$id)->get();
+            $documentos = DB::table('documentos')
+                            ->leftjoin('oficinas', 'documentos.oficina_actual', '=', 'oficinas.id')
+                            ->select('documentos.*', 'oficinas.nombre_oficina')
+                            ->where('user_id',$id)
+                            ->orwhere('user_id_destino',$id)
+                            ->get();
         }
 
         return response()->json($documentos);

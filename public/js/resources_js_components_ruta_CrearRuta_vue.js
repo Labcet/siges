@@ -196,258 +196,262 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "form",
-              {
-                on: {
-                  submit: function ($event) {
-                    $event.preventDefault()
-                    return _vm.crearRut.apply(null, arguments)
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { padding: "0 50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "card" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function ($event) {
+                      $event.preventDefault()
+                      return _vm.crearRut.apply(null, arguments)
+                    },
                   },
                 },
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("ID Documento")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.documento_id,
-                            expression: "ruta.documento_id",
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("ID Documento")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.documento_id,
+                              expression: "ruta.documento_id",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.ruta.documento_id },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "documento_id",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.ruta.documento_id },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "documento_id",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v(" ID Oficina")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.oficina_id,
-                            expression: "ruta.oficina_id",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v(" ID Oficina")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.oficina_id,
+                              expression: "ruta.oficina_id",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.ruta.oficina_id },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "oficina_id",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.ruta.oficina_id },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "oficina_id",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Descripción ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.descripcion,
-                            expression: "ruta.descripcion",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Descripción ")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.descripcion,
+                              expression: "ruta.descripcion",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.ruta.descripcion },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "descripcion",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.ruta.descripcion },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "descripcion",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Fecha Ingreso")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.fecha_ingreso,
-                            expression: "ruta.fecha_ingreso",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Fecha Ingreso")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.fecha_ingreso,
+                              expression: "ruta.fecha_ingreso",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "date" },
+                          domProps: { value: _vm.ruta.fecha_ingreso },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "fecha_ingreso",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "date" },
-                        domProps: { value: _vm.ruta.fecha_ingreso },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "fecha_ingreso",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Hora Ingreso")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.hora_ingreso,
-                            expression: "ruta.hora_ingreso",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Hora Ingreso")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.hora_ingreso,
+                              expression: "ruta.hora_ingreso",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "time" },
+                          domProps: { value: _vm.ruta.hora_ingreso },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "hora_ingreso",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "time" },
-                        domProps: { value: _vm.ruta.hora_ingreso },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "hora_ingreso",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Fecha Salida")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.fecha_salida,
-                            expression: "ruta.fecha_salida",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Fecha Salida")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.fecha_salida,
+                              expression: "ruta.fecha_salida",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "date" },
+                          domProps: { value: _vm.ruta.fecha_salida },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "fecha_salida",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "date" },
-                        domProps: { value: _vm.ruta.fecha_salida },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "fecha_salida",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Hora Salida")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.ruta.hora_salida,
-                            expression: "ruta.hora_salida",
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Hora Salida")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.ruta.hora_salida,
+                              expression: "ruta.hora_salida",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "time" },
+                          domProps: { value: _vm.ruta.hora_salida },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.ruta,
+                                "hora_salida",
+                                $event.target.value
+                              )
+                            },
                           },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "time" },
-                        domProps: { value: _vm.ruta.hora_salida },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.ruta,
-                              "hora_salida",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
+                        }),
+                      ]),
                     ]),
+                    _vm._v(" "),
+                    _vm._m(1),
                   ]),
-                  _vm._v(" "),
-                  _vm._m(1),
-                ]),
-              ]
-            ),
+                ]
+              ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {

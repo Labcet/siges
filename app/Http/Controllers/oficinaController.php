@@ -15,7 +15,8 @@ class oficinaController extends Controller
     public function index()
     {
         $oficinas = oficina::all();
-        return response()->json($oficinas); 
+        return response()->json($oficinas);
+            
         //return "hola amigos";
     }
 

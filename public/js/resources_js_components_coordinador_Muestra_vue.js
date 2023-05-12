@@ -63,6 +63,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "coordinadores",
   data: function data() {
@@ -198,109 +203,124 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _vm.is("administrador")
-        ? _c("div", [
-            _c(
-              "div",
-              { staticClass: "col-lg-12 mb-4" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { to: { name: "crearCoordinadores" } },
-                  },
-                  [_vm._v("Crear")]
-                ),
-              ],
-              1
-            ),
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "table-responsive" }, [
-          _c("table", { staticClass: "table table-bordered" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.coordinadores, function (coordinador) {
-                return _c("tr", { key: coordinador.id }, [
-                  _c("td", [_vm._v(_vm._s(coordinador.id) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.nombre) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.paterno) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.materno) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.direccion) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.dni) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.telefono) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.estado) + " ")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(coordinador.oficina_id) + " ")]),
-                  _vm._v(" "),
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { padding: "0 50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _vm.is("administrador")
+          ? _c("div", [
+              _c(
+                "div",
+                { staticClass: "col-lg-12 mb-4" },
+                [
                   _c(
-                    "td",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: {
-                              name: "editarCoordinadores",
-                              params: { id: coordinador.id },
-                            },
-                          },
-                        },
-                        [
-                          _c("font-awesome-icon", {
-                            attrs: { icon: "user-edit" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _vm.is("administrador")
-                        ? _c("div", [
+                    "router-link",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { to: { name: "crearCoordinadores" } },
+                    },
+                    [_vm._v("Crear")]
+                  ),
+                ],
+                1
+              ),
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "table-responsive" }, [
+            _c("table", { staticClass: "table table-bordered" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.coordinadores, function (coordinador) {
+                  return _c("tr", { key: coordinador.id }, [
+                    _c("td", [_vm._v(_vm._s(coordinador.id) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.nombre) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.paterno) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.materno) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.direccion) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.dni) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.telefono) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(coordinador.estado) + " ")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(_vm._s(coordinador.nombre_oficina) + " "),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { align: "center" } }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col" },
+                          [
                             _c(
-                              "a",
+                              "router-link",
                               {
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.borrarCoordinador(coordinador.id)
+                                attrs: {
+                                  to: {
+                                    name: "editarCoordinadores",
+                                    params: { id: coordinador.id },
                                   },
                                 },
                               },
                               [
                                 _c("font-awesome-icon", {
-                                  attrs: { icon: "trash-alt" },
+                                  attrs: { icon: "user-edit" },
                                 }),
                               ],
                               1
                             ),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ])
-              }),
-              0
-            ),
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col" }, [
+                          _vm.is("administrador")
+                            ? _c("div", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.borrarCoordinador(
+                                          coordinador.id
+                                        )
+                                      },
+                                    },
+                                  },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "trash-alt" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ])
+                            : _vm._e(),
+                        ]),
+                      ]),
+                    ]),
+                  ])
+                }),
+                0
+              ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {

@@ -64,8 +64,9 @@ class UserController extends Controller
             'labels'  => ['Enero', 'Febrero', 'Marzo', 'Abril','Mayo','Junio','Julio','Agosto','Setiembre','Octubre','Noviembre','Diciembre'],
             'datasets' => [
                 [
-                  'backgroundColor' => ['#013461', '#FF287A','#019500', '#FE9A2E','#298A08','#FA58D0','#FF0000','#2EFEF7','#610B21','#FFFF00','#01DF01','#FF0040'],
-                  'data' => [$enero,$febrero,$marzo,$abril,$mayo,$junio,$julio,$agosto, $septiembre,$octubre,$noviembre,$diciembre]
+                    'label' => 'Documentos / Mes',
+                    'backgroundColor' => ['#013461', '#FF287A','#019500', '#FE9A2E','#298A08','#FA58D0','#FF0000','#2EFEF7','#610B21','#FFFF00','#01DF01','#FF0040'],
+                    'data' => [$enero,$febrero,$marzo,$abril,$mayo,$junio,$julio,$agosto, $septiembre,$octubre,$noviembre,$diciembre]
                 ],
             ]
         ];
@@ -89,12 +90,16 @@ class UserController extends Controller
         $user = auth('api')->user();
 
         if($user->hasRole('administrador')){
-            $usuarios = User::all();
+            //$usuarios = User::all();
+            $usuarios = DB::table('users')
+                            ->leftjoin('oficinas', 'users.oficina_id', '=', 'oficinas.id')
+                            ->select('users.*', 'oficinas.nombre_oficina')
+                            ->get();
             
         } else {
             $usuarios = User::where('id',$user->id)->get();
         }
-
+        
         return response()->json($usuarios);
     }
 

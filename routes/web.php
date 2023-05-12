@@ -25,7 +25,8 @@ Route::get('/Logout', [SessionController::class, 'destroy'])
 
 /* DASHBOARD */
 
-Route::get('/Dashboard', [UserController::class,'dashboard'])
-   ->middleware('auth')
-   ->name('dashboard');
+Route::get('/{any}', function () {
+    return view('dashboard');
+})->where('any', '.*');
+
 

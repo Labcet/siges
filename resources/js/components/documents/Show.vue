@@ -1,15 +1,14 @@
 <template>
-
-	<div class="container">
+	<div class="container" style="padding: 0 50px;">
 		<div class="row">
-		   <div class="col-lg-12 mb-4">
-		       <router-link :to='{name:"crearDocumentos"}'class="btn btn-success">Crear</router-link>
+		   	<div class="col-lg-12 mb-4">
+		    	<router-link :to='{name:"crearDocumentos"}' class="btn btn-success">Crear</router-link>
 		    </div>
 			<div class="col-12">
 				<div class ="table-responsive">
 					<table class="table table-bordered">
 						<thead class="bg-primary text-white">
-							 <tr>
+							<tr>
 							 	<th> ID </th>
 							 	<th> Código </th>
 							 	<th> Prioridad </th>
@@ -26,38 +25,37 @@
 							 	<th> Oficina Actual </th>
 							 	<th> Ciclo </th>
 							 	<th> Acciones </th>
-							 </tr>
+							</tr>
 						</thead>
 						<tbody>
-						   <tr v-for="documents in documentos" :key="documents.id">
-						      <td>{{documents.id}}</td>
-						      <td>{{documents.codigo}}</td>
-						      <td>{{documents.prioridad}}</td>
-						      <td>{{documents.estado}}</td>
-						      <td>{{documents.fecha_ingreso}}</td>
-						      <td>{{documents.hora_ingreso}}</td>
-						      <td>{{documents.fecha_salida}}</td>
-						      <td>{{documents.hora_salida}}</td>
-						      <td>{{documents.num_folios}}</td>
-						      <td>{{documents.dni_solicitante}}</td>
-						      <td>{{documents.ruc_solicitante}}</td>
-						      <td>{{documents.observacion}}</td>
-						      <td><a download=documento_Adjunto :href="documents.doc_adjunto">PDF</a></td>
-						      <td>{{documents.oficina_actual}}</td>
-						      <td>{{documents.ciclo}}</td>
-
-						      <td v-if="documents.oficina_actual == user_oficina && documents.oficina_actual != 6">
-						      	<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' ><font-awesome-icon icon="user-edit" /></router-link>
-						      	<a type="button" @click="borrarDocumento(documents.id)" ><font-awesome-icon icon="trash-alt" /></a>
-						      	<a type="button" @click="derivarDocumento(documents.id)" class="btn btn-danger ">D<i class="far fa-trash-alt"></i></a>
-						      </td>
-					     </tr>
-			        </tbody>
-		        </table>
-	         </div>
-         </div>
-      </div>
-   </div>
+						   	<tr v-for="documents in documentos" :key="documents.id">
+								<td>{{documents.id}}</td>
+								<td>{{documents.codigo}}</td>
+								<td>{{documents.prioridad}}</td>
+								<td>{{documents.estado}}</td>
+								<td>{{documents.fecha_ingreso}}</td>
+								<td>{{documents.hora_ingreso}}</td>
+								<td>{{documents.fecha_salida}}</td>
+								<td>{{documents.hora_salida}}</td>
+								<td>{{documents.num_folios}}</td>
+								<td>{{documents.dni_solicitante}}</td>
+								<td>{{documents.ruc_solicitante}}</td>
+								<td>{{documents.observacion}}</td>
+								<td><a download=documento_Adjunto :href="documents.doc_adjunto">PDF</a></td>
+								<td>{{documents.nombre_oficina}}</td>
+								<td>{{documents.ciclo}}</td>
+								<td v-if="documents.oficina_actual == user_oficina && documents.oficina_actual != 6">
+									<router-link :to='{name:"editarDocumentos", params:{id:documents.id}}' ><font-awesome-icon icon="user-edit" /></router-link>
+									<a type="button" @click="borrarDocumento(documents.id)" ><font-awesome-icon icon="trash-alt" /></a>
+									<a type="button" @click="derivarDocumento(documents.id)" class="btn btn-danger ">D<i class="far fa-trash-alt"></i></a>
+								</td>
+					     	</tr>
+			        	</tbody>
+		        	</table>
+	         	</div>
+         	</div>
+      	</div>
+   	</div>
 </template>
 
 <script>

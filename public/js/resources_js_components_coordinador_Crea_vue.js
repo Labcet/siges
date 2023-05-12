@@ -240,393 +240,400 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "form",
-              {
-                on: {
-                  submit: function ($event) {
-                    $event.preventDefault()
-                    return _vm.crea.apply(null, arguments)
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { padding: "0 50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "card" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function ($event) {
+                      $event.preventDefault()
+                      return _vm.crea.apply(null, arguments)
+                    },
                   },
                 },
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Nombre ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.nombre,
-                            expression: "coordinador.nombre",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.nombre },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "nombre",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Apellido Paterno ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.paterno,
-                            expression: "coordinador.paterno",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.paterno },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "paterno",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Apellido Materno")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.materno,
-                            expression: "coordinador.materno",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.materno },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "materno",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Direccion ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.direccion,
-                            expression: "coordinador.direccion",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.direccion },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "direccion",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("DNI ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.dni,
-                            expression: "coordinador.dni",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.dni },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "dni",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Teléfono")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.telefono,
-                            expression: "coordinador.telefono",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.coordinador.telefono },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "telefono",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Email ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.email,
-                            expression: "coordinador.email",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "email" },
-                        domProps: { value: _vm.coordinador.email },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "email",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Password")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.coordinador.password,
-                            expression: "coordinador.password",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "password" },
-                        domProps: { value: _vm.coordinador.password },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.coordinador,
-                              "password",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Estado ")]),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Nombre ")]),
+                        _vm._v(" "),
+                        _c("input", {
                           directives: [
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.coordinador.estado,
-                              expression: "coordinador.estado",
+                              value: _vm.coordinador.nombre,
+                              expression: "coordinador.nombre",
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { name: "estado_id", id: "inputEstado_id" },
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.nombre },
                           on: {
-                            change: function ($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function (o) {
-                                  return o.selected
-                                })
-                                .map(function (o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
                               _vm.$set(
                                 _vm.coordinador,
-                                "estado",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
+                                "nombre",
+                                $event.target.value
                               )
                             },
                           },
-                        },
-                        [
-                          _c("option", { attrs: { value: "" } }, [
-                            _vm._v(" seleccione "),
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "A" } }, [
-                            _vm._v(" Activo"),
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "I" } }, [
-                            _vm._v(" Inactivo "),
-                          ]),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", [_vm._v("Oficina ")]),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.coordinador.oficina_id,
-                              expression: "coordinador.oficina_id",
-                            },
-                          ],
-                          staticClass: "form-control",
-                          attrs: { name: "oficina_id", id: "inputOficina_id" },
-                          on: {
-                            change: function ($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function (o) {
-                                  return o.selected
-                                })
-                                .map(function (o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.coordinador,
-                                "oficina_id",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
-                            },
-                          },
-                        },
-                        _vm._l(_vm.oficinas, function (oficina) {
-                          return _c(
-                            "option",
-                            { domProps: { value: oficina.id } },
-                            [_vm._v(_vm._s(oficina.nombre_oficina))]
-                          )
                         }),
-                        0
-                      ),
+                      ]),
                     ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Apellido Paterno ")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.paterno,
+                              expression: "coordinador.paterno",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.paterno },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "paterno",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Apellido Materno")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.materno,
+                              expression: "coordinador.materno",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.materno },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "materno",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Direccion ")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.direccion,
+                              expression: "coordinador.direccion",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.direccion },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "direccion",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("DNI ")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.dni,
+                              expression: "coordinador.dni",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.dni },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "dni",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Teléfono")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.telefono,
+                              expression: "coordinador.telefono",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.coordinador.telefono },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "telefono",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Email ")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.email,
+                              expression: "coordinador.email",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "email" },
+                          domProps: { value: _vm.coordinador.email },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "email",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Password")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.coordinador.password,
+                              expression: "coordinador.password",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "password" },
+                          domProps: { value: _vm.coordinador.password },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.coordinador,
+                                "password",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Estado ")]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.coordinador.estado,
+                                expression: "coordinador.estado",
+                              },
+                            ],
+                            staticClass: "form-control",
+                            attrs: { name: "estado_id", id: "inputEstado_id" },
+                            on: {
+                              change: function ($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function (o) {
+                                    return o.selected
+                                  })
+                                  .map(function (o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.coordinador,
+                                  "estado",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              },
+                            },
+                          },
+                          [
+                            _c("option", { attrs: { value: "" } }, [
+                              _vm._v(" seleccione "),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "A" } }, [
+                              _vm._v(" Activo"),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "I" } }, [
+                              _vm._v(" Inactivo "),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 mb-2" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Oficina ")]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.coordinador.oficina_id,
+                                expression: "coordinador.oficina_id",
+                              },
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              name: "oficina_id",
+                              id: "inputOficina_id",
+                            },
+                            on: {
+                              change: function ($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function (o) {
+                                    return o.selected
+                                  })
+                                  .map(function (o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.coordinador,
+                                  "oficina_id",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              },
+                            },
+                          },
+                          _vm._l(_vm.oficinas, function (oficina) {
+                            return _c(
+                              "option",
+                              { domProps: { value: oficina.id } },
+                              [_vm._v(_vm._s(oficina.nombre_oficina))]
+                            )
+                          }),
+                          0
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(1),
                   ]),
-                  _vm._v(" "),
-                  _vm._m(1),
-                ]),
-              ]
-            ),
+                ]
+              ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {

@@ -1,16 +1,14 @@
 <template>
-
-	<div class="container">
-
+	<div class="container" style="padding: 0 50px;">
 		<div class="row">
-		   <div class="col-lg-12 mb-4">
-		      <router-link :to='{name:"crearRutas"}' class="btn btn-success">Crear</router-link>
-		   </div>
+		   	<div class="col-lg-12 mb-4">
+		      	<router-link :to='{name:"crearRutas"}' class="btn btn-success">Crear</router-link>
+		   	</div>
 			<div class="col-12">
 				<div class ="table-responsive">
 					<table class="table table-bordered">
 						<thead class="bg-primary text-white">				
-							 <tr>
+							<tr>
 							 	<th> ID</th>
 							 	<th> ID Documento</th>
 							 	<th> ID Oficina</th>
@@ -19,7 +17,7 @@
 							 	<th> Fecha Salida</th>
 							 	<th> Hora Salida</th>
 							 	<th> Acciones </th>
-							 </tr>
+							</tr>
 						 </thead>
 						 <tbody>
 							   <tr v-for="ruta in rutas" :key="ruta.id">
@@ -30,7 +28,7 @@
 							      <td>{{ruta.hora_ingreso}}</td>
 							      <td>{{ruta.fecha_salida}}</td>
 							      <td>{{ruta.hora_salida}}</td>
-							      <td> 
+							      <td align="center"> 
 							      	<router-link :to='{name:"editarRutas", params:{id:ruta.id}}'> <font-awesome-icon icon="user-edit" /></router-link>
 							      	<a type="button" @click="borrarRutas(ruta.id)"> <font-awesome-icon icon="trash-alt" /></a>
 							      </td>

@@ -1,11 +1,10 @@
 <template>
 
-<div class="container">
-
+<div class="container" style="padding: 0 50px;">
 	<div class="row">
 			<div v-if="is('administrador')">
 			   <div class="col-lg-12 mb-4">
-			      <router-link :to='{name:"crearOficinas"}'class="btn btn-success">Crear</router-link>
+			      <router-link :to='{name:"crearOficinas"}' class="btn btn-success">Crear</router-link>
 			   </div>
 			</div>
 		<div class="col-12">
@@ -29,8 +28,8 @@
 						      <td>{{oficina.nombre_oficina}}</td>
 						      <td>{{oficina.nombre_jefe}}</td>
 						      <td>{{oficina.descripcion}}</td>
-						      <td>{{oficina.estado}}</td>
-						      <td>
+						      <td align="center">{{oficina.estado}}</td>
+						      <td align="center">
 							   	<div v-if="is('administrador')">
 										<router-link :to='{name:"editarOficinas", params:{id:oficina.id}}'><font-awesome-icon icon="user-edit" /></router-link>
 								      <a type="button" @click="borrarOficina(oficina.id)"><font-awesome-icon icon="trash-alt" /></a>

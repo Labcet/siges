@@ -1,9 +1,7 @@
- 
-
 <template>
-
-    <Bar :chart-data="chartData"/> 
-
+    <div class="" style="width: 500px; margin: 0 auto;">
+      <Bar :chart-data="chartData"/> 
+    </div>
   </template>
 
   <script>

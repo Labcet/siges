@@ -1,3 +1,4 @@
+const homepage = ()=> import('./components/welcome.vue');
 
 //componentes para oficina
 const mostrarOficinasComponent = ()=> import('./components/oficina/Mostrar.vue');
@@ -25,7 +26,11 @@ const MostrarCuadroComponent = ()=> import('./components/cuadro/mostrar_cuadro.v
 
 
 export const routes = [
-
+{
+	name: 'Dashboard',
+	path: '/Dashboard',
+	component: homepage
+},
 {
 	name:'mostrarOficinas',
 	path: '/Dashboard/mostrarOficinas',

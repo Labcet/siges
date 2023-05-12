@@ -71,8 +71,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "documentos",
   data: function data() {
@@ -220,144 +218,148 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-4" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-success",
-              attrs: { to: { name: "crearDocumentos" } },
-            },
-            [_vm._v("Crear")]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "table-responsive" }, [
-          _c("table", { staticClass: "table table-bordered" }, [
-            _vm._m(0),
-            _vm._v(" "),
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { padding: "0 50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-lg-12 mb-4" },
+          [
             _c(
-              "tbody",
-              _vm._l(_vm.documentos, function (documents) {
-                return _c("tr", { key: documents.id }, [
-                  _c("td", [_vm._v(_vm._s(documents.id))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.codigo))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.prioridad))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.estado))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.fecha_ingreso))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.hora_ingreso))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.fecha_salida))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.hora_salida))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.num_folios))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.dni_solicitante))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.ruc_solicitante))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.observacion))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          download: "documento_Adjunto",
-                          href: documents.doc_adjunto,
-                        },
-                      },
-                      [_vm._v("PDF")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.oficina_actual))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(documents.ciclo))]),
-                  _vm._v(" "),
-                  documents.oficina_actual == _vm.user_oficina &&
-                  documents.oficina_actual != 6
-                    ? _c(
-                        "td",
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "editarDocumentos",
-                                  params: { id: documents.id },
-                                },
-                              },
-                            },
-                            [
-                              _c("font-awesome-icon", {
-                                attrs: { icon: "user-edit" },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              attrs: { type: "button" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.borrarDocumento(documents.id)
-                                },
-                              },
-                            },
-                            [
-                              _c("font-awesome-icon", {
-                                attrs: { icon: "trash-alt" },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "btn btn-danger ",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.derivarDocumento(documents.id)
-                                },
-                              },
-                            },
-                            [
-                              _vm._v("D"),
-                              _c("i", { staticClass: "far fa-trash-alt" }),
-                            ]
-                          ),
-                        ],
-                        1
-                      )
-                    : _vm._e(),
-                ])
-              }),
-              0
+              "router-link",
+              {
+                staticClass: "btn btn-success",
+                attrs: { to: { name: "crearDocumentos" } },
+              },
+              [_vm._v("Crear")]
             ),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "table-responsive" }, [
+            _c("table", { staticClass: "table table-bordered" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.documentos, function (documents) {
+                  return _c("tr", { key: documents.id }, [
+                    _c("td", [_vm._v(_vm._s(documents.id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.codigo))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.prioridad))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.estado))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.fecha_ingreso))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.hora_ingreso))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.fecha_salida))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.hora_salida))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.num_folios))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.dni_solicitante))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.ruc_solicitante))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.observacion))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            download: "documento_Adjunto",
+                            href: documents.doc_adjunto,
+                          },
+                        },
+                        [_vm._v("PDF")]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.nombre_oficina))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(documents.ciclo))]),
+                    _vm._v(" "),
+                    documents.oficina_actual == _vm.user_oficina &&
+                    documents.oficina_actual != 6
+                      ? _c(
+                          "td",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                attrs: {
+                                  to: {
+                                    name: "editarDocumentos",
+                                    params: { id: documents.id },
+                                  },
+                                },
+                              },
+                              [
+                                _c("font-awesome-icon", {
+                                  attrs: { icon: "user-edit" },
+                                }),
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.borrarDocumento(documents.id)
+                                  },
+                                },
+                              },
+                              [
+                                _c("font-awesome-icon", {
+                                  attrs: { icon: "trash-alt" },
+                                }),
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn-danger ",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.derivarDocumento(documents.id)
+                                  },
+                                },
+                              },
+                              [
+                                _vm._v("D"),
+                                _c("i", { staticClass: "far fa-trash-alt" }),
+                              ]
+                            ),
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                  ])
+                }),
+                0
+              ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {

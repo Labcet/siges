@@ -57,7 +57,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "oficinas",
   data: function data() {
@@ -178,117 +177,123 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _vm.is("administrador")
-        ? _c("div", [
-            _c(
-              "div",
-              { staticClass: "col-lg-12 mb-4" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { to: { name: "crearOficinas" } },
-                  },
-                  [_vm._v("Crear")]
-                ),
-              ],
-              1
-            ),
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "table-responsive" }, [
-          _c("table", { staticClass: "table table-bordered" }, [
-            _c("thead", { staticClass: "bg-primary text-white" }, [
-              _c("tr", [
-                _c("th", [_vm._v(" ID ")]),
-                _vm._v(" "),
-                _c("th", [_vm._v(" Nombre Oficina ")]),
-                _vm._v(" "),
-                _c("th", [_vm._v(" Jefe de la Oficina")]),
-                _vm._v(" "),
-                _c("th", [_vm._v(" Descripción ")]),
-                _vm._v(" "),
-                _c("th", [_vm._v(" Estado ")]),
-                _vm._v(" "),
-                _vm.is("administrador")
-                  ? _c("div", [_c("th", [_vm._v(" Acciones ")])])
-                  : _vm._e(),
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { padding: "0 50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _vm.is("administrador")
+          ? _c("div", [
+              _c(
+                "div",
+                { staticClass: "col-lg-12 mb-4" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { to: { name: "crearOficinas" } },
+                    },
+                    [_vm._v("Crear")]
+                  ),
+                ],
+                1
+              ),
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "table-responsive" }, [
+            _c("table", { staticClass: "table table-bordered" }, [
+              _c("thead", { staticClass: "bg-primary text-white" }, [
+                _c("tr", [
+                  _c("th", [_vm._v(" ID ")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(" Nombre Oficina ")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(" Jefe de la Oficina")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(" Descripción ")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(" Estado ")]),
+                  _vm._v(" "),
+                  _vm.is("administrador")
+                    ? _c("div", [_c("th", [_vm._v(" Acciones ")])])
+                    : _vm._e(),
+                ]),
               ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.oficinas, function (oficina) {
+                  return _c("tr", { key: oficina.id }, [
+                    _c("td", [_vm._v(_vm._s(oficina.id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(oficina.nombre_oficina))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(oficina.nombre_jefe))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(oficina.descripcion))]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { align: "center" } }, [
+                      _vm._v(_vm._s(oficina.estado)),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { align: "center" } }, [
+                      _vm.is("administrador")
+                        ? _c(
+                            "div",
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "editarOficinas",
+                                      params: { id: oficina.id },
+                                    },
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "user-edit" },
+                                  }),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.borrarOficina(oficina.id)
+                                    },
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "trash-alt" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                    ]),
+                  ])
+                }),
+                0
+              ),
             ]),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.oficinas, function (oficina) {
-                return _c("tr", { key: oficina.id }, [
-                  _c("td", [_vm._v(_vm._s(oficina.id))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(oficina.nombre_oficina))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(oficina.nombre_jefe))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(oficina.descripcion))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(oficina.estado))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _vm.is("administrador")
-                      ? _c(
-                          "div",
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "editarOficinas",
-                                    params: { id: oficina.id },
-                                  },
-                                },
-                              },
-                              [
-                                _c("font-awesome-icon", {
-                                  attrs: { icon: "user-edit" },
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.borrarOficina(oficina.id)
-                                  },
-                                },
-                              },
-                              [
-                                _c("font-awesome-icon", {
-                                  attrs: { icon: "trash-alt" },
-                                }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        )
-                      : _vm._e(),
-                  ]),
-                ])
-              }),
-              0
-            ),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

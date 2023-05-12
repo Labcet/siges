@@ -1,10 +1,9 @@
 <template>
-
-	<div class="container">
+	<div class="container" style="padding: 0 50px;">
 		<div class="row">
 			<div v-if="is('administrador')">
 	   			<div class="col-lg-12 mb-4">
-	      			 <router-link :to='{name:"crearCoordinadores"}'class="btn btn-success">Crear</router-link>
+	      			 <router-link :to='{name:"crearCoordinadores"}' class="btn btn-success">Crear</router-link>
 	    		</div>
 	    	</div>
 				<div class="col-12">
@@ -34,12 +33,18 @@
 							      <td>{{coordinador.dni}} </td>
 							      <td>{{coordinador.telefono}} </td>
 							      <td>{{coordinador.estado}} </td>
-							      <td>{{coordinador.oficina_id}} </td>
-							      <td> 
-							      	<router-link :to='{name:"editarCoordinadores", params:{id:coordinador.id}}' ><font-awesome-icon icon="user-edit" /></router-link>
-							      	<div v-if="is('administrador')">
-							      	<a type="button" @click="borrarCoordinador(coordinador.id)"><font-awesome-icon icon="trash-alt" /></a>
-							      	</div>
+							      <td>{{coordinador.nombre_oficina}} </td>
+							      <td align="center"> 
+									<div class="row">
+										<div class="col">
+											<router-link :to='{name:"editarCoordinadores", params:{id:coordinador.id}}' ><font-awesome-icon icon="user-edit" /></router-link>
+										</div>
+										<div class="col">
+											<div v-if="is('administrador')">
+												<a type="button" @click="borrarCoordinador(coordinador.id)"><font-awesome-icon icon="trash-alt" /></a>
+											</div>
+										</div>
+									</div>
 							      </td>
 				  				</tr>
 							</tbody>

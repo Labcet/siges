@@ -58,12 +58,12 @@
         </script>
     </head>
     <body>
-        <nav class="flex py-5 bg-gray-500 text-white">
+        <nav class="flex py-3 bg-gray-500 text-white">
             <div class="w-1/2 px-12 mr-auto">
-                <p class="text 2x1 font-bold"> SISTEMA DE GESTIÓN </p>
+                <p class="text 2x1 font-bold" style="font-size: 50px;"> SIGES </p>
             </div>
            
-            <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
+            <ul class="w-1/2 px-13 ml-auto flex justify-end pt-4 pr-10">
                 @if(auth()->check())
                 <li class="mx-6">
                     <p class="text-xl"> Bienvenido <b>{{auth()->user()->nombre}}</b></p>
@@ -77,8 +77,9 @@
                
         </nav>
         
-    <div id="app"></div>
-            
+        <div id="app">
+        </div>
     </body>
     <script src="{{mix('js/app.js')}}" type="text/javascript"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 

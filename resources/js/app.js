@@ -18,9 +18,12 @@ import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt, faUserEdit} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+import Metricas from './components/cuadro/mostrar_cuadro.vue';
 library.add(faTrashAlt, faUserEdit)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('metricas', Metricas);
 
 import LaravelPermissionToVueJS from 'laravel-permission-to-vuejs'
 
