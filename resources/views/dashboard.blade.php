@@ -66,7 +66,7 @@
             <ul class="w-1/2 px-13 ml-auto flex justify-end pt-4 pr-10">
                 @if(auth()->check())
                 <li class="mx-6">
-                    <p class="text-xl"> Bienvenido <b>{{auth()->user()->nombre}}</b></p>
+                    <p class="text-xl"> Bienvenido(a) <b>{{auth()->user()->nombre}}</b></p>
                     <meta name="user_id" content="{{ Auth::user()->id }}">
                 </li>
                 <li>
